@@ -110,6 +110,11 @@ Constructor Fabric must cover all phases of the software product development lif
 
 ### 4.2 Level 2: Detailed Lifecycle
 
+14 phases of software product lifecycle in one line:
+
+**Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
+
+
 #### 4.2.1 PLAN
 
   1. **Intent** - Why does this product exist?
@@ -189,11 +194,11 @@ Constructor Fabric must cover all phases of the software product development lif
 
 #### 4.2.2 BUILD
 
-  6. **Architecture** - How should the solution be structured?
+  6. **Design** - How should the solution be structured?
 
     - Activities:
 
-        - System design
+        - System design & Architecture
         - Technology selection
         - Security design
 
@@ -311,16 +316,37 @@ Constructor Fabric must cover all phases of the software product development lif
 
 
 
-
-### 4.3 Simplified Lifecycle
-**Intent → Vision → Discovery → Strategy → Definition → Design → Construct → Validate → Release → Operate → Learn → Evolve**
-
-
 ## 5. High-Level Scenarios
 
 This section describes the high-level scenarios enabled by Constructor Fabric along with the deliverables for each of the ROles and Stages.
 
-### 5.2.1 Constructor Fabric for Architects
+### 5.1 Constructor Fabric for Product Management 
+
+1. Plan
+   - Vision, requirements & UX design in one consistent workflow
+   - Opportunity assessment - problem, target user, success metric before commit
+   - Annual planning – GEO, segment, App - competitive research, pricing sensitivity, localized functionality, integrations, channel structure & margins, conversion funnel, payment methods
+   - Competitive intelligence - product development trends, channel trends, pricing trends
+   - Roadmap planning -  desired functionality and resources
+
+2. Build
+   - Vision traceability -  resources committed per week/month against each vision pillar
+   - Plan vs. actual - track R&D resources actually spent against the plan
+   - Turn PRDs into (animated) backlog-ready stories & acceptance criteria
+   - End-to-end traceability - spec → feature → delivery
+   - Catch requirement gaps before engineering or market does 
+   - Instrument analytics at build time - every key flow tracked before launch
+   
+3. Operate
+   - Win/loss & funnel-conversion analysis - find the bottlenecks
+   - Live product dashboards & experimentation from launch onward
+   - Customer feedback – prioritized, traceable into requirements
+   - Retention & expansion support - health scores, upsell paths
+   - Flag product & scope drift across the portfolio
+   - Outcome vs. spend - did the resources committed to each vision pillar pay off (ARR, adoption)
+
+
+### 5.2 Constructor Fabric for Architects
 
 1. Plan
    - Architecture traceability - every requirement mapped to the design decision & component that satisfies it.
@@ -347,32 +373,8 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
    - Planned vs. actual resource consumption - track each service's real compute/infra usage against plan, flag overruns
    - Incident → architecture feedback loop - production signals & postmortems feed design
    
-### 5.2.2 Constructor Fabric for Product Management 
 
-1. Plan
-   - Vision, requirements & UX design in one consistent workflow
-   - Opportunity assessment - problem, target user, success metric before commit
-   - Annual planning – GEO, segment, App - competitive research, pricing sensitivity, localized functionality, integrations, channel structure & margins, conversion funnel, payment methods
-   - Competitive intelligence - product development trends, channel trends, pricing trends
-   - Roadmap planning -  desired functionality and resources
-
-2. Build
-   - Vision traceability -  resources committed per week/month against each vision pillar
-   - Plan vs. actual - track R&D resources actually spent against the plan
-   - Turn PRDs into (animated) backlog-ready stories & acceptance criteria
-   - End-to-end traceability - spec → feature → delivery
-   - Catch requirement gaps before engineering or market does 
-   - Instrument analytics at build time - every key flow tracked before launch
-   
-3. Operate
-   - Win/loss & funnel-conversion analysis - find the bottlenecks
-   - Live product dashboards & experimentation from launch onward
-   - Customer feedback – prioritized, traceable into requirements
-   - Retention & expansion support - health scores, upsell paths
-   - Flag product & scope drift across the portfolio
-   - Outcome vs. spend - did the resources committed to each vision pillar pay off (ARR, adoption)
-
-### 5.2.3 Constructor Fabric for Engineering Management
+### 5.3 Constructor Fabric for Engineering Management
 
 1. Plan
    -  Scope decomposition - break down  product requirement into features, user stories, technical tasks, dependencies, acceptance criteria
@@ -392,7 +394,7 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
    
    
 
-### 5.2.4 Constructor Fabric for DevOps/SRE
+### 5.4 Constructor Fabric for DevOps/SRE
 
 1. Plan
    - Define SLOs and error budgets up front – from product requirements
@@ -419,7 +421,7 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
    - Incident to architecture feedback loop - postmortems and production signals feed back into the model
    - Planned vs actual - real compute/infra usage against plan, flag drift and overruns
    
-### 5.2.5 Constructor Fabric for QA & Benchmarking
+### 5.5 Constructor Fabric for QA & Benchmarking
 
 1. Plan
    - Define quality bars and acceptance criteria 
