@@ -114,7 +114,7 @@ Constructor Fabric must cover all phases of the software product development lif
 
   1. **Intent** - Why does this product exist?
 
-    - Examples:
+    - Activities:
 
         - Opportunity identification
         - Market research

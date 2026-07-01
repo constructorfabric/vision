@@ -18,7 +18,7 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 
 AI made code generation faster.
 
-Studio helps serious software teams safely move from **product intent to production**.
+Studio helps professional software development teams safely move from **product intent to production**.
 
 Constructor Studio is an integrated workspace – bringing together all scenarios in one place.
 - It is implemented as:
@@ -56,7 +56,7 @@ For 5–500 person SaaS and service-provider teams adopting AI, but unwilling to
 AI coding tools help teams generate more code faster.
 But complex software delivery still breaks across handoffs:
 
-- Modern AI tools were created with the R&D in mind. Other organizations and functions - Product Management, GTM - are having a hard time adopting AI using R&D-centric tools.
+- Modern AI tools were created with the R&D in mind. Other organizations and functions - Product Management, GTM - are having a hard time adopting AI using R&D-centric tools (IDEs - such as Cursor or GitHub are not the native Product Management tools for example and they require a very steep learning curve and do not provide convinient and efficient collaboration capabilities).
 - Which AI work creates value vs. cost
 - Which agents, models, and prompts are efficient
 - Whether requirements, architecture, decisions, tests, and releases stay connected
@@ -73,13 +73,13 @@ The strategic problem is controlling the full AI-assisted delivery system: value
 The entire software industry is adjusting to AI-assisted delivery. Automation will emerge across many categories of software development:
 
 - Business research
-  -- **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business creates an opportunity. 
-  -- **Understand the problem** - Determine which problems are worth solving.
-  -- **Define target customers** - Decide who the product is for.  
-  -- **Quantify the value** - Estimate whether solving the problem matters.
-  -- **Explore solution space** - Evaluate possible approaches without committing.
-  -- **Define strategic positioning** - Decide why the product should win - identify the "magic sauce" - unique differentiators (special skills, key people, relationships, ecosystem, channel)
-  -- **Formulate intent** - Convert research into a clear decision - should we do it or not and why
+  - **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business creates an opportunity. 
+  - **Understand the problem** - Determine which problems are worth solving.
+  - **Define target customers** - Decide who the product is for.  
+  - **Quantify the value** - Estimate whether solving the problem matters.
+  - **Explore solution space** - Evaluate possible approaches without committing.
+  - **Define strategic positioning** - Decide why the product should win - identify the "magic sauce" - unique differentiators (special skills, key people, relationships, ecosystem, channel)
+  - **Formulate intent** - Convert research into a clear decision - should we do it or not and why
 - Product and requirements work
 - Architecture and design
 - Coding and code review
