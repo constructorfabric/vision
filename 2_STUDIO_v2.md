@@ -10,6 +10,8 @@ Investor-first rewrite of Studio vision deck.
 Source basis: user's Marp draft, refined for investor narrative, wedge, moat, ROI, and competitive positioning.
 -->
 
+> NOTE: Constructor Studio is one of the 3 main Elements of Constructor Fabric. Please read @CONSTRUCTOR_FABRIC_VISION.md first!
+
 # Studio
 
 ## AI control plane for Software Engineering
@@ -17,6 +19,20 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 AI made code generation faster.
 
 Studio helps serious software teams safely move from **product intent to production**.
+
+Constructor Studio is an integrated workspace – bringing together all scenarios in one place.
+- It is implemented as:
+  - A web application in a browser
+  - A desktop application for macOS, Linux, Windows, iOS/Android
+  - A CLI that can be used from other tools (less beneficial because all the existing tools were created for developers and will not benefit all other roles)
+- It is intended for:
+  - Product Management (CPO, Product Owner, Product Manager, Program Manager)
+  - UX Team (UX designers, UI designers)
+  - R&D  (CDO, CTO, Chief Architect, Dev Manager, Developer)
+  - QA (QA engineers, performance engineers)
+  - DevOps /DCO (SRE, DevOps)
+  - GTM (CRO, CMO, Regional GM, Marketing Manager, Marketing Communications Manager)
+
 
 <div class="accent">
 For 5–500 person SaaS and service-provider teams adopting AI, but unwilling to lose control, security, traceability, or delivery quality.
@@ -40,6 +56,7 @@ For 5–500 person SaaS and service-provider teams adopting AI, but unwilling to
 AI coding tools help teams generate more code faster.
 But complex software delivery still breaks across handoffs:
 
+- Modern AI tools were created with the R&D in mind. Other organizations and functions - Product Management, GTM - are having a hard time adopting AI using R&D-centric tools.
 - Which AI work creates value vs. cost
 - Which agents, models, and prompts are efficient
 - Whether requirements, architecture, decisions, tests, and releases stay connected
@@ -55,6 +72,14 @@ The strategic problem is controlling the full AI-assisted delivery system: value
 
 The entire software industry is adjusting to AI-assisted delivery. Automation will emerge across many categories of software development:
 
+- Business research
+  -- **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business creates an opportunity. 
+  -- **Understand the problem** - Determine which problems are worth solving.
+  -- **Define target customers** - Decide who the product is for.  
+  -- **Quantify the value** - Estimate whether solving the problem matters.
+  -- **Explore solution space** - Evaluate possible approaches without committing.
+  -- **Define strategic positioning** - Decide why the product should win - identify the "magic sauce" - unique differentiators (special skills, key people, relationships, ecosystem, channel)
+  -- **Formulate intent** - Convert research into a clear decision - should we do it or not and why
 - Product and requirements work
 - Architecture and design
 - Coding and code review
