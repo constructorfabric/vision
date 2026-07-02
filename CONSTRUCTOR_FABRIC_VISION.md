@@ -52,7 +52,63 @@ Constructor Fabric is intended to be used by the following groups of people:
    - Program Manager
    - **UX/UI Designers** - responsible for designing the user experience and user interface of software products to ensure they are intuitive, efficient, accessible, and aligned with user needs and business goals.
 2. R&D
-   - **Software Architects** - responsible for defining and guiding the overall structure, design principles, and technical direction of a software system to ensure it meets functional, non-functional, and long-term scalability 
+   - **Software Architects** - responsible for defining and guiding the overall structure, design principles, and technical direction of a software system to ensure it meets functional, non-functional, and long-term scalability
+   - # Constructor Fabric Vision
+
+> NOTE: This document is a draft in terms of completeness - but can be used already to validate the rest of the artifacts
+
+
+## 1. Open Design
+
+Constructor Fabric is model-agnostic, tool-agnostic, and open.
+
+Organizations retain ownership of their specifications, architecture, code, and operational knowledge while benefiting from AI-native software construction.
+
+
+## 2. Why Fabric
+
+A fabric is created by weaving many independent threads into one coherent structure.
+
+Constructor Fabric weaves together:
+
+- Intent and strategy
+- Product discovery and requirements
+- Architecture and decisions
+- Code and reusable components
+- Validation and governance
+- Deployment and operations
+- Learning and optimization
+
+Every artifact remains connected to its origin.
+Every decision remains traceable.
+Every improvement compounds.
+
+
+## 3. Target Audience
+
+### 3.1 Target Organizations/Departments/Functions
+
+Constructor Fabric is designed to serve the following organizational units:
+
+1. Product Management
+2. R&D
+3. DevOps / Datacenter Operations (DCO)
+4. GTM (Sales & Marketing)
+5. Customer Success / Support
+
+
+### 3.2 Target Roles
+
+Constructor Fabric is intended to be used by the following groups of people:
+
+1. Product Management
+   - **VP of Product Management** - who defines the product portfolio vision of the company
+   - **Product Owner / Product Manager** - who is responsible for maximizing the value of a product by defining its vision, strategy, priorities, and outcomes.
+   - Program Manager
+   - **UX/UI Designers** - responsible for designing the user experience and user interface of software products to ensure they are intuitive, efficient, accessible, and aligned with user needs and business goals.
+2. R&D
+   - **Software Architects** - responsible for defining and guiding the overall structure, design principles, and technical direction of a software system to ensure it meets functional, non-functional, and long-term scalability
+   - **Subject Matter Experts** - responsible for application security, compliance, performance engineering, database architecture and other domain experts who provide specialized review criteria, rules, and validation guidance.
    - **Engineering Managers** - responsible for delivery quality, traceability, and review readiness across teams.
 and maintainability requirements.
    - **Developers** who use AI coding tools daily and need a reliable way to keep requirements, design, and code aligned.
@@ -483,7 +539,6 @@ Constructor Fabric's open philosophy assumes that one is not restricted by the s
 
 - Atlassian (Jira / Confluence) - plans to Jira, ADRs to Confluence; PRD→CODE traceability
 
-
 ### 7.3 Source & CI/CD
 
 - GitLab (+ CI + Runners) - CF drives MRs, pipelines & runners via API/webhooks; emits CI config
@@ -527,7 +582,6 @@ Constructor Fabric's open philosophy assumes that one is not restricted by the s
 6. **Cost observability - track spend per user, per model, per task type, per agent. Alert on overruns.
 
 
-
 ## 9. Participation in Constructor Fabric
 
 ### 9.1 Use Constructor Fabric Start elements in your project share your feedback.
@@ -538,21 +592,19 @@ You can start using any element or any combination of elements of Constructor Fa
     2. Use Constructor Gears as building blocks for your projects
     3. Deploy Constructor Insight and see how AI affects your organization's productivity
 
-
 ### 9.2 Contribute to Constructor Fabric
 
     1. Provide new skills, kits, and plugins for Constructor Studio tools
     2. Improve Constructor Studio tools
-    3. Improve existing Constructor Gears
-    4. Develop new Constructor Gears from the Constructor Fabric roadmap
-    5. Propose and develop new Constructor Gears outside the roadmap
-    6. Implement integrations between Constructor Fabric and third-party systems
-
-
+    3. Implement new functionality in Insight
+    4. Improve existing Constructor Gears
+    5. Develop new Constructor Gears from the Constructor Fabric roadmap
+    6. Propose and develop new Constructor Gears outside the roadmap
+    7. Implement integrations between Constructor Fabric and third-party systems
+    
 ## 99. Unsorted Requirements
 
 - Ingress existing repository
 - Participating companies
 - Operational environment hosted by partners
-
 
