@@ -2,6 +2,10 @@
 
 This repository holds the vision documents for [Constructor Fabric](https://constructorfabric.org) and all of its elements. The documents are the source of truth for what each element is meant to do and why.
 
+## Read the vision
+
+The vision documents are published as a website: **https://constructorfabric.github.io/vision/**
+
 ## How to use
 
 Add this repository as a git submodule in any Constructor Fabric repository:
