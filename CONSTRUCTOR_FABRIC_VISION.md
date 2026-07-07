@@ -63,7 +63,8 @@ Constructor Fabric is intended to be used by the following groups of people:
    - Program Manager
    - **UX/UI Designers** - responsible for designing the user experience and user interface of software products to ensure they are intuitive, efficient, accessible, and aligned with user needs and business goals.
 2. R&D
-   - **Software Architects** - responsible for defining and guiding the overall structure, design principles, and technical direction of a software system to ensure it meets functional, non-functional, and long-term scalability 
+   - **Software Architects** - responsible for defining and guiding the overall structure, design principles, and technical direction of a software system to ensure it meets functional, non-functional, and long-term scalability
+   - **Subject Matter Experts** - responsible for application security, compliance, performance engineering, database architecture and other domain experts who provide specialized review criteria, rules, and validation guidance.
    - **Engineering Managers** - responsible for delivery quality, traceability, and review readiness across teams.
 and maintainability requirements.
    - **Developers** who use AI coding tools daily and need a reliable way to keep requirements, design, and code aligned.
@@ -518,11 +519,11 @@ Constructor Fabric's open philosophy assumes that one is not restricted by the s
 - Zencoder (Zenflow and IDE Agents) -  AI coding agent, pluggable in Studio
 - Cognition (Windsurf/Devin) - AI editor; pluggable agent via the gateway
 
+---
+
 ### 7.2 Plan & Collaborate
 
 - Atlassian (Jira / Confluence) - plans to Jira, ADRs to Confluence; PRD→CODE traceability
-
----
 
 ### 7.3 Source & CI/CD
 
@@ -587,15 +588,17 @@ You can start using any element or any combination of elements of Constructor Fa
 
     1. Provide new skills, kits, and plugins for Constructor Studio tools
     2. Improve Constructor Studio tools
-    3. Improve existing Constructor Gears
-    4. Develop new Constructor Gears from the Constructor Fabric roadmap
-    5. Propose and develop new Constructor Gears outside the roadmap
-    6. Implement integrations between Constructor Fabric and third-party systems
+    3. Implement new functionality in Insight
+    4. Improve existing Constructor Gears
+    5. Develop new Constructor Gears from the Constructor Fabric roadmap
+    6. Propose and develop new Constructor Gears outside the roadmap
+    7. Implement integrations between Constructor Fabric and third-party systems
 
 ---
-
+ 
 ## 99. Unsorted Requirements
 
 - Ingress existing repository
 - Participating companies
 - Operational environment hosted by partners
+
