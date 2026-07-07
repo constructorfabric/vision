@@ -12,7 +12,7 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 
 > NOTE: Constructor Studio is one of the 3 main Elements of Constructor Fabric. Please read @CONSTRUCTOR_FABRIC_VISION.md first!
 
-# Studio
+# Studio Vision
 
 ## AI control plane for Software Engineering
 
