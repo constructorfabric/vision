@@ -96,13 +96,13 @@ Constructor Studio is intended for the following functions and roles:
 
 - Constructor Studio covers the Software Development Lifecycle (SDLC) in a broader way - starting from intent, moving through product construction and operation, and then continuing into learning, evolution, and transformation.
 - Constructor does not dictate a specific Software Development Lifecycle (SDLC). On the contrary, it can be easily adapted to any SDLC used by a company and extended into more advanced SDLCs.
-- Constructor Studio ships with one or more examples of supported SCLCs that can be used as is or customized to fit a company's needs.
+- Constructor Studio ships with one or more examples of supported SDLCs that can be used as is or customized to fit a company's needs.
 
 ---
 
 # Reference Studio SDLC example
 
-Reference SCLC kit provided by Studio includes 3 high-level phases: **Plan > Build > Operate**, which are in turn split into 14 stages:
+Reference SDLC kit provided by Studio includes 3 high-level phases: **Plan > Build > Operate**, which are in turn split into 14 stages:
 
   **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolution**
 
