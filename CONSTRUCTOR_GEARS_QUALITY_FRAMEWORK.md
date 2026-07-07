@@ -1,3 +1,10 @@
+---
+marp: true
+theme: rose-pine-moon
+paginate: true
+size: 16:9
+---
+
 # Constructor Gears Quality Framework
 
 Constructor Gears is evaluated across five quality vectors that guide
@@ -8,6 +15,8 @@ throughout the software lifecycle.
 > quality vector. The **Example Metrics** column contains representative
 > metrics that teams may use to measure and monitor that vector. The
 > specific metrics can evolve over time.
+
+---
 
 | Quality Vector | Guiding Question | Description | North Star Metric | Example Metrics (non-exhaustive) |
 | --- | --- | --- | --- | --- |
