@@ -14,27 +14,26 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 
 # What is Constructor Studio
 
-Constructor Studio is an AI-native software construction workspace that brings together every role, artifact, and activity across the software construction lifecycle into a single collaborative environment.
+Constructor Studio is an AI-native software construction workspace that brings together every role, artifact, and activity across the software construction lifecycle into a single collaborative environment. 
 
 Studio helps professional software development teams to safely, affectively and predictively move from **product intent to operating the product**.
+It is indetnded for 5–500 person SaaS and service-provider teams adopting AI, but unwilling to lose control, security, traceability, or delivery quality.
 
 Constructor Studio is an **integrated** workspace – bringing together all scenarios in one place.
-- It is implemented as:
-  - A web application in a browser
-  - A desktop application for macOS, Linux, Windows, iOS/Android
-  - A CLI that can be used from other tools (less beneficial because all the existing tools were created for developers and will not benefit all other roles)
 
-<div class="accent">
-For 5–500 person SaaS and service-provider teams adopting AI, but unwilling to lose control, security, traceability, or delivery quality.
-</div>
+It is implemented as:
+- A web application in a browser
+- A desktop application for macOS, Linux, Windows, iOS/Android
+- A CLI that can be used from other tools (less beneficial because all the existing tools were created for developers and will not benefit all other roles)
 
 ---
 
 # Executive Summary
 
-- **Market shift:** - AI coding agents are making code generation cheap and fast
-- **Gravity Shift** - the weight shifts from code generation to intent definition and operations 
-- **New bottleneck:** - validation, coordination, governance, and production readiness
+- **Market shift:** - AI coding agents are making code generation cheaper and faster
+- **Skyrocketing costs** - Uncontrollable use of LLMs - whna pplied to old-style SDLC leads to the growth of bills from LLM providers
+- **Gravity Shift** - The weight shifts from code generation to intent definition and operations 
+- **New bottleneck:** - Validation, coordination, governance, and production readiness
 - **Product:** - Studio is an open-core control plane over existing SDLC systems
 - **How it works:** - Studio builds a shadow SDLC graph and runs validated actions over it
 - **Moat:** - Open core adoption + Insight data + Studio automation + Gears kits + custom AI models and World Model
@@ -42,48 +41,44 @@ For 5–500 person SaaS and service-provider teams adopting AI, but unwilling to
 
 ---
 
-# The Problem
+# Problem Statement
 
-AI coding tools help teams generate more code faster.
-But complex software delivery still breaks across handoffs:
+The problems that Constructor Studio is builto to address:
 
-- Modern AI tools were created with the R&D in mind. Other organizations and functions - Product Management, GTM - are having a hard time adopting AI using R&D-centric tools (IDEs - such as Cursor or GitHub are not the native Product Management tools for example and they require a very steep learning curve and do not provide convenient and efficient collaboration capabilities).
-- Which AI work creates value vs. cost
-- Which agents, models, and prompts are efficient
-- Whether requirements, architecture, decisions, tests, and releases stay connected
-- Whether production feedback updates future decisions
+## AI Costs 
+The costs associated with AI use are groiwng very fast but the outcomes of this use are not very clear and not undesrtood. The lack of proper company-wide guidelnes and guardrails leads to inefficient uses of AI - wrong models for wrong tasks, multiple passes of the same context to the model, context growth with the ack of context compression, the same tasks executed by multiple team members agains the same or different models. Which AI work creates value vs. cost? Which agents, models, and prompts are efficient?
+
+
+## Developer-centric AI Tools
+Modern AI tools were created with the R&D in mind. Other organizations and functions - Product Management, GTM - are having a hard time adopting AI using R&D-centric tools (IDEs - such as Cursor or GitHub are not the native Product Management tools for example and they require a very steep learning curve and do not provide convenient and efficient collaboration capabilities).
+
+## Lack of Handoff
+AI coding tools help teams generate more code faster. But complex software delivery still breaks across handoffs. Artifacts created by one team at one stage of the SDLC are not well received or consistently followed by another team. Whether requirements, architecture, decisions, tests, and releases stay connected?
+
+## Lack of Feedback Loop
+Majority of the AI tools focus only on a few stages of SDLC - around coding and delivery of the software. Opetationa apsect stays uncovered and the production feedback updates does not affect future decisions.
 
 <div class="accent">
-The strategic problem is controlling the full AI-assisted delivery system: value, cost, architecture, decisions, validation, and production readiness.
+The strategic problem is controlling the full AI-assisted software delivery: value, cost, architecture, decisions, validation, and production readiness.
 </div>
 
 ---
 
 # Why Now
 
-The entire software industry is adjusting to AI-assisted delivery. Automation will emerge across many categories of software development:
-
-- Business research
-- Product and requirements work
-- Architecture and design
-- Coding and code review
-- Testing and validation
-- Release and operations
-- Cost, quality, and governance control
-
-<div class="accent">
-We bring 20+ years of experience building highly scalable and secure SaaS platforms — and see a major opportunity to turn AI momentum into governed, validated, production-grade SaaS software delivery.
-</div>
+1. Costs of AI-assisted software developmnent are griowing in 2026
+2. While there are many companies that are experimenting and trying to build one or more tools covering a small portion of SDLC - there is no single company that adresses the problems holistically.
 
 ---
 
 # Constructor Studio Users
-- Constructor Studio automaes the work of **Actors** - anything that performs a transformation in the Software Construction Lifecycle. Today that includes mostly humans. Tomorrow it will also include AI agents and external systems. For example:
-- Human
-- AI Agent
-- External Tool
-- External System
-- Automated Pipeline
+- Constructor Studio automaes the work of **Actors** - anything that performs a transformation in the Software Construction Lifecycle. Today that includes mostly humans. Tomorrow it will also include AI agents and external systems. 
+For example:
+  - Human
+  - AI Agent
+  - External Tool
+  - External System
+  - Automated Pipeline
 - It is intended for the following fucntions and roles:
   - Product Management (CPO, Director of Product, Product Owner, Product Manager, Program Manager) - Define what should be built
   - Product Marketing (CMO, Product Marketing Manager, Technical Marketing Manager, Marketing Communications Manager) - Position and launch products
