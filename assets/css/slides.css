@@ -228,6 +228,13 @@ section table code {
     color: var(--subtle);
 }
 
+section.text-sm p,
+section.text-sm li,
+section.text-sm ul,
+section.text-sm ol {
+    font-size: 0.9em;
+}
+
 
 section.table-sm table {
     font-size: 0.8em;
@@ -240,3 +247,29 @@ section.table-md table {
 section.table-xs table {
     font-size: 0.6em;
 }
+
+section.appendix {
+    position: relative;
+}
+
+section.appendix > header {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    left: auto;
+    display: inline-block;
+    width: auto;
+    max-width: max-content;
+    margin: 0;
+    padding: 4px 10px;
+    border: 1px solid var(--highlight-high);
+    border-radius: 999px;
+    background: var(--overlay);
+    color: var(--foam);
+    font-size: 0.42em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+

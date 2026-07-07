@@ -16,45 +16,34 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 
 Constructor Studio is an AI-native software construction workspace that brings together every role, artifact, and activity across the software construction lifecycle into a single collaborative environment.
 
-Studio helps professional software development teams to safely, affectively and predictively move from **product intent to operating the product**.
-
-Constructor Studio is an **integrated** workspace – bringing together all scenarios in one place.
-- It is implemented as:
-  - A web application in a browser
-  - A desktop application for macOS, Linux, Windows, iOS/Android
-  - A CLI that can be used from other tools (less beneficial because all the existing tools were created for developers and will not benefit all other roles)
-
-<div class="accent">
-For 5–500 person SaaS and service-provider teams adopting AI, but unwilling to lose control, security, traceability, or delivery quality.
-</div>
+Studio helps 5–500 person SaaS and service-provider teams adopting AI to safely, effectively, and predictably move from **product intent to operating the product** in one workspace without losing control, security, traceability, or delivery quality.
 
 ---
 
 # Executive Summary
 
 - **Market shift:** - AI coding agents are making code generation cheap and fast
-- **Gravity Shift** - the weight shifts from code generation to intent definition and operations 
+- **Gravity shift:** - the weight shifts from code generation to intent definition and operations
 - **New bottleneck:** - validation, coordination, governance, and production readiness
 - **Product:** - Studio is an open-core control plane over existing SDLC systems
 - **How it works:** - Studio builds a shadow SDLC graph and runs validated actions over it
-- **Moat:** - Open core adoption + Insight data + Studio automation + Gears kits + custom AI models and World Model
-- **Customer promise:** no migration, no vendor lock-in, own your SDLC graph and workflows
+- **Moat:** - open-core adoption + Insight data + Studio automation + Gears kits + custom AI models and World Model
+- **Customer promise:** -no migration, no vendor lock-in, and ownership of your SDLC graph and workflows
 
 ---
 
 # The Problem
 
-AI coding tools help teams generate more code faster.
-But complex software delivery still breaks across handoffs:
+AI coding tools help teams generate more code faster. But complex software delivery still breaks across handoffs:
 
-- Modern AI tools were created with the R&D in mind. Other organizations and functions - Product Management, GTM - are having a hard time adopting AI using R&D-centric tools (IDEs - such as Cursor or GitHub are not the native Product Management tools for example and they require a very steep learning curve and do not provide convenient and efficient collaboration capabilities).
-- Which AI work creates value vs. cost
-- Which agents, models, and prompts are efficient
-- Whether requirements, architecture, decisions, tests, and releases stay connected
-- Whether production feedback updates future decisions
+- AI tools are still centered on R&D workflows (e.g Claude Code and GitHub), making adoption harder for product managers, UX, GTM, and other non-engineering roles
+- Teams struggle to see which AI work creates value versus cost
+- It is hard to know which agents, models, and prompts are actually effective
+- Requirements, architecture, decisions, tests, and releases often lose traceability across the lifecycle
+- Production feedback rarely flows back cleanly into future decisions and planning
 
 <div class="accent">
-The strategic problem is controlling the full AI-assisted delivery system: value, cost, architecture, decisions, validation, and production readiness.
+The real problem is controlling the full AI-assisted delivery system: value, cost, decisions, validation, and production readiness.
 </div>
 
 ---
@@ -72,62 +61,88 @@ The entire software industry is adjusting to AI-assisted delivery. Automation wi
 - Cost, quality, and governance control
 
 <div class="accent">
-We bring 20+ years of experience building highly scalable and secure SaaS platforms — and see a major opportunity to turn AI momentum into governed, validated, production-grade SaaS software delivery.
+We bring 20+ years of experience building scalable and secure SaaS platforms — and see a major opportunity to turn AI momentum into a new software delivery paradigm.
 </div>
 
 ---
 
 # Constructor Studio Users
-- Constructor Studio automaes the work of **Actors** - anything that performs a transformation in the Software Construction Lifecycle. Today that includes mostly humans. Tomorrow it will also include AI agents and external systems. For example:
-- Human
-- AI Agent
-- External Tool
-- External System
-- Automated Pipeline
-- It is intended for the following fucntions and roles:
-  - Product Management (CPO, Director of Product, Product Owner, Product Manager, Program Manager) - Define what should be built
-  - Product Marketing (CMO, Product Marketing Manager, Technical Marketing Manager, Marketing Communications Manager) - Position and launch products
-  - User Experience Team (UX Researcher, UX designer, UI designers, Interaction designer, Design System Engineer) - Design user experience
-  - R&D  (CDO, CTO, Chief Architect, Engineering Manager, Developer, AI Engineer) - Design and construct software
-  - QA (QA engineers, performance engineers) - Validate quality
-  - DevOps /DCO (SRE, DevOps) - Operate production systems
-  - GTM (CRO, Regioal VPs) - Sell and grow the business
-  - Cusromer Success (Implementation teams, customer support, TAMs) - earn from customers, support customer growth
+
+Constructor Studio automates the work of **Actors** - anything that performs a transformation in the Software Construction Lifecycle.
+
+Today, that mostly includes humans. Tomorrow, it will also include AI agents and external systems.
+
+Examples - Human, AI Agent, External Tool, External System, Automated Pipeline
+
+---
+
+<!-- _class: text-sm -->
+
+# Constructor Studio Users by Function
+
+Constructor Studio is intended for the following functions and roles:
+
+- **Product Management** (CPO, Director of Product, Product Owner, Product Manager, Program Manager) - Define what should be built
+- **Product Marketing** (CMO, Product Marketing Manager, Technical Marketing Manager, Marketing Communications Manager) - Position and launch products
+- **User Experience Team** (UX Researcher, UX designer, UI designers, Interaction designer, Design System Engineer) - Design user experience
+- **R&D**  (CDO, CTO, Chief Architect, Engineering Manager, Developer, QA, SME, AI Engineer, DevOps) - Design and construct software
+- **Operations** (DevOps, DCO, SRE) - Deploy & operate production systems
+- **GTM** (CRO, Regional VPs) - Sell and grow the business
+- **Customer Success** (Implementation teams, customer support, TAMs) - Support customers and drive customer growth
+
+---
 
 # Product Lifecycle
-- Instead of focusing on Software Developmen Lifecycle (SDLC) - where the focus was only the creation of a software product - Constructor Studio covers a much wide scope in the lifecycle of a sofware product - starting from Intent, transitioning to the constrction of the product ad the to the operation of the product and lerning to the evolution and transofmration of the product. So we will be using the term Software Construction Lifecycle (SCLC).
-- Cosntructor does not dictate the specific Software Development Lifecycle (SDLC) - completely opposite - it can be easily adopted to any SDLC used by the company and extend it into a proper SCLC.
-- Constructor Studio is shipped with one or more examples of supported SCLCs that can be used as is or can be cusomized to fir the company needs.
-- This SCLC inclides 3 high-level phases: **Plan > Build > Operate** which are in turn split into 14 stages: 
 
-  **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
+- Constructor Studio covers the Software Development Lifecycle (SDLC) in a broader way - starting from intent, moving through product construction and operation, and then continuing into learning, evolution, and transformation.
+- Constructor does not dictate a specific Software Development Lifecycle (SDLC). On the contrary, it can be easily adapted to any SDLC used by a company and extended into more advanced SDLCs.
+- Constructor Studio ships with one or more examples of supported SCLCs that can be used as is or customized to fit a company's needs.
 
-- For every Actor and every Lifecycle Stage - Constructor Studio defines:
+---
+
+# Reference Studio SDLC example
+
+Reference SCLC kit provided by Studio includes 3 high-level phases: **Plan > Build > Operate**, which are in turn split into 14 stages:
+
+  **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolution**
+
+For every Actor and every Lifecycle Stage, Constructor Studio defines:
   1. Actor
   2. Activities
   3. Inputs
-  4. Optputs
+  4. Outputs
+
+---
+
+<!-- _class: table-sm -->
+
+# Lifecycle Model Example
 
 For example:
 
-  ```text
-  Actor	      Stage	         Activities	         Inputs	              Outputs
-  Product Manager	Intent	   Identify opportunity,   Market trends	        Opportunity Statement
-                                 Market analysis,        Customer feedback  
-                                 Define business goals	
-  Product Manager	Discovery	   Customer interviews,    Opportunity Statement  Problem Statements
-                                 JTBD, Prioritization 
-  Architect	      Architecture   Design system	         Requirements	        Architecture
-  Developer	      Construction   Implement solution	   Architecture	        Source Code
-  QA	            Validation	   Execute tests	         Source Code	        Test Results
-  SRE	            Operations	   Monitor production	   Running System	        Operational Metrics
-```
+| Actor | Stage | Activities | Inputs | Outputs |
+|---|---|---|---|---|
+| Product Manager | Intent | Identify opportunity; Market analysis; Define business goals | Market trends; Customer feedback | Opportunity Statement |
+| Product Manager | Discovery | Customer interviews; JTBD; Prioritization | Opportunity Statement | Problem Statements |
+| Architect | Architecture | Design system | Requirements | Architecture |
+| Developer | Construction | Implement solution | Architecture | Source Code |
+| QA | Validation | Execute tests | Source Code | Test Results |
+| SRE | Operations | Monitor production | Running System | Operational Metrics |
 
-# Tools 
-- Construtor Studio does not replace the existing source control systems, AI models - instead it integrates with them.  
+---
 
+# Tools
 
+Constructor Studio is designed to work with the tools teams already use — and to adapt to how each organization builds software.
 
+Instead of forcing migration, Studio connects to existing systems, mirrors their context into the shadow SDLC graph, and lets teams customize how work is validated, routed, and automated.
+
+This includes:
+- Integrations with IDEs, agentic workflows, issue trackers, Git repositories, docs, CI/CD, cloud, and operations systems
+- Customizable workflows, templates, validators, policies, and actions
+- Team-specific kits, connectors, and automation patterns without vendor lock-in
+
+---
 # Initial Customer Segment
 
 ## AI-assisted SaaS and service-provider teams
@@ -145,7 +160,6 @@ For example:
 CTO, VP Engineering, Head of Platform, Head of R&D.
 
 ---
-
 # Studio Positioning
 
 Studio is **not** the primary system of record.
@@ -170,277 +184,58 @@ create ticket | update doc | open PR | run CI | assign owner | create release ta
 ```
 
 ---
-# High-Level Scenarios
+# User Interfaces
 
-1. Stage: Intent
+Constructor Studio is an **integrated** workspace – bringing together all scenarios in one place.
 
-   Actor: Product Management
-
-  - **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business creates an opportunity. 
-  - **Understand the problem** - Determine which problems are worth solving.
-  - **Define target customers** - Decide who the product is for.  
-  - **Quantify the value** - Estimate whether solving the problem matters.
-  - **Explore solution space** - Evaluate possible approaches without committing.
-  - **Define strategic positioning** - Decide why the product should win - identify the "magic sauce" - unique differentiators (special skills, key people, relationships, ecosystem, channel)
-  - **Formulate intent** - Convert research into a clear decision - should we do it or not and why
-
-2. TBD - the rest of the stages
+It is implemented as:
+- A **web application** in a browser
+- A **desktop application** for macOS, Linux, Windows, iOS/Android
+- A **CLI** that can be used from other tools (less beneficial because most existing tools were created for developers and do not serve all other roles as well)
 
 ---
 # User Experience
 
-- One of the unique differentiators of Constructor Studio is its excellent User Experience for all Roles participating in the creation of the sofwtare product. Some of these Roles are extremely technacal (like developers or architects) and some - are more business-oriented and less technical (like Product Management and UX Design).
-- Constructor Studio provides an ability to perform activities with adjustable level of complexity - one can start with assisted AI-approach but have a possibility to go deeper into manual operations.
-- English is becoming a mainstream programming language (as well as many other human-spoken languages) and many modern tools are switching from the old UX paradigm - menus and buttons to a more modern conversational approach - which have their own set of benefits and disdavantages. One of them - you have to remember the sequence of actions which one needs to perform to accomplish the task - even if to invoke the task you can use now plain human language. Constructor Studio provides an intuitive User Experience with a short learning curve - when the next Action or Task is suggested to a User by Studio. 
-- Constructor Studio allows to easily feed a result of one activity as an input to another activity. It's possible to feed multiple outputs of multiple activities as an inputs to multiple activities.
+- Constructor Studio is designed for all roles involved in software creation.
+- Some roles are deeply technical, while others are more business-oriented and less technical.
+- The goal is a short learning curve without sacrificing power.
+- Users can start with AI-assisted flows and go deeper into manual operations when needed.
 
 ---
-#Collaboration
+# Guided, Connected Work
 
-For the teams working together - Constructor Studio allows to setup common guidelines, templates, processes, workflows, artifacts to be shared:
-- By the same person across multiple projects
-- By a team of people playing the same or different Roles
-- For the whole organziation
-For example: tempaltes of the documents, stages in the process, quality gates - that every team member must follow.
+- Natural language and conversational interfaces are becoming mainstream.
+- Studio reduces the need to remember complex sequences by suggesting the next Action or Task.
+- The output of one activity can become the input to another.
+- Multiple outputs from multiple activities can be routed into multiple downstream activities.
 
-Constructor Studio allows to setup guardrails and quality gates for a team or for a whole organization.
+---
+# Collaboration
 
+For teams working together, Constructor Studio makes it possible to share:
 
-While the most benefits can be achieved when Constructor Studio is used by the team of people - it also provides the benefits for an individual contributor working on multiple projects at the same time - such as synchronisation between Activities, routing outputs of activities as inputs to other activities, re-using artifacts between projects.
+- Guidelines
+- Templates
+- Processes
+- Workflows
+- Artifacts
+
+These can be shared by one person across multiple projects, by teams across roles, or across the whole organization.
+
+---
+# Collaboration at Team and Organization Level
+
+- Studio allows teams and organizations to define common guardrails and quality gates.
+- Shared standards improve consistency, handoffs, and reuse across the lifecycle.
+- Individual contributors also benefit through synchronization between Activities, routing outputs into other activities, and reusing artifacts across projects.
 
 
 ---
 # Localization
 
-- Constructor Studio can be easily localized into multiple locales. Localization includes not only the user interface translation - but also things like currency format, date format, time format, working week start day, right-to-left.
-- Each user collaborating in the project using Constructor Studio may use it in her own language/locale - and successfully collaborate.
+- Constructor Studio can be easily localized into multiple locales. Localization includes not only user interface translation, but also things like currency format, date format, time format, working week start day, and right-to-left support.
+- Each user collaborating on a project in Constructor Studio may use it in their own language or locale and still collaborate successfully.
 
-
----
-# Core Ideas
-
-## Shadow objects. Validated actions. Human-controlled automation.
-
-- Constructor Studio does not introduce new artifacts - and produces and digests the artifacts that are very familiar in the software industry.
-- Constructor Studio does not dictate which other tools a team needs to use - instead it supports a wide variety of the tools - various IDEs, source control systems, CI/CD tools, AI models, Agent SDKs.
-
-Studio mirrors work from existing systems, links it into a graph, and applies registered actions to move work forward.
-
-```text
-PRD -> Design -> Decomposition -> Agent / Human Work -> Validation -> Release -> Operations
-```
-
-Every transition can be:
-
-- Deterministic script
-- AI-assisted transformation
-- Human task
-
-Every transition can be validated before the next step.
-
----
-
-# Shadow SDLC Graph
-
-Studio mirrors SDLC objects, intent, context, and attributes.
-
-<div class="cols">
-<div>
-
-**Objects**
-
-- Requirement / PRD / Design / ADR
-- Task / Epic / Bug / Decision
-- Repo / File / Branch / Commit / PR
-- Test / Build / Release / Deployment
-- Alert / Incident / Runbook / Postmortem
-- Person / Team / Role / Approval
-
-</div>
-<div>
-
-**Tracked attributes**
-
-- Source system and external ID
-- Owner, team, state, version
-- Last sync and change history
-- Related objects and dependencies
-- Validation status and evidence
-- Staleness and risk signals
-
-</div>
-</div>
-
----
-
-# Actions Are Executable Edges
-
-Output of one Activity may become an input or a decision gate of another activity.
-Objects are nodes. Actions are executable edges.
-
-```text
-PRD -------- create_design() --------> Design
-Design ----- decompose_feature() ----> Tasks
-Task ------- implement_code() -------> Pull Request
-Bug -------- create_repro_test() ----> Failing Test
-PR --------- run_ci() ---------------> Build Result
-Release ---- deploy() ---------------> Deployment
-Incident --- create_postmortem() ----> Postmortem + Prevention Tasks
-```
-
-Studio is not only an analytics layer. It can recommend, prepare, validate, and execute approved actions through connectors.
-
----
-
-# Validated Action Graph
-
-Studio combines objects, relationships, actions, validators, policies, and evidence.
-
-```text
-Object(s) + Context + Rules
-          |
-          v
-Action / Transformation
-          |
-          v
-Candidate Object(s) + Evidence
-          |
-          v
-Validators
-          |
-   pass / fail / retry / escalate
-```
-
-Studio does not just generate artifacts. It validates whether work is ready to move to the next state.
-
----
-
-# Validator Loops
-
-```text
-              Candidate artifact
-                      |
-                      v
-                 Validators
-                      |
-            pass      |      fail
-          +-----------+-----------+
-          |                       |
-          v                       v
-      Next task              Fix / retry
-                                  |
-                            retry < limit?
-                            /          \
-                         yes            no
-                          |              |
-                          v              v
-                    Candidate       Human escalation
-                                    or abort
-```
-
-Validator loops create trust, auditability, and bounded automation.
-
----
-
-# First Killer Workflow
-
-## Bug report → reproduction → failing test → fix PR
-
-This is the best first demo because success is measurable.
-
-```text
-Bug report
-  -> validate bug description
-  -> find suspected component
-  -> deploy test environment
-  -> reproduce bug
-  -> create failing test
-  -> confirm test fails on baseline
-  -> implement fix
-  -> confirm test passes after fix
-  -> run CI
-  -> create PR
-```
-
----
-
-# Second Killer Workflow
-
-## PRD → Design → Tasks → PR validation
-
-```text
-PRD in Confluence / Office / Git
-      | create_design(PRD, repo, SaaS kit, templates, rules)
-      v
-Candidate Design
-      | validators: coverage, architecture, security, multi-tenancy, RBAC/ABAC
-      v
-Approved Design
-      | decompose_feature(Design, PRD, repo, team capacity)
-      v
-Candidate Tasks
-      | validators: missing requirements, duplicates, ownership, task size
-      v
-Jira / ADO / Linear tasks
-      | validate PRs against design and acceptance criteria
-      v
-Release-ready implementation
-```
-
----
-
-# Studio Flow Library
-
-Studio ships with smart predefined flows.
-
-<div class="cols">
-<div>
-
-- Gap analysis
-- Traceability analysis
-- Contradiction detection
-- Bloat detection
-- Stale artifact detection
-- Ownership-gap analysis
-- Duplicate-work detection
-
-</div>
-<div>
-
-- Architecture-drift detection
-- Security-impact analysis
-- Test-gap detection
-- Release-readiness review
-- Incident-to-postmortem automation
-- Operations metrics analysis
-- AI-cost efficiency analysis
-
-</div>
-</div>
-
----
-
-# Example: Gap Detection
-
-```text
-Requirement R-17 exists
-      |
-      v
-No design section references R-17
-      |
-      v
-No task implements R-17
-      |
-      v
-No test covers R-17
-      |
-      v
-Studio recommends:
-- update design
-- create task
-- add test case
-- assign owner
-```
 
 ---
 
@@ -476,32 +271,6 @@ Studio is designed to **assist and advise people**, not blindly replace them.
 
 </div>
 </div>
-
----
-
-# Platform Architecture
-
-```text
-┌──────────────────────────────────────────────┐
-│                 Studio UI                    │
-│ Dashboards | Graph | Recommendations | Flows │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│            Studio Control Plane              │
-│ Shadow Graph | Actions | Validators | SDKs   │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│   Insight: operational intelligence layer    │
-│ Connectors | Data | Analytics | Benchmarking │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│              Existing Systems                │
-│ Jira | Git | CI | Docs | Teams | IDE | Cloud │
-└──────────────────────────────────────────────┘
-```
 
 ---
 
@@ -559,7 +328,7 @@ Gears are reusable OSS/BSS modules, platform engines, and developer/SRE tooling.
 
 # Higher Segment Than Lovable
 
-Studio targets higher Lovable-customers' segments where teams need:
+Studio targets higher-end customer segments than Lovable, where teams need:
 
 - Production-grade multi-tenant SaaS
 - Multi-tier service-provider platforms
@@ -578,24 +347,29 @@ Studio competes above the prototype segment: scalable, secure, governed SaaS.
 
 # The Most Cost-Efficient Software Development
 
-Studio is designed for AI cost control, not just AI usage. This achieved mainly by:
-1. **Multi-model support** - it's possible to configure Constructor Studio to always use a model that is most efifient for the specific Activity and for a specific Role:
-  - Model routing by Activity type - code generation vs. document consistency check.
-  - Small models for classification and extraction
-  - Non-GPU models for simple checks
-  - Large models only for hard reasoning
-  - Own models for repeated enterprise tasks
-2. **Context compression** - Constructor Studio condences the information fed into AI models by using summarization, sliding window approach, relevance filtering, token trimming/pruning.
-3. **Quality/cost benchmarking** - Constructor Studio provides the tools to measure and monitor the overall costs of sofwtware development.
-   - Cost of Atokens
-   - Cost of compute in development - through tight integration with Constructor Insight
-4. Other cost-saving techniques
-  - Prompt/version A/B testing
-  - Incremental analysis & revalidation
+Studio is designed for AI cost control, not just AI usage.
 
-Constructor Studio always provides the most cost-effective software development - while it is shipped with the most optimal configuration available at the moment - it is possible at a later stage while using the Studio to request most up-to date configuration (model routing, context compression) and optionally apply it to the studio instance. 
+- Multi-model support
+- Context compression
+- Quality and cost benchmarking
+- Continuous optimization and revalidation
+- Telemetry dashboards and analytics
 
-While some organizations allow their team members freely chose any AI model for any task - Constructor Studio allows centralizaed control over the model routing. Organization administrators may decide to lock the Studio configuration - which models the team members will be using for which Activities.
+---
+# Cost-Efficiency Levers
+
+- **Multi-model support** - route each Activity to the most efficient model for the job
+- **Context compression** - reduce token load through summarization, filtering, and pruning
+- **Benchmarking** - measure the cost of AI tokens and development compute
+- **Optimization** - improve prompts, routing, and revalidation over time
+- **Other cost-saving techniques** - prompt/version A/B testing and incremental analysis & revalidation
+
+---
+# Cost-Efficiency Controls
+
+- Studio ships with an optimized default configuration.
+- Teams can later request updated configurations for model routing and context compression.
+- Organizations can centrally control model routing instead of letting every team member choose any model for any task.
 
 <div class="accent">
 Goal: lower AI cost per accepted change, not just more AI activity.
@@ -640,7 +414,7 @@ Studio should be measured by delivery outcomes.
 
 - Higher requirement-to-test coverage
 - Fewer stale design/code mismatches
-- Fewer rejected AI-generated artficats
+- Fewer rejected AI-generated artifacts
 - Lower AI cost per accepted change
 
 </div>
@@ -854,3 +628,311 @@ It mirrors the SDLC, detects gaps, recommends improvements, and runs validated a
 <div class="accent">
 Studio helps serious SaaS and service-provider teams build faster — without losing control, security, traceability, or production quality.
 </div>
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix A -->
+# Appendix A - High-Level Scenarios
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix A -->
+# High-Level Scenarios - #1 Intent
+
+Actor: Product Management
+
+  - **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business create an opportunity.
+  - **Understand the problem** - Determine which problems are worth solving.
+  - **Define target customers** - Decide who the product is for.
+  - **Quantify the value** - Estimate whether solving the problem matters.
+  - **Explore solution space** - Evaluate possible approaches without committing.
+  - **Define strategic positioning** - Decide why the product should win - identify the "magic sauce" - unique differentiators (special skills, key people, relationships, ecosystem, channel)
+  - **Formulate intent** - Convert research into a clear decision - should we do it or not, and why?
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix A -->
+# High-Level Scenarios - #2 TBD - the rest of the stages
+
+...
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Appendix B - Product Mechanics
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Core Ideas
+
+## Shadow objects. Validated actions. Human-controlled automation.
+
+- Studio works with familiar software-delivery artifacts rather than introducing a new system of record.
+- It supports a wide range of existing tools, including IDEs, source control systems, CI/CD tools, AI models, and Agent SDKs.
+- Studio mirrors work from existing systems, links it into a graph, and applies registered actions to move work forward.
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Core Ideas in Flow
+
+```text
+PRD -> Design -> Decomposition -> Agent / Human Work -> Validation -> Release -> Operations
+```
+
+Every transition can be:
+
+- Deterministic script
+- AI-assisted transformation
+- Human task
+
+Every transition can be validated before the next step.
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Shadow SDLC Graph
+
+Studio mirrors SDLC objects, intent, context, and attributes.
+
+<div class="cols">
+<div>
+
+**Objects**
+
+- Requirement / PRD / Design / ADR
+- Task / Epic / Bug / Decision
+- Repo / File / Branch / Commit / PR
+- Test / Build / Release / Deployment
+- Alert / Incident / Runbook / Postmortem
+- Person / Team / Role / Approval
+
+</div>
+<div>
+
+**Tracked attributes**
+
+- Source system and external ID
+- Owner, team, state, version
+- Last sync and change history
+- Related objects and dependencies
+- Validation status and evidence
+- Staleness and risk signals
+
+</div>
+</div>
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Actions Are Executable Edges
+
+Output of one Activity may become an input or a decision gate of another activity.
+Objects are nodes. Actions are executable edges.
+
+```text
+PRD -------- create_design() --------> Design
+Design ----- decompose_feature() ----> Tasks
+Task ------- implement_code() -------> Pull Request
+Bug -------- create_repro_test() ----> Failing Test
+PR --------- run_ci() ---------------> Build Result
+Release ---- deploy() ---------------> Deployment
+Incident --- create_postmortem() ----> Postmortem + Prevention Tasks
+```
+
+Studio is not only an analytics layer. It can recommend, prepare, validate, and execute approved actions through connectors.
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Validated Action Graph
+
+Studio combines objects, relationships, actions, validators, policies, and evidence.
+
+```text
+Object(s) + Context + Rules
+          |
+          v
+Action / Transformation
+          |
+          v
+Candidate Object(s) + Evidence
+          |
+          v
+Validators
+          |
+   pass / fail / retry / escalate
+```
+
+Studio does not just generate artifacts. It validates whether work is ready to move to the next state.
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Validator Loops
+
+```text
+              Candidate artifact
+                      |
+                      v
+                 Validators
+                      |
+            pass      |      fail
+          +-----------+-----------+
+          |                       |
+          v                       v
+      Next task              Fix / retry
+                                  |
+                            retry < limit?
+                            /          \
+                         yes            no
+                          |              |
+                          v              v
+                    Candidate       Human escalation
+                                    or abort
+```
+
+Validator loops create trust, auditability, and bounded automation.
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# First Killer Workflow
+
+## Bug report → reproduction → failing test → fix PR
+
+This is the best first demo because success is measurable.
+
+```text
+Bug report
+  -> validate bug description
+  -> find suspected component
+  -> deploy test environment
+  -> reproduce bug
+  -> create failing test
+  -> confirm test fails on baseline
+  -> implement fix
+  -> confirm test passes after fix
+  -> run CI
+  -> create PR
+```
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Second Killer Workflow
+
+## PRD → Design → Tasks → PR validation
+
+```text
+PRD in Confluence / Office / Git
+      | create_design(PRD, repo, SaaS kit, templates, rules)
+      v
+Candidate Design
+      | validators: coverage, architecture, security, multi-tenancy, RBAC/ABAC
+      v
+Approved Design
+      | decompose_feature(Design, PRD, repo, team capacity)
+      v
+Candidate Tasks
+      | validators: missing requirements, duplicates, ownership, task size
+      v
+Jira / ADO / Linear tasks
+      | validate PRs against design and acceptance criteria
+      v
+Release-ready implementation
+```
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Studio Flow Library
+
+Studio ships with smart predefined flows.
+
+<div class="cols">
+<div>
+
+- Gap analysis
+- Traceability analysis
+- Contradiction detection
+- Bloat detection
+- Stale artifact detection
+- Ownership-gap analysis
+- Duplicate-work detection
+
+</div>
+<div>
+
+- Architecture-drift detection
+- Security-impact analysis
+- Test-gap detection
+- Release-readiness review
+- Incident-to-postmortem automation
+- Operations metrics analysis
+- AI-cost efficiency analysis
+
+</div>
+</div>
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Example: Gap Detection
+
+```text
+Requirement R-17 exists
+      |
+      v
+No design section references R-17
+      |
+      v
+No task implements R-17
+      |
+      v
+No test covers R-17
+      |
+      v
+Studio recommends:
+- update design
+- create task
+- add test case
+- assign owner
+```
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Platform Architecture
+
+```text
+┌──────────────────────────────────────────────┐
+│                 Studio UI                    │
+│ Dashboards | Graph | Recommendations | Flows │
+└─────────────────────┬────────────────────────┘
+                      │
+┌─────────────────────v────────────────────────┐
+│            Studio Control Plane              │
+│ Shadow Graph | Actions | Validators | SDKs   │
+└─────────────────────┬────────────────────────┘
+                      │
+┌─────────────────────v────────────────────────┐
+│   Insight: operational intelligence layer    │
+│ Connectors | Data | Analytics | Benchmarking │
+└─────────────────────┬────────────────────────┘
+                      │
+┌─────────────────────v────────────────────────┐
+│              Existing Systems                │
+│ Jira | Git | CI | Docs | Teams | IDE | Cloud │
+└──────────────────────────────────────────────┘
+```
