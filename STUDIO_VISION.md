@@ -77,6 +77,7 @@ We bring 20+ years of experience building highly scalable and secure SaaS platfo
 
 ---
 
+# Constructor Studio Users
 - Constructor Studio automaes the work of **Actors** - anything that performs a transformation in the Software Construction Lifecycle. Today that includes mostly humans. Tomorrow it will also include AI agents and external systems. For example:
 - Human
 - AI Agent
@@ -98,13 +99,17 @@ We bring 20+ years of experience building highly scalable and secure SaaS platfo
 - Cosntructor does not dictate the specific Software Development Lifecycle (SDLC) - completely opposite - it can be easily adopted to any SDLC used by the company and extend it into a proper SCLC.
 - Constructor Studio is shipped with one or more examples of supported SCLCs that can be used as is or can be cusomized to fir the company needs.
 - This SCLC inclides 3 high-level phases: **Plan > Build > Operate** which are in turn split into 14 stages: 
+
   **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
+
 - For every Actor and every Lifecycle Stage - Constructor Studio defines:
   1. Actor
   2. Activities
   3. Inputs
   4. Optputs
-  For example:
+
+For example:
+
   ```text
   Actor	      Stage	         Activities	         Inputs	              Outputs
   Product Manager	Intent	   Identify opportunity,   Market trends	        Opportunity Statement
@@ -119,12 +124,7 @@ We bring 20+ years of experience building highly scalable and secure SaaS platfo
 ```
 
 # Tools 
-- Construtro Studio does not replace the existing source control systems, AI models - instead it integrates with them.  
-
-
-
-
-
+- Construtor Studio does not replace the existing source control systems, AI models - instead it integrates with them.  
 
 
 
