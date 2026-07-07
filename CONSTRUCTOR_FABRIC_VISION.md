@@ -1,7 +1,15 @@
+---
+marp: true
+theme: rose-pine-moon
+paginate: true
+size: 16:9
+---
+
 # Constructor Fabric Vision
 
 > NOTE: This document is a draft in terms of completeness - but can be used already to validate the rest of the artifacts
 
+---
 
 ## 1. Open Design
 
@@ -9,6 +17,7 @@ Constructor Fabric is model-agnostic, tool-agnostic, and open.
 
 Organizations retain ownership of their specifications, architecture, code, and operational knowledge while benefiting from AI-native software construction.
 
+---
 
 ## 2. Why Fabric
 
@@ -28,6 +37,7 @@ Every artifact remains connected to its origin.
 Every decision remains traceable.
 Every improvement compounds.
 
+---
 
 ## 3. Target Audience
 
@@ -41,6 +51,7 @@ Constructor Fabric is designed to serve the following organizational units:
 4. GTM (Sales & Marketing)
 5. Customer Success / Support
 
+---
 
 ### 3.2 Target Roles
 
@@ -65,6 +76,8 @@ and maintainability requirements.
 5. External 
    - **Kit and extension authors** who build reusable workflow packages, artifact kinds, and project rules for teams.
 
+---
+
 ### 3.3 Target Companies
 
 #### 3.3.1 Product Type
@@ -80,18 +93,18 @@ Constructor Fabric is designed to serve the XaaS (Everything as a Service) space
  - Medium-to large Service Providers with 2-5 developers
  - Larger software organizations with 20+ developers - Service Providers (SaaS, PaaS, IaaS, AIaaS), ISVs
 
-
+---
 
 ### 3.4 Maturity Level
 
 - **Greenfield** - creation of a new software product or system from scratch without constraints imposed by existing code, architecture, data, or operational environments. 
 - **Brownfield** - development, modernization, or extension of software within an existing system landscape while preserving compatibility with existing code, architecture, data, users, and business operations.
 
-
 ### 3.5 Codebase Size
 
 Constructor Fabric must be affective for a wide variety of codebase sizes - from a single repository with dozens of files for one product and few thousands lines of code to a product portfolio spanning across hundreds of repositories, dozens of products and dozens of millions line of code.
 
+---
 
 ### 3.6 Target Ecosystems
 
@@ -101,6 +114,7 @@ Constructor Fabric must be affective for a wide variety of codebase sizes - from
   4. Open-source ecosystems extending commercial adoption and operational capabilities
   5. IDE, developer tooling, and AI-agent platforms embedding structured AI-native SDLC workflows and benchmarking
 
+---
 
 ## 4. Product Development Lifecycle 
 Constructor Fabric must cover all phases of the software product development lifecycle:
@@ -115,6 +129,7 @@ Constructor Fabric must cover all phases of the software product development lif
 
 **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
 
+---
 
 #### 4.2.1 PLAN
 
@@ -134,6 +149,8 @@ Constructor Fabric must cover all phases of the software product development lif
         - Success metrics
         - Investment thesis
 
+---
+
   2. **Vision** - What future are we trying to create?
 
     - Outputs:
@@ -141,6 +158,8 @@ Constructor Fabric must cover all phases of the software product development lif
         - Product vision
         - Value proposition
         - Long-term direction
+
+---
 
   3. **Discovery** - What problems should we solve?
 
@@ -158,7 +177,7 @@ Constructor Fabric must cover all phases of the software product development lif
         - Problem statements
         - Customer needs
 
-
+---
 
   4. **Strategy** - How will we win?
 
@@ -177,6 +196,8 @@ Constructor Fabric must cover all phases of the software product development lif
         - Product strategy
         - Roadmap themes
 
+---
+
   5. **Definition** - What exactly should be built?
 
     - Activities:
@@ -191,7 +212,7 @@ Constructor Fabric must cover all phases of the software product development lif
         - Backlog
         - Product specifications
 
-
+---
 
 #### 4.2.2 BUILD
 
@@ -207,6 +228,7 @@ Constructor Fabric must cover all phases of the software product development lif
 
         - Architecture specifications
 
+---
 
   7. **Construction** - Build the product.
 
@@ -221,6 +243,7 @@ Constructor Fabric must cover all phases of the software product development lif
         - Source code
         - Infrastructure code
 
+---
 
   8. **Validation** - Does it work?
 
@@ -234,6 +257,8 @@ Constructor Fabric must cover all phases of the software product development lif
 
         - Verified release candidates
 
+---
+
   9. **Release** - Deliver to customers.
 
     - Activities:
@@ -246,10 +271,9 @@ Constructor Fabric must cover all phases of the software product development lif
 
         - Production release
 
-
+---
 
 #### 4.2.3 OPERATE
-
 
   10. **Operations** - Keep the system running efficiently
 
@@ -262,6 +286,8 @@ Constructor Fabric must cover all phases of the software product development lif
     - Outputs:
 
         - Reliable service
+
+---
 
   11. **Support** - Help users succeed.
 
@@ -276,6 +302,8 @@ Constructor Fabric must cover all phases of the software product development lif
         - Resolved issues
         - Customer satisfaction
 
+---
+
   12. **Intelligence** - Understand what is happening.
 
     - Activities:
@@ -288,6 +316,8 @@ Constructor Fabric must cover all phases of the software product development lif
 
         - Product insights
         - Business insights
+
+---
 
   13. **Optimization** - Improve the product.
 
@@ -302,6 +332,8 @@ Constructor Fabric must cover all phases of the software product development lif
         - Updated roadmap
         - Improvement initiatives
 
+---
+
   14. **Evolution** - Determine what comes next.
 
     - Activities:
@@ -315,11 +347,13 @@ Constructor Fabric must cover all phases of the software product development lif
         - New vision
         - New discovery cycle
 
-
+---
 
 ## 5. High-Level Scenarios
 
 This section describes the high-level scenarios enabled by Constructor Fabric along with the deliverables for each of the ROles and Stages.
+
+---
 
 ### 5.1 Constructor Fabric for Product Management 
 
@@ -346,6 +380,7 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
    - Flag product & scope drift across the portfolio
    - Outcome vs. spend - did the resources committed to each vision pillar pay off (ARR, adoption)
 
+---
 
 ### 5.2 Constructor Fabric for Architects
 
@@ -373,7 +408,8 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
    - Flag cross-system architectural drift - keep one governed layer across teams
    - Planned vs. actual resource consumption - track each service's real compute/infra usage against plan, flag overruns
    - Incident → architecture feedback loop - production signals & postmortems feed design
-   
+
+---
 
 ### 5.3 Constructor Fabric for Engineering Management
 
@@ -392,8 +428,8 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
    - Automated root-cause analysis – when a deployment fails or performance degrades – instantly and automatically cross-reference the incident with the recent code changes to locate the cause
    - Trend detection and anomaly surfacing - analyze ticket streams to detect emerging issues early, flag abnormal increases in specific categories, services, or customer segments before they become major incidents - shift from reactive to early-warning-driven. 
    - Performance & cost optimization - identifies inefficiencies in production systems such as slow endpoints, over-provisioned resources, or expensive queries, and suggest optimizations to improve latency and reduce cloud spend.
-   
-   
+
+---
 
 ### 5.4 Constructor Fabric for DevOps/SRE
 
@@ -421,7 +457,9 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
    - Performance and cost optimization
    - Incident to architecture feedback loop - postmortems and production signals feed back into the model
    - Planned vs actual - real compute/infra usage against plan, flag drift and overruns
-   
+
+---
+
 ### 5.5 Constructor Fabric for QA & Benchmarking
 
 1. Plan
@@ -448,7 +486,8 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
    - Anomaly detection in quality signals - rising defect categories or flaky tests surfaced early
    - Production to test feedback loop - real incidents and escaped defects and production configurations feed back into the test suite
    - Optimize utilization and costs of environment used in tests (hardware, cloud resources and more)
-   
+
+---
 
 ## 6. Elements
 
@@ -464,6 +503,7 @@ When used in a combination - each of the elements should benefit from other elem
 
 All 3 elements must work not only with Constructor Fabric stack - but with the other clouds as well - listed in the Integrations section below.
 
+---
 
 ## 7. Integrations
 
@@ -479,6 +519,7 @@ Constructor Fabric's open philosophy assumes that one is not restricted by the s
 - Zencoder (Zenflow and IDE Agents) -  AI coding agent, pluggable in Studio
 - Cognition (Windsurf/Devin) - AI editor; pluggable agent via the gateway
 
+---
 
 ### 7.2 Plan & Collaborate
 
@@ -495,6 +536,8 @@ Constructor Fabric's open philosophy assumes that one is not restricted by the s
 - Snyk -  CF wires SCA into its NFR gates; findings feed the auto-SBOM
 - Also gates: SonarQube, Semgrep, Trivy, TruffleHog (SAST, image & secret scans)
 
+---
+
 ### 7.5 Artifacts & Registry
 
 - JFrog - CF pushes artifacts to Artifactory; Xray scans feed BOM/SBOM
@@ -503,6 +546,8 @@ Constructor Fabric's open philosophy assumes that one is not restricted by the s
 ### 7.6 GitOps & Runtime
 - Kubernetes -  primary runtime; Gears via operators/Helm
 - ArgoCD -  Studio emits manifests; GitOps delivery
+
+---
 
 ### 7.7 IaC, Secrets & Signals
 - HashiCorp (Terraform + Vault) - IaC + secrets/PKI, as Gears modules
@@ -514,6 +559,7 @@ Constructor Fabric's open philosophy assumes that one is not restricted by the s
 - NeoClouds (Nebius, CoreWeave, Crusoe, Lambda, FluidStack, Nscale) - GPU, cost-routed
 - Digital Ocean - lighter-weight target
 
+---
 
 ## 8. Constructor Fabric Improves Total Cost of Ownership
 
@@ -526,6 +572,7 @@ Constructor Fabric's open philosophy assumes that one is not restricted by the s
 5. **Batching, output caps, structured output** -  rein in output tokens (3–10× the cost of input)
 6. **Cost observability - track spend per user, per model, per task type, per agent. Alert on overruns.
 
+---
 
 ## 9. Participation in Constructor Fabric
 
@@ -546,7 +593,9 @@ You can start using any element or any combination of elements of Constructor Fa
     5. Develop new Constructor Gears from the Constructor Fabric roadmap
     6. Propose and develop new Constructor Gears outside the roadmap
     7. Implement integrations between Constructor Fabric and third-party systems
-    
+
+---
+ 
 ## 99. Unsorted Requirements
 
 - Ingress existing repository
