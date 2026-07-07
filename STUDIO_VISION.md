@@ -194,24 +194,6 @@ It is implemented as:
 - A **CLI** that can be used from other tools (less beneficial because most existing tools were created for developers and do not serve all other roles as well)
 
 ---
-# High-Level Scenarios - #1 Intent
-
-Actor: Product Management
-
-  - **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business create an opportunity.
-  - **Understand the problem** - Determine which problems are worth solving.
-  - **Define target customers** - Decide who the product is for.
-  - **Quantify the value** - Estimate whether solving the problem matters.
-  - **Explore solution space** - Evaluate possible approaches without committing.
-  - **Define strategic positioning** - Decide why the product should win - identify the "magic sauce" - unique differentiators (special skills, key people, relationships, ecosystem, channel)
-  - **Formulate intent** - Convert research into a clear decision - should we do it or not, and why?
-
----
-# High-Level Scenarios - #2 TBD - the rest of the stages
-
-...
-
----
 # User Experience
 
 - Constructor Studio is designed for all roles involved in software creation.
@@ -256,234 +238,6 @@ These can be shared by one person across multiple projects, by teams across role
 
 
 ---
-# Core Ideas
-
-## Shadow objects. Validated actions. Human-controlled automation.
-
-- Studio works with familiar software-delivery artifacts rather than introducing a new system of record.
-- It supports a wide range of existing tools, including IDEs, source control systems, CI/CD tools, AI models, and Agent SDKs.
-- Studio mirrors work from existing systems, links it into a graph, and applies registered actions to move work forward.
-
----
-# Core Ideas in Flow
-
-```text
-PRD -> Design -> Decomposition -> Agent / Human Work -> Validation -> Release -> Operations
-```
-
-Every transition can be:
-
-- Deterministic script
-- AI-assisted transformation
-- Human task
-
-Every transition can be validated before the next step.
-
----
-
-# Shadow SDLC Graph
-
-Studio mirrors SDLC objects, intent, context, and attributes.
-
-<div class="cols">
-<div>
-
-**Objects**
-
-- Requirement / PRD / Design / ADR
-- Task / Epic / Bug / Decision
-- Repo / File / Branch / Commit / PR
-- Test / Build / Release / Deployment
-- Alert / Incident / Runbook / Postmortem
-- Person / Team / Role / Approval
-
-</div>
-<div>
-
-**Tracked attributes**
-
-- Source system and external ID
-- Owner, team, state, version
-- Last sync and change history
-- Related objects and dependencies
-- Validation status and evidence
-- Staleness and risk signals
-
-</div>
-</div>
-
----
-
-# Actions Are Executable Edges
-
-Output of one Activity may become an input or a decision gate of another activity.
-Objects are nodes. Actions are executable edges.
-
-```text
-PRD -------- create_design() --------> Design
-Design ----- decompose_feature() ----> Tasks
-Task ------- implement_code() -------> Pull Request
-Bug -------- create_repro_test() ----> Failing Test
-PR --------- run_ci() ---------------> Build Result
-Release ---- deploy() ---------------> Deployment
-Incident --- create_postmortem() ----> Postmortem + Prevention Tasks
-```
-
-Studio is not only an analytics layer. It can recommend, prepare, validate, and execute approved actions through connectors.
-
----
-
-# Validated Action Graph
-
-Studio combines objects, relationships, actions, validators, policies, and evidence.
-
-```text
-Object(s) + Context + Rules
-          |
-          v
-Action / Transformation
-          |
-          v
-Candidate Object(s) + Evidence
-          |
-          v
-Validators
-          |
-   pass / fail / retry / escalate
-```
-
-Studio does not just generate artifacts. It validates whether work is ready to move to the next state.
-
----
-
-# Validator Loops
-
-```text
-              Candidate artifact
-                      |
-                      v
-                 Validators
-                      |
-            pass      |      fail
-          +-----------+-----------+
-          |                       |
-          v                       v
-      Next task              Fix / retry
-                                  |
-                            retry < limit?
-                            /          \
-                         yes            no
-                          |              |
-                          v              v
-                    Candidate       Human escalation
-                                    or abort
-```
-
-Validator loops create trust, auditability, and bounded automation.
-
----
-
-# First Killer Workflow
-
-## Bug report → reproduction → failing test → fix PR
-
-This is the best first demo because success is measurable.
-
-```text
-Bug report
-  -> validate bug description
-  -> find suspected component
-  -> deploy test environment
-  -> reproduce bug
-  -> create failing test
-  -> confirm test fails on baseline
-  -> implement fix
-  -> confirm test passes after fix
-  -> run CI
-  -> create PR
-```
-
----
-
-# Second Killer Workflow
-
-## PRD → Design → Tasks → PR validation
-
-```text
-PRD in Confluence / Office / Git
-      | create_design(PRD, repo, SaaS kit, templates, rules)
-      v
-Candidate Design
-      | validators: coverage, architecture, security, multi-tenancy, RBAC/ABAC
-      v
-Approved Design
-      | decompose_feature(Design, PRD, repo, team capacity)
-      v
-Candidate Tasks
-      | validators: missing requirements, duplicates, ownership, task size
-      v
-Jira / ADO / Linear tasks
-      | validate PRs against design and acceptance criteria
-      v
-Release-ready implementation
-```
-
----
-
-# Studio Flow Library
-
-Studio ships with smart predefined flows.
-
-<div class="cols">
-<div>
-
-- Gap analysis
-- Traceability analysis
-- Contradiction detection
-- Bloat detection
-- Stale artifact detection
-- Ownership-gap analysis
-- Duplicate-work detection
-
-</div>
-<div>
-
-- Architecture-drift detection
-- Security-impact analysis
-- Test-gap detection
-- Release-readiness review
-- Incident-to-postmortem automation
-- Operations metrics analysis
-- AI-cost efficiency analysis
-
-</div>
-</div>
-
----
-
-# Example: Gap Detection
-
-```text
-Requirement R-17 exists
-      |
-      v
-No design section references R-17
-      |
-      v
-No task implements R-17
-      |
-      v
-No test covers R-17
-      |
-      v
-Studio recommends:
-- update design
-- create task
-- add test case
-- assign owner
-```
-
----
 
 # Human-Centric Automation
 
@@ -517,32 +271,6 @@ Studio is designed to **assist and advise people**, not blindly replace them.
 
 </div>
 </div>
-
----
-
-# Platform Architecture
-
-```text
-┌──────────────────────────────────────────────┐
-│                 Studio UI                    │
-│ Dashboards | Graph | Recommendations | Flows │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│            Studio Control Plane              │
-│ Shadow Graph | Actions | Validators | SDKs   │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│   Insight: operational intelligence layer    │
-│ Connectors | Data | Analytics | Benchmarking │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│              Existing Systems                │
-│ Jira | Git | CI | Docs | Teams | IDE | Cloud │
-└──────────────────────────────────────────────┘
-```
 
 ---
 
@@ -900,3 +628,311 @@ It mirrors the SDLC, detects gaps, recommends improvements, and runs validated a
 <div class="accent">
 Studio helps serious SaaS and service-provider teams build faster — without losing control, security, traceability, or production quality.
 </div>
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix A -->
+# Appendix A - High-Level Scenarios
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix A -->
+# High-Level Scenarios - #1 Intent
+
+Actor: Product Management
+
+  - **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business create an opportunity.
+  - **Understand the problem** - Determine which problems are worth solving.
+  - **Define target customers** - Decide who the product is for.
+  - **Quantify the value** - Estimate whether solving the problem matters.
+  - **Explore solution space** - Evaluate possible approaches without committing.
+  - **Define strategic positioning** - Decide why the product should win - identify the "magic sauce" - unique differentiators (special skills, key people, relationships, ecosystem, channel)
+  - **Formulate intent** - Convert research into a clear decision - should we do it or not, and why?
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix A -->
+# High-Level Scenarios - #2 TBD - the rest of the stages
+
+...
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Appendix B - Product Mechanics
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Core Ideas
+
+## Shadow objects. Validated actions. Human-controlled automation.
+
+- Studio works with familiar software-delivery artifacts rather than introducing a new system of record.
+- It supports a wide range of existing tools, including IDEs, source control systems, CI/CD tools, AI models, and Agent SDKs.
+- Studio mirrors work from existing systems, links it into a graph, and applies registered actions to move work forward.
+
+---
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Core Ideas in Flow
+
+```text
+PRD -> Design -> Decomposition -> Agent / Human Work -> Validation -> Release -> Operations
+```
+
+Every transition can be:
+
+- Deterministic script
+- AI-assisted transformation
+- Human task
+
+Every transition can be validated before the next step.
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Shadow SDLC Graph
+
+Studio mirrors SDLC objects, intent, context, and attributes.
+
+<div class="cols">
+<div>
+
+**Objects**
+
+- Requirement / PRD / Design / ADR
+- Task / Epic / Bug / Decision
+- Repo / File / Branch / Commit / PR
+- Test / Build / Release / Deployment
+- Alert / Incident / Runbook / Postmortem
+- Person / Team / Role / Approval
+
+</div>
+<div>
+
+**Tracked attributes**
+
+- Source system and external ID
+- Owner, team, state, version
+- Last sync and change history
+- Related objects and dependencies
+- Validation status and evidence
+- Staleness and risk signals
+
+</div>
+</div>
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Actions Are Executable Edges
+
+Output of one Activity may become an input or a decision gate of another activity.
+Objects are nodes. Actions are executable edges.
+
+```text
+PRD -------- create_design() --------> Design
+Design ----- decompose_feature() ----> Tasks
+Task ------- implement_code() -------> Pull Request
+Bug -------- create_repro_test() ----> Failing Test
+PR --------- run_ci() ---------------> Build Result
+Release ---- deploy() ---------------> Deployment
+Incident --- create_postmortem() ----> Postmortem + Prevention Tasks
+```
+
+Studio is not only an analytics layer. It can recommend, prepare, validate, and execute approved actions through connectors.
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Validated Action Graph
+
+Studio combines objects, relationships, actions, validators, policies, and evidence.
+
+```text
+Object(s) + Context + Rules
+          |
+          v
+Action / Transformation
+          |
+          v
+Candidate Object(s) + Evidence
+          |
+          v
+Validators
+          |
+   pass / fail / retry / escalate
+```
+
+Studio does not just generate artifacts. It validates whether work is ready to move to the next state.
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Validator Loops
+
+```text
+              Candidate artifact
+                      |
+                      v
+                 Validators
+                      |
+            pass      |      fail
+          +-----------+-----------+
+          |                       |
+          v                       v
+      Next task              Fix / retry
+                                  |
+                            retry < limit?
+                            /          \
+                         yes            no
+                          |              |
+                          v              v
+                    Candidate       Human escalation
+                                    or abort
+```
+
+Validator loops create trust, auditability, and bounded automation.
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# First Killer Workflow
+
+## Bug report → reproduction → failing test → fix PR
+
+This is the best first demo because success is measurable.
+
+```text
+Bug report
+  -> validate bug description
+  -> find suspected component
+  -> deploy test environment
+  -> reproduce bug
+  -> create failing test
+  -> confirm test fails on baseline
+  -> implement fix
+  -> confirm test passes after fix
+  -> run CI
+  -> create PR
+```
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Second Killer Workflow
+
+## PRD → Design → Tasks → PR validation
+
+```text
+PRD in Confluence / Office / Git
+      | create_design(PRD, repo, SaaS kit, templates, rules)
+      v
+Candidate Design
+      | validators: coverage, architecture, security, multi-tenancy, RBAC/ABAC
+      v
+Approved Design
+      | decompose_feature(Design, PRD, repo, team capacity)
+      v
+Candidate Tasks
+      | validators: missing requirements, duplicates, ownership, task size
+      v
+Jira / ADO / Linear tasks
+      | validate PRs against design and acceptance criteria
+      v
+Release-ready implementation
+```
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Studio Flow Library
+
+Studio ships with smart predefined flows.
+
+<div class="cols">
+<div>
+
+- Gap analysis
+- Traceability analysis
+- Contradiction detection
+- Bloat detection
+- Stale artifact detection
+- Ownership-gap analysis
+- Duplicate-work detection
+
+</div>
+<div>
+
+- Architecture-drift detection
+- Security-impact analysis
+- Test-gap detection
+- Release-readiness review
+- Incident-to-postmortem automation
+- Operations metrics analysis
+- AI-cost efficiency analysis
+
+</div>
+</div>
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Example: Gap Detection
+
+```text
+Requirement R-17 exists
+      |
+      v
+No design section references R-17
+      |
+      v
+No task implements R-17
+      |
+      v
+No test covers R-17
+      |
+      v
+Studio recommends:
+- update design
+- create task
+- add test case
+- assign owner
+```
+
+---
+
+<!-- _class: appendix -->
+<!-- _header: Appendix B -->
+# Platform Architecture
+
+```text
+┌──────────────────────────────────────────────┐
+│                 Studio UI                    │
+│ Dashboards | Graph | Recommendations | Flows │
+└─────────────────────┬────────────────────────┘
+                      │
+┌─────────────────────v────────────────────────┐
+│            Studio Control Plane              │
+│ Shadow Graph | Actions | Validators | SDKs   │
+└─────────────────────┬────────────────────────┘
+                      │
+┌─────────────────────v────────────────────────┐
+│   Insight: operational intelligence layer    │
+│ Connectors | Data | Analytics | Benchmarking │
+└─────────────────────┬────────────────────────┘
+                      │
+┌─────────────────────v────────────────────────┐
+│              Existing Systems                │
+│ Jira | Git | CI | Docs | Teams | IDE | Cloud │
+└──────────────────────────────────────────────┘
+```
