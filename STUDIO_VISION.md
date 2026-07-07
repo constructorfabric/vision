@@ -133,11 +133,14 @@ For example:
 
 # Tools
 
-Constructor Studio does not replace existing source control systems or AI models - instead, it integrates with them with pre-defined integrations with popular:
-- IDEs
-- Agentic workflows
-- Issue trackers
-- Git repositories
+Constructor Studio is designed to work with the tools teams already use — and to adapt to how each organization builds software.
+
+Instead of forcing migration, Studio connects to existing systems, mirrors their context into the shadow SDLC graph, and lets teams customize how work is validated, routed, and automated.
+
+This includes:
+- Integrations with IDEs, agentic workflows, issue trackers, Git repositories, docs, CI/CD, cloud, and operations systems
+- Customizable workflows, templates, validators, policies, and actions
+- Team-specific kits, connectors, and automation patterns without vendor lock-in
 
 ---
 # Initial Customer Segment
