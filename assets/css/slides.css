@@ -228,6 +228,13 @@ section table code {
     color: var(--subtle);
 }
 
+section.text-sm p,
+section.text-sm li,
+section.text-sm ul,
+section.text-sm ol {
+    font-size: 0.9em;
+}
+
 
 section.table-sm table {
     font-size: 0.8em;
