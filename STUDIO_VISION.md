@@ -29,7 +29,41 @@ It is implemented as:
 
 ---
 
-# Costructor Studio Differentiators
+Constructor Studio works across full Sofwtare Developoment Lifecycle (SDLC) and covers area slike:
+
+## 1.1 Idea → Specs
+
+- Standardized transformation of business ideas into structured engineering specifications
+- Legacy code-to-spec generation – ingest large repositories of legacy code, generate full and consistent spec set 
+- BRD, PRD, ADR, DESIGN, DECOMPOSITION, and FEATURE frameworks (based on best industry practices and aligned with ISO 29148)
+- Spec consistency checks (old specs vs new specs) 
+- AI-assisted generation, refinement, and reconstruction of missing specifications and architecture artifacts
+- End-to-end provenance, governance, and traceability established before implementation begins
+
+---
+
+## 1.2 Specs → Code
+
+- AI-native transformation of specifications into implementation, tests, and workflows
+- Incremental decomposition and controlled generation across the SDLC lifecycle
+- Full traceability between requirements, architecture, implementation, validation, and code comments
+- Supports existing brownfield systems through reverse engineering and AI-assisted reconstruction
+
+---
+
+## 1.3 Code → Production
+
+- Continuous validation between specifications, architecture, code, tests, and delivery artifacts
+- Integrated governance, consistency analysis, and development-time validation workflows
+- Cross-repository traceability and enterprise-scale consistency management
+- Enables modernization, operational control, and predictable AI-assisted software delivery
+- Traceability from production back to code and back to spec for continuous code optimization
+- AI agent cost control  - spend caps, cross-provider routing, policies and audit
+
+
+---
+
+# 2. Costructor Studio Differentiators
 
 Although Constructor Studio is not the first and not the only AI-assisted sofwtare development framework/toolset - it has a unique combination of differentiators:
 1. End-to-end software development cost optimziation - including operationsl costs at proiduction
@@ -157,7 +191,7 @@ It is intended for the following fucntions and roles:
 
   **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
 
-- For every Role and every Lifecycle Stage - Constructor Studio defines:
+- For every Role and every Lifecycle Stage - Constructor Studio defines (configurable):
   1. Role
   2. Activities
   3. Inputs

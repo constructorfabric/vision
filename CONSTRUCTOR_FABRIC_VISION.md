@@ -136,17 +136,17 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Opportunity identification
-        - Market research
-        - Customer segmentation
-        - Business case
-        - Intent formulation
+      - Opportunity identification
+      - Market research
+      - Customer segmentation
+      - Business case
+      - Intent formulation
 
     - Outputs:
 
-        - Strategic goals
-        - Success metrics
-        - Investment thesis
+      - Strategic goals
+      - Success metrics
+      - Investment thesis
 
 ---
 
@@ -154,9 +154,9 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Outputs:
 
-        - Product vision
-        - Value proposition
-        - Long-term direction
+      - Product vision
+      - Value proposition
+      - Long-term direction
 
 ---
 
@@ -164,17 +164,17 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Customer interviews
-        - Problem validation
-        - Competitive analysis
-        - Solution exploration
-        - User research
+      - Customer interviews
+      - Problem validation
+      - Competitive analysis
+      - Solution exploration
+      - User research
 
     - Outputs:
 
-        - Opportunities
-        - Problem statements
-        - Customer needs
+      - Opportunities
+      - Problem statements
+      - Customer needs
 
 ---
 
@@ -182,18 +182,18 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Positioning
-        - Packaging
-        - Pricing
-        - Roadmap themes
-        - Business model
-        - Competition
-        - Go-to-market planning
+      - Positioning
+      - Packaging
+      - Pricing
+      - Roadmap themes
+      - Business model
+      - Competition
+      - Go-to-market planning
 
     - Outputs:
 
-        - Product strategy
-        - Roadmap themes
+      - Product strategy
+      - Roadmap themes
 
 ---
 
@@ -201,15 +201,15 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Requirements
-        - User stories
-        - Acceptance criteria
-        - Prioritization
+      - Requirements
+      - User stories
+      - Acceptance criteria
+      - Prioritization
 
     - Outputs:
 
-        - Backlog
-        - Product specifications
+      - Backlog
+      - Product specifications
 
 ---
 
@@ -219,13 +219,13 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - System design & Architecture
-        - Technology selection
-        - Security design
+      - System design & Architecture
+      - Technology selection
+      - Security design
 
     - Outputs:
 
-        - Architecture specifications
+      - Architecture specifications
 
 ---
 
@@ -233,28 +233,28 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Coding
-        - AI-assisted development
-        - Infrastructure definition
+      - Coding
+      - AI-assisted development
+      - Infrastructure definition
 
     - Outputs:
 
-        - Source code
-        - Infrastructure code
+      - Source code
+      - Infrastructure code
 
 ---
 
   8. **Validation** - Does it work?
 
     - Activities:
-        - Testing
-        - Security validation
-        - Performance testing
-        - Compliance checks
+      - Testing
+      - Security validation
+      - Performance testing
+      - Compliance checks
 
     - Outputs:
 
-        - Verified release candidates
+      - Verified release candidates
 
 ---
 
@@ -262,13 +262,13 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Deployment
-        - Launch management
-        - Rollout planning
+      - Deployment
+      - Launch management
+      - Rollout planning
 
     - Outputs:
 
-        - Production release
+      - Production release
 
 ---
 
@@ -278,13 +278,18 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Monitoring
-        - Incident response
-        - Capacity management
+      - Monitoring
+      - Incident response
+      - Capacity management
+      - SLO & error-budget management
+      - Deployment & release ops (canary / blue-green / rollback)
+      - Automated root-cause analysis
 
     - Outputs:
 
-        - Reliable service
+      - Reliable service
+      - Reliability dashboards (SLO burn, DORA)
+      - Met SLAs
 
 ---
 
@@ -292,14 +297,14 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Customer support
-        - Knowledge management
-        - Case handling
+      - Customer support
+      - Knowledge management
+      - Case handling
 
     - Outputs:
 
-        - Resolved issues
-        - Customer satisfaction
+      - Resolved issues
+      - Customer satisfaction
 
 ---
 
@@ -307,14 +312,14 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Analytics
-        - Telemetry
-        - Usage analysis
+      - Analytics
+      - Telemetry
+      - Usage analysis
 
     - Outputs:
 
-        - Product insights
-        - Business insights
+      - Product insights
+      - Business insights
 
 ---
 
@@ -322,14 +327,14 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Feature enhancement
-        - Performance tuning
-        - Cost optimization
+      - Feature enhancement
+      - Performance tuning
+      - Cost optimization
 
     - Outputs:
 
-        - Updated roadmap
-        - Improvement initiatives
+      - Updated roadmap
+      - Improvement initiatives
 
 ---
 
@@ -337,14 +342,14 @@ Constructor Fabric must cover all phases of the software product development lif
 
     - Activities:
 
-        - Strategic review
-        - New opportunities
-        - Portfolio planning
+      - Strategic review
+      - New opportunities
+      - Portfolio planning
 
     - Outputs:
 
-        - New vision
-        - New discovery cycle
+      - New vision
+      - New discovery cycle
 
 ---
 
