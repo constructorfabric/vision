@@ -135,6 +135,8 @@ For example:
   - External System
   - Automated Pipeline
 
+Each **Actor** may play one or multiple **Roles**.
+
 ## 7.2 Functions and Roles  
 
 It is intended for the following fucntions and roles:
@@ -155,8 +157,8 @@ It is intended for the following fucntions and roles:
 
   **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
 
-- For every Actor and every Lifecycle Stage - Constructor Studio defines:
-  1. Actor
+- For every Role and every Lifecycle Stage - Constructor Studio defines:
+  1. Role
   2. Activities
   3. Inputs
   4. Optputs
@@ -164,7 +166,7 @@ It is intended for the following fucntions and roles:
 For example:
 
 
-|Actor | Stage | Activities | Inputs | Outputs | 
+| Role | Stage | Activities | Inputs | Outputs | 
 |---|---|---|---|---|
 | Product Manager	| Intent | Identify opportunity, Market analysis, Define business goals | Market trends, Customer feedback | Opportunity Statement | 
 | Product Manager	| Discovery	 | Customer interviews, JTBD, Prioritization | Opportunity Statement | Problem Statements |
@@ -233,7 +235,9 @@ Insight provides cross-vendor data. Studio turns it into SDLC intelligence, reco
 
 ## 12.1 Stage: Intent
 
-Actor: Product Management
+This section provides examples of high-level scenarios for each **Role** and each **Stage**. 
+
+Role: Product Management
 
   - **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business creates an opportunity. 
   - **Understand the problem** - Determine which problems are worth solving.
