@@ -27,8 +27,6 @@ It is implemented as:
 - A desktop application for macOS, Linux, Windows, iOS/Android
 - A CLI that can be used from other tools (less beneficial because all the existing tools were created for developers and will not benefit all other roles)
 
----
-
 Constructor Studio works across full Sofwtare Developoment Lifecycle (SDLC) and covers area slike:
 
 ## 1.1 Idea → Specs
@@ -40,7 +38,6 @@ Constructor Studio works across full Sofwtare Developoment Lifecycle (SDLC) and 
 - AI-assisted generation, refinement, and reconstruction of missing specifications and architecture artifacts
 - End-to-end provenance, governance, and traceability established before implementation begins
 
----
 
 ## 1.2 Specs → Code
 
@@ -49,7 +46,6 @@ Constructor Studio works across full Sofwtare Developoment Lifecycle (SDLC) and 
 - Full traceability between requirements, architecture, implementation, validation, and code comments
 - Supports existing brownfield systems through reverse engineering and AI-assisted reconstruction
 
----
 
 ## 1.3 Code → Production
 
@@ -60,8 +56,6 @@ Constructor Studio works across full Sofwtare Developoment Lifecycle (SDLC) and 
 - Traceability from production back to code and back to spec for continuous code optimization
 - AI agent cost control  - spend caps, cross-provider routing, policies and audit
 
-
----
 
 # 2. Costructor Studio Differentiators
 
@@ -154,7 +148,8 @@ While in future Cosntructor Studio may address a much wide audience - it's initi
 
 ## 6.2 Buyer Personas
 
-CTO, Chief Architect, VP Engineering, Head of Platform, Head of R&D.
+- Product Management: CPO, Director of Product Management, Product Manager
+- R&D: CTO, Chief Architect, VP Engineering, Head of Platform, Head of R&D.
 
 ---
 # 7. Constructor Studio Users
@@ -192,23 +187,33 @@ It is intended for the following fucntions and roles:
   **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
 
 - For every Role and every Lifecycle Stage - Constructor Studio defines (configurable):
-  1. Role
-  2. Activities
-  3. Inputs
-  4. Optputs
+  1. Activities
+  2. Inputs
+  3. Optputs
+  4. Quality gates
+  5. Synchronisation Checkpoints
 
-For example:
+For example (graph presented as a flat table):
 
 
 | Role | Stage | Activities | Inputs | Outputs | 
 |---|---|---|---|---|
 | Product Manager	| Intent | Identify opportunity, Market analysis, Define business goals | Market trends, Customer feedback | Opportunity Statement | 
 | Product Manager	| Discovery	 | Customer interviews, JTBD, Prioritization | Opportunity Statement | Problem Statements |
-| Architect | Architecture  | Design system | Requirements | Architecture | 
+| Architect | Design  | Design system | Requirements | Architecture | 
 | Developer | Construction  | Implement solution | Architecture | Source Code
 | QA | Validation	| Execute tests | Source Code | Test Results | 
 | SRE | Operations | Monitor production | Running System | Operational Metrics | 
 
+
+Or as graphpresented as a two-dimensialnal (Stages/Roles) table:
+
+| Phase | Stage | Produc Manager | Architect | Developer | QA | SRE | * | 
+|---|---|---|---|---|---|---|---|
+| Plan | Intent | **Activities:** Identify opportunity, Market analysis, Define business goals **Inputs:** Market trends; Customer feedback **Outputs:** Opportunity Statement | | | | | |
+| Plan | Discovery | **Activities:** Customer interviews; JTBD; Prioritization **Inputs:** Opportunity Statement **Outputs:** Opportunity Problem Statements | | | | | |
+| Build | Design | |**Activities:** Design system **Inputs:** Reqirements **Outputs:** Architecture | | | | |
+| Build | Construction | | | **Activities:** Design system **Inputs:** Architecture **Outputs:** Source Code | | | |
 
 
 # 8. User Experience
