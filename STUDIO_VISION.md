@@ -29,16 +29,14 @@ It is implemented as:
 
 ---
 
-# 2. Executive Summary
+# Costructor Studio Differentiators
 
-- **Market shift:** - AI coding agents are making code generation cheaper and faster
-- **Skyrocketing costs** - Uncontrollable use of LLMs - whna pplied to old-style SDLC leads to the growth of bills from LLM providers
-- **Gravity Shift** - The weight shifts from code generation to intent definition and operations 
-- **New bottleneck:** - Validation, coordination, governance, and production readiness
-- **Product:** - Studio is an open-core control plane over existing SDLC systems
-- **How it works:** - Studio builds a shadow SDLC graph and runs validated actions over it
-- **Moat:** - Open core adoption + Insight data + Studio automation + Gears kits + custom AI models and World Model
-- **Customer promise:** no migration, no vendor lock-in, own your SDLC graph and workflows
+Although Constructor Studio is not the first and not the only AI-assisted sofwtare development framework/toolset - it has a unique combination of differentiators:
+1. End-to-end software development cost optimziation - including operationsl costs at proiduction
+2. Support for large engineering organizations
+3. Ability to adapt to any Software Development Lifecycle (SDLC)
+4. Model-agnostic - not tieto a specific LLM and can support different LLMs for different tasks and activities
+5. Integration with existing tools
 
 ---
 
@@ -112,7 +110,7 @@ Goal: lower AI cost per accepted change, not just more AI activity.
 
 ## 6.1 AI-assisted SaaS and service-provider teams
 
-While in future Cosntructor Studio may address a much wide audience - it's initial target customers are 5–500 person engineering teams that:
+While in future Cosntructor Studio may address a much wide audience - it's initial target customers are 2+ person engineering teams that:
 
 - Already use AI coding tools and agents
 - Have fragmented delivery systems and context
@@ -165,18 +163,16 @@ It is intended for the following fucntions and roles:
 
 For example:
 
-```text
-Actor             Stage         Activities	         Inputs	              Outputs
-Product Manager	Intent	  Identify opportunity,    Market trends	        Opportunity Statement
-                                Market analysis,         Customer feedback  
-                                Define business goals	
-Product Manager	Discovery	  Customer interviews,     Opportunity Statement  Problem Statements
-                                JTBD, Prioritization 
-Architect	      Architecture  Design system	         Requirements	        Architecture
-Developer	      Construction  Implement solution	   Architecture	        Source Code
-QA	            Validation	  Execute tests	         Source Code	        Test Results
-SRE	            Operations	  Monitor production	   Running System	        Operational Metrics
-```
+
+|Actor | Stage | Activities | Inputs | Outputs | 
+|---|---|---|---|---|
+| Product Manager	| Intent | Identify opportunity, Market analysis, Define business goals | Market trends, Customer feedback | Opportunity Statement | 
+| Product Manager	| Discovery	 | Customer interviews, JTBD, Prioritization | Opportunity Statement | Problem Statements |
+| Architect | Architecture  | Design system | Requirements | Architecture | 
+| Developer | Construction  | Implement solution | Architecture | Source Code
+| QA | Validation	| Execute tests | Source Code | Test Results | 
+| SRE | Operations | Monitor production | Running System | Operational Metrics | 
+
 
 
 # 8. User Experience
@@ -378,9 +374,9 @@ Studio does not need to beat them at CI/CD. Studio improves work across them whi
 
 ---
 
-
-
-
+# APPENDIX - NOT READY - APPENDIX - NOT READY  - APPENDIX - NOT READY - APPENDIX - NOT READY - APPENDIX - NOT READY
+# APPENDIX - NOT READY - APPENDIX - NOT READY  - APPENDIX - NOT READY - APPENDIX - NOT READY - APPENDIX - NOT READY
+# APPENDIX - NOT READY - APPENDIX - NOT READY  - APPENDIX - NOT READY - APPENDIX - NOT READY - APPENDIX - NOT READY
 
 ---
 
@@ -863,3 +859,14 @@ They optimize their own ecosystems. Studio is open-core, cross-vendor, and integ
 Measure accepted PR rate, AI cost per accepted change, PRD-to-task cycle time, test coverage, release-readiness time, and review time saved.
 
 ---
+
+# 2. Executive Summary
+
+- **Market shift:** - AI coding agents are making code generation cheaper and faster
+- **Skyrocketing costs** - Uncontrollable use of LLMs - whna pplied to old-style SDLC leads to the growth of bills from LLM providers
+- **Gravity Shift** - The weight shifts from code generation to intent definition and operations 
+- **New bottleneck:** - Validation, coordination, governance, and production readiness
+- **Product:** - Studio is an open-core control plane over existing SDLC systems
+- **How it works:** - Studio builds a shadow SDLC graph and runs validated actions over it
+- **Moat:** - Open core adoption + Insight data + Studio automation + Gears kits + custom AI models and World Model
+- **Customer promise:** no migration, no vendor lock-in, own your SDLC graph and workflows
