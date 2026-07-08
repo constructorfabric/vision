@@ -1,4 +1,4 @@
-# Constructor Studio Marketecture
+# Constructor Studio Architecture Vision
 
 ![Studio marketecture](assets/img/studio_marketecture.drawio.svg)
 
@@ -200,7 +200,7 @@ This separation makes the system easier to scale, govern, and extend on every pl
 
 ## Illustrative Mechanics
 
-The marketecture above supports a broad operating model for Studio: not a single prescribed process, but a governed graph of Objects, Workers, Flows, Validators, Connectors, and approvals that can be assembled into many SDLC journeys.
+The achitecture vision above supports a broad operating model for Studio: not a single prescribed process, but a governed graph of Objects, Workers, Flows, Validators, Connectors, and approvals that can be assembled into many SDLC journeys.
 
 ### Pipeline fabric, not one pipeline
 
@@ -345,4 +345,4 @@ These are all first-class Studio journeys. They show how Studio combines shadow 
 
 In short, Studio v2 combines a shadow SDLC graph, a governed execution runtime, and a multi-interface experience into one extensible platform for software construction.
 
-Its marketecture should be read as a system for orchestrating many possible SDLC automation pipelines, not a single golden path: teams can compose, validate, govern, and evolve their own journey patterns while preserving traceability, evidence, and control.
+Its achitecture should be read as a system for orchestrating many possible SDLC automation pipelines, not a single golden path: teams can compose, validate, govern, and evolve their own journey patterns while preserving traceability, evidence, and control.
