@@ -210,10 +210,10 @@ Or as graphpresented as a two-dimensialnal (Stages/Roles) table:
 
 | Phase | Stage | Produc Manager | Architect | Developer | QA | SRE | * | 
 |---|---|---|---|---|---|---|---|
-| Plan | Intent | **Activities:** Identify opportunity, Market analysis, Define business goals **Inputs:** Market trends; Customer feedback **Outputs:** Opportunity Statement | | | | | |
-| Plan | Discovery | **Activities:** Customer interviews; JTBD; Prioritization **Inputs:** Opportunity Statement **Outputs:** Opportunity Problem Statements | | | | | |
-| Build | Design | |**Activities:** Design system **Inputs:** Reqirements **Outputs:** Architecture | | | | |
-| Build | Construction | | | **Activities:** Design system **Inputs:** Architecture **Outputs:** Source Code | | | |
+| Plan | Intent | **Activities:** Identify opportunity, Market analysis, Define business goals<br> **Inputs:** Market trends; Customer feedback<br> **Outputs:** Opportunity Statement<br> **Quality Gate**: | | | | | |
+| Plan | Discovery | **Activities:** Customer interviews; JTBD; Prioritization<br> **Inputs:** Opportunity Statement<br> **Outputs:** Opportunity Problem Statements<br> **Quality gate:** | | | | | |
+| Build | Design | |**Activities:** Design system<br> **Inputs:** Reqirements<br> **Outputs:** Architecture<br> **Quality Gate:**| | | | |
+| Build | Construction | | | **Activities:** Design system<br> **Inputs:** Architecture<br> **Outputs:** Source Code<br> **Quality Gate:** | | | |
 
 
 # 8. User Experience
