@@ -49,11 +49,15 @@ flowchart TB
         ORG["Organizations (Tenants)"]
     end
 
+    UI["Studio UI"]
+
     AUT -->|"act on"| WI
     CON -->|"sync data into"| WI
     KIT -->|"packages"| AUT
     KIT -->|"packages"| FL
     KIT -->|"packages"| CON
+    KIT -->|"adds new types to"| WI
+    KIT -->|"extends"| UI
 
     INSIGHT["Constructor Insight\n(connectors, analytics, benchmarking)"]
     GEARS["Constructor Gears\n(platform infrastructure)"]
