@@ -2,6 +2,31 @@
 
 This document explains how Constructor Studio is structured, what it tracks, and what it can do — in business terms. It is written for product managers and business owners who want to understand the shape of the system without reading engineering specifications. Technical terms appear in parentheses on their first use only.
 
+<!-- toc -->
+
+- [Visual Overview Map](#visual-overview-map)
+- [Quick Reference](#quick-reference)
+- [The Data Model](#the-data-model)
+  - [Work Items](#work-items)
+  - [Links](#links)
+  - [Workspaces](#workspaces)
+  - [Organizations](#organizations)
+- [The Action Model](#the-action-model)
+  - [Automations](#automations)
+  - [Flows](#flows)
+  - [Kits](#kits)
+  - [Connectors](#connectors)
+  - [Recommendations](#recommendations)
+- [Governance and Quality Gates](#governance-and-quality-gates)
+  - [Quality gates (Validators)](#quality-gates-validators)
+  - [Human approval points](#human-approval-points)
+  - [Policies](#policies)
+  - [Model routing and cost control](#model-routing-and-cost-control)
+  - [Audit trail](#audit-trail)
+- [Glossary](#glossary)
+
+<!-- /toc -->
+
 ---
 
 ## Visual Overview Map
