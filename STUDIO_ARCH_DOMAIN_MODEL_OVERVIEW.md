@@ -38,7 +38,7 @@ flowchart TB
 ## Quick Reference
 
 | Business term | Technical term | One-sentence definition |
-|---|---|---|
+| --- | --- | --- |
 | Organization | Tenant | Your company or business unit in Studio; controls which Kits are installed, which models are allowed, and which Workspaces exist. |
 | Workspace | Workspace | The scope of a single project or product; every Work Item belongs to exactly one Workspace. |
 | Work Item | Object | Anything Studio tracks: requirements, tasks, pull requests, incidents, designs, builds, and more. |
@@ -61,7 +61,7 @@ The Data Model is everything Studio knows — the living graph of your product's
 A Work Item (Object) is anything Studio tracks. Studio covers a broad range of categories:
 
 | Category | Examples |
-|---|---|
+| --- | --- |
 | Product and requirements | Requirements, PRDs, epics, user stories, acceptance criteria |
 | Architecture and design | Designs, architecture decision records, components, API specs |
 | Work tracking | Tasks, bugs, change requests, spikes |
@@ -162,7 +162,7 @@ Every Automation Run is an immutable record in the audit trail, capturing its in
 ## Glossary
 
 | Business term | Technical term |
-|---|---|
+| --- | --- |
 | Organization | Tenant |
 | Work Item | Object |
 | Work Item graph | Object graph |
