@@ -77,7 +77,7 @@ flowchart TB
 | Automation | Worker | A reusable, typed action blueprint — like a template that Studio can execute. |
 | Automation Run | WorkerRun | A timestamped record of one specific Automation execution, with its inputs, outputs, and status. |
 | Flow | Flow | An ordered sequence of Automations with mandatory steps that Studio enforces; the sequence cannot be skipped. |
-| Kit | Kit | A package of Automations, Flows, Connectors, new Work Item types, and rules that extends Studio for a specific domain or platform (e.g. SaaS SDLC, Jira integration). |
+| Kit | Kit | A package of Automations, Flows, Connectors, new Work Item types, UI extensions, and rules that extends Studio for a specific domain or platform (e.g. SaaS SDLC, Jira integration). |
 | Connector | Connector | An integration with an external tool (Jira, GitHub, GitLab, etc.) that syncs data into Studio and can write approved actions back. |
 | Recommendation | Recommendation | A gap or risk detected by an Analyzer Automation, surfaced for PM review with a suggested action. |
 
@@ -138,7 +138,7 @@ A Flow is an ordered sequence of Automations with mandatory steps. When a Flow r
 
 ### Kits
 
-A Kit is a delivery knowledge package. It bundles Automations, Flows, Connectors, new Work Item types, and rules together for a specific domain or platform. New Work Item types are how Kits extend Studio's data model — for example, a Jira Kit can introduce a "Jira Issue" type that enriches the standard Task with Jira-specific fields. Kits can be open-source or proprietary — a team or vendor can publish a Kit that encodes their best practices, and Organizations install only the Kits they approve. The SaaS SDLC Kit, for example, packages a complete set of Automations and Flows for multi-tenant SaaS development. Kits are the only extension unit: everything Studio is customized with goes through a Kit, without modifying its core.
+A Kit is a delivery knowledge package. It bundles Automations, Flows, Connectors, new Work Item types, UI extensions, and rules together for a specific domain or platform. New Work Item types extend Studio's data model — for example, a Jira Kit can introduce a "Jira Issue" type that enriches the standard Task with Jira-specific fields. UI extensions add domain-specific views, panels, and actions to the Studio interface without touching its core. Kits can be open-source or proprietary — a team or vendor can publish a Kit that encodes their best practices, and Organizations install only the Kits they approve. The SaaS SDLC Kit, for example, packages a complete set of Automations and Flows for multi-tenant SaaS development. Kits are the only extension unit: everything Studio is customized with goes through a Kit.
 
 ### Connectors
 
