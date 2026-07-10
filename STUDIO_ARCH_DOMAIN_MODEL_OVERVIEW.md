@@ -1,6 +1,6 @@
 # Constructor Studio — Architecture and Domain Model Overview
 
-This document explains how Constructor Studio is structured, what it tracks, and what it can do — in business terms. It is written for product managers and business owners who want to understand the shape of the system without reading engineering specifications. Technical terms appear in parentheses on their first use only.
+This document explains how Constructor Studio is structured, what it tracks, and what it can do — in business terms. It is written for product managers, business owners, and engineering leaders who want to understand the shape of the system without reading engineering specifications. Technical terms appear in parentheses on their first use only.
 
 <!-- toc -->
 
@@ -55,7 +55,13 @@ flowchart TB
     KIT -->|"packages"| FL
     KIT -->|"packages"| CON
 
-    note["Powered by Constructor Gears platform"]
+    INSIGHT["Constructor Insight\n(connectors, analytics, benchmarking)"]
+    GEARS["Constructor Gears\n(platform infrastructure)"]
+
+    CON -->|"data via"| INSIGHT
+    INSIGHT -->|"feeds data into"| WI
+    GEARS -->|"powers"| ActionModel
+    GEARS -->|"powers"| DataModel
 ```
 
 ---
@@ -79,7 +85,7 @@ flowchart TB
 
 ## The Data Model
 
-The Data Model is everything Studio knows — the living graph of your product's history, state, and relationships across the full Plan-to-Operate lifecycle.
+The Data Model is everything Studio knows — the living graph of your product's history, state, and relationships across the full Plan → Build → Operate lifecycle (Software Construction Lifecycle).
 
 ### Work Items
 
@@ -180,7 +186,7 @@ Every Automation Run is an immutable record in the audit trail, capturing its in
 
 ---
 
-> Note: Constructor Studio is one element of Constructor Fabric, which also includes Constructor Insight (analytics and benchmarking) and Constructor Gears (the underlying platform infrastructure that Studio builds on).
+> Note: Constructor Studio is one element of Constructor Fabric, which also includes Constructor Insight (connectors, analytics, and benchmarking) and Constructor Gears (the underlying platform infrastructure that Studio builds on).
 
 ---
 
@@ -206,4 +212,6 @@ Every Automation Run is an immutable record in the audit trail, capturing its in
 | Audit trail | AuditLog / WorkerRun records |
 | Model routing | ModelRouter |
 | Workspace | Workspace |
-| Constructor Fabric platform | Constructor Gears |
+| Constructor Fabric | The umbrella brand; includes Studio, Insight, and Gears |
+| Constructor Gears | The underlying platform infrastructure Studio builds on |
+| Constructor Insight | The connectors, analytics, and benchmarking layer |
