@@ -6,6 +6,7 @@ This document explains how Constructor Studio is structured, what it tracks, and
 
 - [Visual Overview Map](#visual-overview-map)
 - [Quick Reference](#quick-reference)
+- [How PMs Use Studio](#how-pms-use-studio)
 - [The Data Model](#the-data-model)
   - [Work Items](#work-items)
   - [Links](#links)
@@ -29,16 +30,18 @@ This document explains how Constructor Studio is structured, what it tracks, and
 
 ---
 
+> **How Studio connects to your tools:**
+> Studio does not replace your existing tools — it connects to them. Adoption starts read-only: Studio maps your current SDLC graph and surfaces Recommendations without touching anything. Write-back actions are introduced gradually, on approval, after trust is established. The first step is connecting your existing tools via Connectors — Studio begins mapping your Work Item graph immediately, with no migration required.
+
 ## Visual Overview Map
 
-The diagram below shows the two layers that make up Studio. The top layer — the Action Model — defines everything Studio can do. The bottom layer — the Data Model — defines everything Studio tracks. Automations in the top layer read and update Work Items in the bottom layer.
+The diagram below shows how Studio is structured: two layers — what Studio tracks and what it can do — extended by Kits, which can add capabilities to both.
 
 ```mermaid
 flowchart TB
     subgraph ActionModel["The Action Model — what Studio can do"]
         AUT["Automations (Workers)"]
         FL["Flows"]
-        KIT["Kits"]
         CON["Connectors"]
     end
 
@@ -47,6 +50,10 @@ flowchart TB
         LK["Links"]
         WS["Workspaces"]
         ORG["Organizations (Tenants)"]
+    end
+
+    subgraph Extensions["Extensions (Kits)"]
+        KIT["Kits\n(extend both layers)"]
     end
 
     UI["Studio UI"]
@@ -62,8 +69,7 @@ flowchart TB
     INSIGHT["Constructor Insight\n(connectors, analytics, benchmarking)"]
     GEARS["Constructor Gears\n(platform infrastructure)"]
 
-    CON -->|"data via"| INSIGHT
-    INSIGHT -->|"feeds data into"| WI
+    INSIGHT -->|"external system data"| WI
     GEARS -->|"powers"| ActionModel
     GEARS -->|"powers"| DataModel
 ```
@@ -84,6 +90,19 @@ flowchart TB
 | Kit | Kit | A package of Automations, Flows, Connectors, new Work Item types, UI extensions, and rules that extends Studio for a specific domain or platform (e.g. SaaS SDLC, Jira integration). |
 | Connector | Connector | An integration with an external tool (Jira, GitHub, GitLab, etc.) that syncs data into Studio and can write approved actions back. |
 | Recommendation | Recommendation | A gap or risk detected by an Analyzer Automation, surfaced for PM review with a suggested action. |
+
+---
+
+## How PMs Use Studio
+
+Each day, a PM using Studio gets a prioritized view of gaps, stale artifacts, and Recommendations — without switching between tools.
+
+- **Review Recommendations** surfaced overnight — gaps, stale artifacts, coverage issues
+- **Accept a Recommendation** → approve the suggested Automation before it runs
+- **Create or link Work Items** — requirements, tasks, decisions — to build traceability
+- **Monitor Flow run status** — see which mandatory steps passed, failed, or need approval
+- **Check AI spend and staleness indicators** on the Workspace dashboard
+- **Collaborate with engineering** — PM approves the Automation output before it is committed; engineering implements based on the approved output
 
 ---
 
@@ -116,9 +135,17 @@ Studio also tracks two important properties on every Work Item automatically:
 
 Work Items connect to each other through Links. A Link is a typed relationship: one Work Item "implements" another, "derives from" it, "validates" it, or "supersedes" it. These typed connections are what allow Studio to answer questions like "which requirements have no test coverage?" or "which designs have no matching tasks?" Studio treats the Link graph as the primary source for gap detection, coverage analysis, and traceability reporting.
 
+Links can be created manually in the Studio UI — connecting a requirement to a task, for example — or generated automatically by Automations and Connectors as they process Work Items.
+
+Gap detection works on links that have been established — a requirement with no links is not visible to traceability analysis.
+
+Automations and Connectors create many Links automatically as they run — manual linking fills in the rest. The more completely Work Items are linked, the more gaps Studio can detect.
+
 ### Workspaces
 
 A Workspace is the scope boundary for a single project or product. Every Work Item belongs to exactly one Workspace. Workspaces can span multiple code repositories and hold all the artifacts, history, and Automation results for that product.
+
+Within a Workspace, Projects group related Work Items — a product Workspace might contain separate Projects for different features, teams, or releases.
 
 ### Organizations
 
@@ -136,25 +163,29 @@ An Automation (Worker) is a reusable, typed action blueprint. Think of an Automa
 
 Automations range from simple scripts to AI-assisted transformations. Examples include: generating a design document from a product requirement, decomposing a design into tasks, validating that a pull request matches its design, or scanning for security vulnerabilities.
 
+Kits ship with pre-built Automations — the typical PM path is installing a Kit from the marketplace. Building custom Automations requires technical configuration by an engineering team.
+
 ### Flows
 
-A Flow is an ordered sequence of Automations with mandatory steps. When a Flow runs, Studio enforces the sequence — mandatory steps cannot be skipped. A Flow can encode a complete engineering process: for example, "to fix a bug, always validate the bug description first, then confirm the test fails, then confirm the test passes after the fix." Flows make process compliance automatic rather than relying on individual judgment.
+A Flow is an ordered sequence of Automations with mandatory steps. When a Flow runs, Studio enforces the sequence — mandatory steps cannot be skipped. A Flow can encode a complete engineering process — for example, a bug-fix Flow might require: validate the bug description, confirm the test fails, implement the fix, confirm the test passes. This is what a custom or Kit-provided Flow looks like in practice. Flows make process compliance automatic **once configured** — mandatory steps cannot be skipped.
 
 ### Kits
 
-A Kit is a delivery knowledge package. It bundles Automations, Flows, Connectors, new Work Item types, UI extensions, and rules together for a specific domain or platform. New Work Item types extend Studio's data model — for example, a Jira Kit can introduce a "Jira Issue" type that enriches the standard Task with Jira-specific fields. UI extensions add domain-specific views, panels, and actions to the Studio interface without touching its core. Kits can be open-source or proprietary — a team or vendor can publish a Kit that encodes their best practices, and Organizations install only the Kits they approve. The SaaS SDLC Kit, for example, packages a complete set of Automations and Flows for multi-tenant SaaS development. Kits are the only extension unit: everything Studio is customized with goes through a Kit.
+A Kit is a delivery knowledge package. It bundles Automations, Flows, Connectors, new Work Item types, UI extensions, and rules together for a specific domain or platform. New Work Item types extend Studio's data model — for example, a Jira Kit can introduce a "Jira Issue" type that enriches the standard Task with Jira-specific fields. UI extensions add domain-specific views, panels, and actions to the Studio interface without touching its core. Kits can be open-source or proprietary — a team or vendor can publish a Kit that encodes their best practices. Organization administrators approve which Kits are available to the team — a one-time setup step. Once approved, team members work with the Kit's features directly. The SaaS SDLC Kit, for example, packages a complete set of Automations and Flows for multi-tenant SaaS development. Kits declare the permissions and governance settings they require — Organization administrators approve these at installation. Kits are the only extension unit: everything Studio is customized with goes through a Kit.
 
 ### Connectors
 
-A Connector is an integration with an external tool. Connectors sync data from systems like Jira, GitHub, and GitLab into the Studio Work Item graph — keeping Studio's picture of your product current without requiring manual entry. Connectors can also write approved actions back to external systems: for example, when Studio creates a task or updates a ticket state, it can push that change through the Connector to Jira automatically, subject to the Organization's write-back policy.
+A Connector is an integration with an external tool. Connectors sync data from systems like Jira, GitHub, and GitLab into the Studio Work Item graph — keeping Studio's picture of your product current without requiring manual entry. Connectors can also write approved actions back to external systems: for example, when Studio creates a task or updates a ticket state, it can push that change through the Connector to Jira automatically, subject to the Organization's write-back policy. *(in development)*
+
+Work Items created directly in Studio and Work Items synced from external tools (Jira, Confluence, GitHub Issues, etc.) are treated identically for traceability and analysis purposes — both live in the same Work Item graph. Externally synced items may have some fields managed by the Connector.
 
 ### Recommendations
 
 Analyzer Automations run continuously — on a schedule or triggered by changes — and scan the Work Item graph for gaps and risks. When an Analyzer finds a problem, it creates a Recommendation: a named gap with a severity level, a reason, and a suggested Automation to fix it.
 
-Examples of what Recommendations surface: a requirement with no test coverage, a design document that has not been updated after a related requirement changed, a stale task that no longer maps to any active requirement, or an AI spending rate approaching the monthly budget cap. Product managers review Recommendations on the Workspace dashboard and decide which to act on — accepting a Recommendation launches the suggested Automation, which the PM can review before it executes.
+Examples of what Recommendations surface: a requirement with no test coverage, a design document that has not been updated after a related requirement changed, a stale task that no longer maps to any active requirement, or an AI spending rate approaching the monthly budget cap. Product managers review Recommendations on the Workspace dashboard and decide which to act on — accepting a Recommendation launches the suggested Automation, which requires a PM approval before it executes.
 
-Studio also supports agentic loops — Automations that iterate until a quality threshold is met — a capability covered separately when available.
+Studio also supports agentic loops *(in development)* — Automations that iterate until a quality threshold is met — a capability covered separately when available.
 
 > **Where in Studio:** Automations are browsable in the Automations catalog. Flows appear in the Flow library. Recommendations surface on the Workspace dashboard and in Work Item detail panels. Automation Run history is accessible per Work Item.
 
@@ -162,7 +193,7 @@ Studio also supports agentic loops — Automations that iterate until a quality 
 
 ## Governance and Quality Gates
 
-Studio's governance model answers two questions: who controls what, and what gets logged.
+Studio's governance model keeps Studio acting within your organization's risk boundaries — through five controls: quality gates, human approvals, policies, cost control, and audit.
 
 ### Quality gates (Validators)
 
@@ -172,13 +203,19 @@ Every Automation that produces an artifact can be followed by a quality gate (Va
 
 High-risk actions — such as releasing to production, accepting a security exception, or upgrading a Kit with breaking changes — require explicit human approval before they proceed. Approvals can be chained (two approvers must agree before an action runs) and delegated (an approver can hand off to a designated colleague). Nothing happens until the right person approves.
 
+Approval requirements are defined in Flows and Kits — Kit and Flow designers declare which actions require approval. Administrators configure who the designated approvers are at the Organization level or narrowed per Workspace.
+
 ### Policies
 
 Organizations set policies that govern what Automations may do: which categories of Automation are permitted, which AI models are allowed, and what monthly spending cap applies. Policies apply at the Organization level and can be narrowed — but never expanded — for individual Workspaces. This ensures that company-wide rules are always enforced regardless of local settings.
 
+Workspace administrators *(typically the PM or team lead who owns the Workspace)* can apply stricter settings within the bounds their Organization has set.
+
+Kits declare the permissions and governance settings they require — Organization administrators approve these at installation.
+
 ### Model routing and cost control
 
-Studio routes each Automation to the most cost-effective AI model capable of the task — small models for classification and extraction, large models only for complex reasoning. Organizations can lock this routing so team members cannot override it. Monthly budget caps are a first-class governance control: when a cap is approaching, Studio surfaces a Recommendation; when the cap is reached, new AI Automation Runs are blocked until the budget is reviewed.
+Studio routes each Automation to the most cost-effective AI model capable of the task — small models for classification and extraction, large models only for complex reasoning. Organization administrators can lock this routing so team members cannot override it. Organization administrators set monthly budget caps — when a cap is approaching, Studio surfaces a Recommendation; when the cap is reached, new AI Automation Runs are blocked until the budget is reviewed.
 
 ### Audit trail
 
@@ -188,9 +225,11 @@ Every Automation Run is an immutable record in the audit trail, capturing its in
 
 ---
 
-> Note: Constructor Studio is one element of Constructor Fabric, which also includes Constructor Insight (connectors, analytics, and benchmarking) and Constructor Gears (the underlying platform infrastructure that Studio builds on).
+> **About Constructor Fabric:** Constructor Studio is one element of Constructor Fabric, which also includes Constructor Insight (connectors, analytics, and benchmarking) and Constructor Gears (the underlying platform infrastructure that Studio builds on). Studio's core graph, validators, and connectors are open-source; proprietary Kits and enterprise features extend the open-source foundation.
 
 ---
+
+> **Next steps:** Review the Recommendations on your Workspace dashboard → accept one and approve its suggested Automation → check staleness indicators on your key requirements → work with your Organization administrator to connect additional tools and expand your Kits as coverage grows.
 
 ## Glossary
 
