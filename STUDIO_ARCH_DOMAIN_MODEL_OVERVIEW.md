@@ -192,26 +192,26 @@ Every Automation Run is an immutable record in the audit trail, capturing its in
 
 ## Glossary
 
-| Business term | Technical term |
-| --- | --- |
-| Organization | Tenant |
-| Work Item | Object |
-| Work Item graph | Object graph |
-| Link | Link |
-| Automation | Worker |
-| Automation Run | WorkerRun |
-| Flow (ordered sequence) | Flow |
-| Kit (knowledge package) | Kit |
-| Connector (integration) | Connector |
-| Recommendation | Recommendation |
-| Quality gate | Validator |
-| Staleness score | stalenessScore |
-| Provenance | createdByRunId / lastModifiedByRunId |
-| Approval | Approval |
-| Policy | Policy |
-| Audit trail | AuditLog / WorkerRun records |
-| Model routing | ModelRouter |
-| Workspace | Workspace |
-| Constructor Fabric | The umbrella brand; includes Studio, Insight, and Gears |
-| Constructor Gears | The underlying platform infrastructure Studio builds on |
-| Constructor Insight | The connectors, analytics, and benchmarking layer |
+| Business term | Technical term | Definition |
+| --- | --- | --- |
+| Organization | Tenant | Your company or business unit; controls Kit approvals, model policy, and spending limits. |
+| Workspace | Workspace | The scope of a single project or product; every Work Item belongs to one Workspace. |
+| Work Item | Object | Anything Studio tracks: requirements, tasks, pull requests, incidents, designs, builds, and more. |
+| Work Item graph | Object graph | The full graph of Work Items and their Links across a Workspace. |
+| Link | Link | A typed relationship between two Work Items (e.g. "implements", "derived from", "validates"). |
+| Automation | Worker | A reusable, typed action blueprint that Studio can execute. |
+| Automation Run | WorkerRun | A timestamped execution record of one specific Automation, capturing inputs, outputs, and status. |
+| Flow (ordered sequence) | Flow | An ordered sequence of Automations with mandatory steps that Studio enforces. |
+| Kit (knowledge package) | Kit | A package of Automations, Flows, Connectors, and rules for a specific domain or platform. |
+| Connector (integration) | Connector | An integration with an external tool that syncs data in and writes approved actions back. |
+| Recommendation | Recommendation | A gap or risk detected by an Analyzer Automation, surfaced for review with a suggested action. |
+| Quality gate | Validator | A check run after an Automation output — pass, fail, retry, or escalate to a human reviewer. |
+| Staleness score | stalenessScore | A score (0–1) indicating how out-of-date a Work Item is based on time, dependencies, and sync gaps. |
+| Provenance | createdByRunId / lastModifiedByRunId | The record of which person or Automation Run created or last changed a Work Item. |
+| Approval | Approval | An explicit human sign-off required before a high-risk action can proceed. |
+| Policy | Policy | Organization-level rules governing which Automations are permitted, which models are allowed, and spending caps. |
+| Audit trail | AuditLog / WorkerRun records | The immutable log of every Automation Run — inputs, outputs, cost, trigger, and status. |
+| Model routing | ModelRouter | The system that selects the most cost-effective AI model for each Automation task. |
+| Constructor Fabric | Constructor Fabric | The umbrella product family: Studio + Insight + Gears together. |
+| Constructor Gears | Constructor Gears | The underlying platform infrastructure (identity, events, model gateway) that Studio builds on. |
+| Constructor Insight | Constructor Insight | The connectors, analytics, and benchmarking layer that feeds data into Studio. |
