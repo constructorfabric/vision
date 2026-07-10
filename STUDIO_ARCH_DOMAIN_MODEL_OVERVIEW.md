@@ -185,7 +185,6 @@ Analyzer Automations run continuously — on a schedule or triggered by changes 
 
 Examples of what Recommendations surface: a requirement with no test coverage, a design document that has not been updated after a related requirement changed, a stale task that no longer maps to any active requirement, or an AI spending rate approaching the monthly budget cap. Product managers review Recommendations on the Workspace dashboard and decide which to act on — accepting a Recommendation launches the suggested Automation, which requires a PM approval before it executes.
 
-Studio also supports agentic loops *(in development)* — Automations that iterate until a quality threshold is met — a capability covered separately when available.
 
 > **Where in Studio:** Automations are browsable in the Automations catalog. Flows appear in the Flow library. Recommendations surface on the Workspace dashboard and in Work Item detail panels. Automation Run history is accessible per Work Item.
 
