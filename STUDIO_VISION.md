@@ -688,25 +688,25 @@ Studio is designed to **assist and advise people**, not blindly replace them.
 # Platform Architecture
 
 ```text
-┌──────────────────────────────────────────────┐
-│                 Studio UI                    │
-│ Dashboards | Graph | Recommendations | Flows │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│            Studio Control Plane              │
-│ Shadow Graph | Actions | Validators | SDKs   │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│   Insight: operational intelligence layer    │
-│ Connectors | Data | Analytics | Benchmarking │
-└─────────────────────┬────────────────────────┘
-                      │
-┌─────────────────────v────────────────────────┐
-│              Existing Systems                │
-│ Jira | Git | CI | Docs | Teams | IDE | Cloud │
-└──────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│                          Studio UI                           │
+│ Dashboards | Graph | Recommendations | Flows | Collaboration │
+└─────────────────────────────┬────────────────────────────────┘
+                              │
+┌─────────────────────────────v────────────────────────────────┐
+│                    Studio Control Plane                      │
+│    Users | Policies | Kits runtime | Gen AI | SDLC engine    │
+└─────────────────────────────┬────────────────────────────────┘
+                              │
+┌─────────────────────────────v────────────────────────────────┐
+│                      Integration plane                       │
+│      Integrated connectors  |  Third-party connectors        │
+└─────────────────────────────┬────────────────────────────────┘
+                              │
+┌─────────────────────────────v────────────────────────────────┐
+│                     Existing Systems                         │
+│ Teams | Users | Code | Issues | CI | Docs | LLMs | Harnesses |
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ---
