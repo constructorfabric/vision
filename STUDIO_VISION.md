@@ -13,28 +13,28 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 
 # 1. What is Constructor Studio
 
-Constructor Studio is an AI-native software construction workspace that brings together every role, artifact, and activity across the software construction lifecycle into a single collaborative environment. Along with Constructor Insight and Constructor Gears it is one of the elemnts of Constructor Fabric.
+Constructor Studio is an AI-native software construction workspace that brings together every role, artifact, and activity across the software construction lifecycle into a single collaborative environment. Along with Constructor Insight and Constructor Gears, it is one of the elements of Constructor Fabric.
 
 > **VERY IMPORTANT NOTE: Please read @CONSTRUCTOR_FABRIC_VISION.md first!**
 
-Studio helps professional software development teams to safely, affectively and predictively move from **product intent to operating the product**.
-It is indetnded for 5–500 person SaaS and service-provider teams adopting AI, but unwilling to lose control, security, traceability, or delivery quality.
+Studio helps professional software development teams to safely, effectively, and predictably move from **product intent to operating the product**.
+It is intended for 5–500 person SaaS and service-provider teams adopting AI, but unwilling to lose control, security, traceability, or delivery quality.
 
 Constructor Studio is an **integrated** workspace – bringing together all scenarios in one place.
 
 It is implemented as:
 - A web application in a browser
 - A desktop application for macOS, Linux, Windows, iOS/Android
-- A CLI that can be used from other tools (less beneficial because all the existing tools were created for developers and will not benefit all other roles)
+- A CLI that can be used from other tools (less beneficial because most existing tools were created for developers and do not serve all other roles as well)
 
-Constructor Studio works across full Sofwtare Developoment Lifecycle (SDLC) and covers area slike:
+Constructor Studio works across the full Software Development Lifecycle (SDLC) and covers areas like:
 
 ## 1.1 Idea → Specs
 
 - Standardized transformation of business ideas into structured engineering specifications
-- Legacy code-to-spec generation – ingest large repositories of legacy code, generate full and consistent spec set 
+- Legacy code-to-spec generation – ingest large repositories of legacy code, generate full and consistent spec set
 - BRD, PRD, ADR, DESIGN, DECOMPOSITION, and FEATURE frameworks (based on best industry practices and aligned with ISO 29148)
-- Spec consistency checks (old specs vs new specs) 
+- Spec consistency checks (old specs vs new specs)
 - AI-assisted generation, refinement, and reconstruction of missing specifications and architecture artifacts
 - End-to-end provenance, governance, and traceability established before implementation begins
 
@@ -57,33 +57,33 @@ Constructor Studio works across full Sofwtare Developoment Lifecycle (SDLC) and 
 - AI agent cost control  - spend caps, cross-provider routing, policies and audit
 
 
-# 2. Costructor Studio Differentiators
+# 2. Constructor Studio Differentiators
 
-Although Constructor Studio is not the first and not the only AI-assisted sofwtare development framework/toolset - it has a unique combination of differentiators:
-1. End-to-end software development cost optimziation - including operationsl costs at proiduction
+Although Constructor Studio is not the first and not the only AI-assisted software development framework/toolset, it has a unique combination of differentiators:
+1. End-to-end software development cost optimization - including operational costs in production
 2. Support for large engineering organizations
 3. Ability to adapt to any Software Development Lifecycle (SDLC)
-4. Model-agnostic - not tieto a specific LLM and can support different LLMs for different tasks and activities
+4. Model-agnostic - not tied to a specific LLM and able to support different LLMs for different tasks and activities
 5. Integration with existing tools
 
 ---
 
 # 3. Problem Statement
 
-The problems that Constructor Studio is builto to address:
+The problems that Constructor Studio is built to address:
 
-## 3.1 AI Costs 
-The costs associated with AI use are groiwng very fast but the outcomes of this use are not very clear and not undesrtood. The lack of proper company-wide guidelnes and guardrails leads to inefficient uses of AI - wrong models for wrong tasks, multiple passes of the same context to the model, context growth with the ack of context compression, the same tasks executed by multiple team members agains the same or different models. Which AI work creates value vs. cost? Which agents, models, and prompts are efficient?
+## 3.1 AI Costs
+The costs associated with AI use are growing very fast, but the outcomes of this use are not very clear and are not well understood. The lack of proper company-wide guidelines and guardrails leads to inefficient use of AI - wrong models for the wrong tasks, multiple passes of the same context to the model, context growth with the lack of context compression, and the same tasks executed by multiple team members against the same or different models. Which AI work creates value vs. cost? Which agents, models, and prompts are efficient?
 
 
 ## 3.2 Developer-centric AI Tools
-Modern AI tools were created with the R&D in mind. Other organizations and functions - Product Management, GTM - are having a hard time adopting AI using R&D-centric tools (IDEs - such as Cursor and source control systems like GitHub are not the native Product Management tools for example and they require a very steep learning curve and do not provide convenient and efficient collaboration capabilities).
+Modern AI tools were created with R&D in mind. Other organizations and functions - such as Product Management and GTM - are having a hard time adopting AI using R&D-centric tools (IDEs such as Cursor and source control systems like GitHub are not native Product Management tools, for example, and they require a very steep learning curve and do not provide convenient and efficient collaboration capabilities).
 
 ## 3.3 Lack of Handoff
-AI coding tools help teams generate more code faster. But complex software delivery still breaks across handoffs. Artifacts created by one team at one stage of the SDLC are not well received or consistently followed by another team. Whether requirements, architecture, decisions, tests, and releases stay connected?
+AI coding tools help teams generate more code faster. But complex software delivery still breaks across handoffs. Artifacts created by one team at one stage of the SDLC are not always well received or consistently followed by another team. Do requirements, architecture, decisions, tests, and releases stay connected?
 
 ## 3.4 Lack of Feedback Loop
-Majority of the AI tools focus only on a few stages of SDLC - around coding and delivery of the software. Opetationa apsect stays uncovered and the production feedback updates does not affect future decisions.
+Most AI tools focus only on a few stages of the SDLC - around coding and software delivery. The operational aspect stays uncovered, and production feedback does not affect future decisions.
 
 <div class="accent">
 The strategic problem is controlling the full AI-assisted software delivery: value, cost, architecture, decisions, validation, and production readiness.
@@ -93,16 +93,16 @@ The strategic problem is controlling the full AI-assisted software delivery: val
 
 # 4. Why Now
 
-1. Costs of AI-assisted software developmnent are griowing in 2026
-2. While there are many companies that are experimenting and trying to build one or more tools covering a small portion of SDLC - there is no single company that adresses the problems holistically.
+1. Costs of AI-assisted software development are growing in 2026
+2. While there are many companies that are experimenting and trying to build one or more tools covering a small portion of the SDLC, there is no single company that addresses the problems holistically.
 
 ---
 
 # 5. The Most Cost-Efficient Software Development
 
-Studio is designed for AI cost control, not just AI usage. This achieved mainly by:
-## 5.1 Multi-model support 
-It's possible to configure Constructor Studio to always use a model that is most efifient for the specific Activity and for a specific Role:
+Studio is designed for AI cost control, not just AI usage. This is achieved mainly by:
+## 5.1 Multi-model support
+It's possible to configure Constructor Studio to always use the model that is most efficient for a specific Activity and a specific Role:
   - Model routing by Activity type - code generation vs. document consistency check.
   - Small models for classification and extraction
   - Non-GPU models for simple checks
@@ -111,21 +111,21 @@ It's possible to configure Constructor Studio to always use a model that is most
 
 ## 5.2 Context compression
 
-Constructor Studio condences the information fed into AI models by using summarization, sliding window approach, relevance filtering, token trimming/pruning.
+Constructor Studio condenses the information fed into AI models by using summarization, a sliding-window approach, relevance filtering, and token trimming/pruning.
 
 ## 5.3 Quality/cost benchmarking
 
-Constructor Studio provides the tools to measure and monitor the overall costs of sofwtware development.
-  - Cost of Atokens
+Constructor Studio provides the tools to measure and monitor the overall costs of software development.
+  - Cost of AI tokens
   - Cost of compute in development - through tight integration with Constructor Insight
 
 ## 5.4 Other cost-saving techniques
   - Prompt/version A/B testing
   - Incremental analysis & revalidation
 
-Constructor Studio always provides the most cost-effective software development - while it is shipped with the most optimal configuration available at the moment - it is possible at a later stage while using the Studio to request most up-to date configuration (model routing, context compression) and optionally apply it to the studio instance. 
+Constructor Studio always provides the most cost-effective software development - while it is shipped with the most optimal configuration available at the moment, it is possible later, while using Studio, to request the most up-to-date configuration (model routing, context compression) and optionally apply it to the Studio instance.
 
-While some organizations allow their team members freely chose any AI model for any task - Constructor Studio allows centralizaed control over the model routing. Organization administrators may decide to lock the Studio configuration - which models the team members will be using for which Activities.
+While some organizations allow their team members to freely choose any AI model for any task, Constructor Studio allows centralized control over model routing. Organization administrators may decide to lock the Studio configuration - defining which models team members will use for which Activities.
 
 <div class="accent">
 Goal: lower AI cost per accepted change, not just more AI activity.
@@ -138,7 +138,7 @@ Goal: lower AI cost per accepted change, not just more AI activity.
 
 ## 6.1 AI-assisted SaaS and service-provider teams
 
-While in future Cosntructor Studio may address a much wide audience - it's initial target customers are 2+ person engineering teams that:
+While in the future Constructor Studio may address a much wider audience, its initial target customers are engineering teams of 2+ people that:
 
 - Already use AI coding tools and agents
 - Have fragmented delivery systems and context
@@ -156,7 +156,7 @@ While in future Cosntructor Studio may address a much wide audience - it's initi
 
 ## 7.1 Actors
 
-Constructor Studio automaes the work of **Actors** - anything that performs a transformation in the Software Construction Lifecycle. Today that includes mostly humans. Tomorrow it will also include AI agents and external systems. 
+Constructor Studio automates the work of **Actors** - anything that performs a transformation in the Software Construction Lifecycle. Today that includes mostly humans. Tomorrow it will also include AI agents and external systems.
 For example:
   - Human
   - AI Agent
@@ -166,90 +166,90 @@ For example:
 
 Each **Actor** may play one or multiple **Roles**.
 
-## 7.2 Functions and Roles  
+## 7.2 Functions and Roles
 
-It is intended for the following fucntions and roles:
+It is intended for the following functions and roles:
   - Product Management (CPO, Director of Product, Product Owner, Product Manager, Program Manager) - Define what should be built
   - Product Marketing (CMO, Product Marketing Manager, Technical Marketing Manager, Marketing Communications Manager) - Position and launch products
   - User Experience Team (UX Researcher, UX designer, UI designers, Interaction designer, Design System Engineer) - Design user experience
   - R&D  (CDO, CTO, Chief Architect, Engineering Manager, Developer, AI Engineer) - Design and construct software
   - QA (QA engineers, performance engineers) - Validate quality
   - DevOps /DCO (SRE, DevOps) - Operate production systems
-  - GTM (CRO, Regioal VPs) - Sell and grow the business
-  - Cusromer Success (Implementation teams, customer support, TAMs) - earn from customers, support customer growth
+  - GTM (CRO, Regional VPs) - Sell and grow the business
+  - Customer Success (Implementation teams, customer support, TAMs) - Earn from customers and support customer growth
 
 # 8. Product Lifecycle
-- Instead of focusing on Software Developmen Lifecycle (SDLC) - where the focus was only the creation of a software product - Constructor Studio covers a much wider scope in the lifecycle of a sofware product - starting from Intent, transitioning to the constrction of the product ad the to the operation of the product and lerning to the evolution and transofmration of the product. So we will be using the term Software Construction Lifecycle (SCLC).
-- Cosntructor does not dictate the specific Software Development Lifecycle (SDLC) - completely opposite - it can be easily adopted to any SDLC used by the company and extend it into a proper SCLC.
-- Constructor Studio is shipped with one or more examples of supported SCLCs that can be used as is or can be cusomized to fir the company needs.
-- This SCLC inclides 3 high-level phases: **Plan > Build > Operate** which are in turn split into 14 stages: 
+- Instead of focusing on the Software Development Lifecycle (SDLC) - where the focus was only the creation of a software product - Constructor Studio covers a much wider scope in the lifecycle of a software product, starting from Intent, transitioning to the construction of the product and then to the operation of the product, and learning toward the evolution and transformation of the product. So we will be using the term Software Construction Lifecycle (SCLC).
+- Constructor does not dictate a specific Software Development Lifecycle (SDLC) - quite the opposite - it can be easily adapted to any SDLC used by the company and extended into a proper SCLC.
+- Constructor Studio is shipped with one or more examples of supported SCLCs that can be used as is or can be customized to fit the company's needs.
+- This SCLC includes 3 high-level phases: **Plan > Build > Operate** which are in turn split into 14 stages:
 
-  **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
+  **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolution**
 
 - For every Role and every Lifecycle Stage - Constructor Studio defines (configurable):
   1. Activities
   2. Inputs
-  3. Optputs
+  3. Outputs
   4. Quality gates
-  5. Synchronisation Checkpoints
+  5. Synchronization Checkpoints
 
 For example (graph presented as a flat table):
 
 
-| Role | Stage | Activities | Inputs | Outputs | 
+| Role | Stage | Activities | Inputs | Outputs |
 |---|---|---|---|---|
-| Product Manager	| Intent | Identify opportunity, Market analysis, Define business goals | Market trends, Customer feedback | Opportunity Statement | 
-| Product Manager	| Discovery	 | Customer interviews, JTBD, Prioritization | Opportunity Statement | Problem Statements |
-| Architect | Design  | Design system | Requirements | Architecture | 
+| Product Manager	| Intent | Identify opportunity, market analysis, define business goals | Market trends, customer feedback | Opportunity Statement |
+| Product Manager	| Discovery	 | Customer interviews, JTBD, prioritization | Opportunity Statement | Problem Statements |
+| Architect | Design  | Design system | Requirements | Architecture |
 | Developer | Construction  | Implement solution | Architecture | Source Code
-| QA | Validation	| Execute tests | Source Code | Test Results | 
-| SRE | Operations | Monitor production | Running System | Operational Metrics | 
+| QA | Validation	| Execute tests | Source Code | Test Results |
+| SRE | Operations | Monitor production | Running System | Operational Metrics |
 
 
-Or as graphpresented as a two-dimensialnal (Stages/Roles) table:
+Or as a graph presented as a two-dimensional (Stages/Roles) table:
 
-| Phase | Stage | Produc Manager | Architect | Developer | QA | SRE | * | 
+| Phase | Stage | Product Manager | Architect | Developer | QA | SRE | * |
 |---|---|---|---|---|---|---|---|
 | Plan | Intent | **Activities:** Identify opportunity, Market analysis, Define business goals<br> **Inputs:** Market trends; Customer feedback<br> **Outputs:** Opportunity Statement<br> **Quality Gate**: | | | | | |
 | Plan | Discovery | **Activities:** Customer interviews; JTBD; Prioritization<br> **Inputs:** Opportunity Statement<br> **Outputs:** Opportunity Problem Statements<br> **Quality gate:** | | | | | |
-| Build | Design | |**Activities:** Design system<br> **Inputs:** Reqirements<br> **Outputs:** Architecture<br> **Quality Gate:**| | | | |
+| Build | Design | |**Activities:** Design system<br> **Inputs:** Requirements<br> **Outputs:** Architecture<br> **Quality Gate:**| | | | |
 | Build | Construction | | | **Activities:** Design system<br> **Inputs:** Architecture<br> **Outputs:** Source Code<br> **Quality Gate:** | | | |
 
 
 # 8. User Experience
 
-- One of the unique differentiators of Constructor Studio is its excellent User Experience for all Roles participating in the creation of the sofwtare product. Some of these Roles are extremely technacal (like developers or architects) and some - are more business-oriented and less technical (like Product Management and UX Design).
-- Constructor Studio provides an ability to perform activities with adjustable level of complexity - one can start with assisted AI-approach but have a possibility to go deeper into manual operations.
-- English is becoming a mainstream programming language (as well as many other human-spoken languages) and many modern tools are switching from the old UX paradigm - menus and buttons to a more modern conversational approach - which have their own set of benefits and disdavantages. One of them - you have to remember the sequence of actions which one needs to perform to accomplish the task - even if to invoke the task you can use now plain human language. Constructor Studio provides an intuitive User Experience with a short learning curve - when the next Action or Task is suggested to a User by Studio. 
-- Constructor Studio allows to easily feed a result of one activity as an input to another activity. It's possible to feed multiple outputs of multiple activities as an inputs to multiple activities.
+- One of the unique differentiators of Constructor Studio is its excellent User Experience for all Roles participating in the creation of the software product. Some of these Roles are extremely technical (like developers or architects), and some are more business-oriented and less technical (like Product Management and UX Design).
+- Constructor Studio provides the ability to perform activities with an adjustable level of complexity - one can start with an AI-assisted approach but still have the possibility to go deeper into manual operations.
+- English is becoming a mainstream programming language (as well as many other human-spoken languages), and many modern tools are switching from the old UX paradigm - menus and buttons - to a more modern conversational approach, which has its own set of benefits and disadvantages. One of them is that you have to remember the sequence of actions that one needs to perform to accomplish the task - even if, to invoke the task, you can now use plain human language. Constructor Studio provides an intuitive User Experience with a short learning curve, where the next Action or Task is suggested to a User by Studio.
+- Constructor Studio allows a result of one activity to be easily fed as an input to another activity. It's possible to feed multiple outputs of multiple activities as inputs to multiple activities.
 
 ---
 
 # 9. Collaboration
 
-For the teams working together - Constructor Studio allows to setup common guidelines, templates, processes, workflows, artifacts to be shared:
+For teams working together, Constructor Studio allows common guidelines, templates, processes, workflows, and artifacts to be set up and shared:
 - By the same person across multiple projects
 - By a team of people playing the same or different Roles
-- For the whole organziation
-For example: tempaltes of the documents, stages in the process, quality gates - that every team member must follow.
+- For the whole organization
+For example: templates of documents, stages in the process, and quality gates that every team member must follow.
 
-Constructor Studio allows to setup guardrails and quality gates for a team or for a whole organization.
+Constructor Studio allows guardrails and quality gates to be set up for a team or for a whole organization.
 
 
-While the most benefits can be achieved when Constructor Studio is used by the team of people - it also provides the benefits for an individual contributor working on multiple projects at the same time - such as synchronisation between Activities, routing outputs of activities as inputs to other activities, re-using artifacts between projects.
+While the greatest benefits can be achieved when Constructor Studio is used by a team of people, it also provides benefits for an individual contributor working on multiple projects at the same time - such as synchronization between Activities, routing outputs of activities as inputs to other activities, and reusing artifacts between projects.
 
 
 ---
 # 10. Localization
 
-- Constructor Studio can be easily localized into multiple locales. Localization includes not only the user interface translation - but also things like currency format, date format, time format, working week start day, right-to-left.
-- Each user collaborating in the project using Constructor Studio may use it in her own language/locale - and successfully collaborate.
+- Constructor Studio can be easily localized into multiple locales. Localization includes not only user interface translation - but also things like currency format, date format, time format, working week start day, and right-to-left support.
+- Each user collaborating on a project using Constructor Studio may use their own language/locale - and still collaborate successfully.
 
 ---
 
-# 11. Constructor Fabric Elements 
+# 11. Constructor Fabric Elements
 
-While each of the elemements of Constructor fabric can be used independently - they were designed to enrich each other when are used together.
+While each of the elements of Constructor Fabric can be used independently, they were designed to enrich each other when used together.
 
 ## 11.1 Constructor Studio & Constructor Insight Integration Advantages
 
@@ -274,26 +274,26 @@ Insight provides cross-vendor data. Studio turns it into SDLC intelligence, reco
 
 ## 12.1 Stage: Intent
 
-This section provides examples of high-level scenarios for each **Role** and each **Stage**. 
+This section provides examples of high-level scenarios for each **Role** and each **Stage**.
 
 Role: Product Management
 
-  - **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business creates an opportunity. 
+  - **Identify the opportunity** - Understand what changes in the market, customer behavior, technology, or business create an opportunity.
   - **Understand the problem** - Determine which problems are worth solving.
-  - **Define target customers** - Decide who the product is for.  
+  - **Define target customers** - Decide who the product is for.
   - **Quantify the value** - Estimate whether solving the problem matters.
   - **Explore solution space** - Evaluate possible approaches without committing.
   - **Define strategic positioning** - Decide why the product should win - identify the "magic sauce" - unique differentiators (special skills, key people, relationships, ecosystem, channel)
-  - **Formulate intent** - Convert research into a clear decision - should we do it or not and why
+  - **Formulate intent** - Convert research into a clear decision - should we do it or not, and why?
 
 ## 12.2 TBD - the rest of the stages
 
 ---
 
-# 13. Integrations 
+# 13. Integrations
 
 Constructor Studio is **not** the primary system of record.
-Construtor Studio does not replace the existing source control systems, AI models - instead it integrates with them.  
+Constructor Studio does not replace existing source control systems or AI models - instead, it integrates with them.
 
 It is the **open-core control plane for AI-native software delivery**.
 
@@ -318,9 +318,9 @@ create ticket | update doc | open PR | run CI | assign owner | create release ta
 
 <!-- _class: table-md -->
 
-# 14. Competetive Landscape
+# 14. Competitive Landscape
 
-## 14.1 Competititor Categories
+## 14.1 Competitor Categories
 
 | Category | Examples | Main strength | Studio angle |
 |---|---|---|---|
@@ -427,8 +427,8 @@ Studio does not need to beat them at CI/CD. Studio improves work across them whi
 
 ## Shadow objects. Validated actions. Human-controlled automation.
 
-- Constructor Studio does not introduce new artifacts - and produces and digests the artifacts that are very familiar in the software industry.
-- Constructor Studio does not dictate which other tools a team needs to use - instead it supports a wide variety of the tools - various IDEs, source control systems, CI/CD tools, AI models, Agent SDKs.
+- Constructor Studio does not introduce new artifacts - it produces and consumes artifacts that are already very familiar in the software industry.
+- Constructor Studio does not dictate which other tools a team needs to use - instead, it supports a wide variety of tools, including various IDEs, source control systems, CI/CD tools, AI models, and Agent SDKs.
 
 Studio mirrors work from existing systems, links it into a graph, and applies registered actions to move work forward.
 
@@ -746,7 +746,7 @@ Gears are reusable OSS/BSS modules, platform engines, and developer/SRE tooling.
 
 # Higher Segment Than Lovable
 
-Studio targets higher Lovable-customers' segments where teams need:
+Studio targets higher customer segments than Lovable, where teams need:
 
 - Production-grade multi-tenant SaaS
 - Multi-tier service-provider platforms
@@ -801,7 +801,7 @@ Studio should be measured by delivery outcomes.
 
 - Higher requirement-to-test coverage
 - Fewer stale design/code mismatches
-- Fewer rejected AI-generated artficats
+- Fewer rejected AI-generated artifacts
 - Lower AI cost per accepted change
 
 </div>
@@ -906,10 +906,10 @@ Measure accepted PR rate, AI cost per accepted change, PRD-to-task cycle time, t
 # 2. Executive Summary
 
 - **Market shift:** - AI coding agents are making code generation cheaper and faster
-- **Skyrocketing costs** - Uncontrollable use of LLMs - whna pplied to old-style SDLC leads to the growth of bills from LLM providers
-- **Gravity Shift** - The weight shifts from code generation to intent definition and operations 
+- **Skyrocketing costs** - Uncontrollable use of LLMs - when applied to an old-style SDLC - leads to growing bills from LLM providers
+- **Gravity shift** - The weight shifts from code generation to intent definition and operations
 - **New bottleneck:** - Validation, coordination, governance, and production readiness
 - **Product:** - Studio is an open-core control plane over existing SDLC systems
 - **How it works:** - Studio builds a shadow SDLC graph and runs validated actions over it
 - **Moat:** - Open core adoption + Insight data + Studio automation + Gears kits + custom AI models and World Model
-- **Customer promise:** no migration, no vendor lock-in, own your SDLC graph and workflows
+- **Customer promise:** - no migration, no vendor lock-in, own your SDLC graph and workflows
