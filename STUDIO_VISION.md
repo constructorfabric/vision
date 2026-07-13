@@ -187,11 +187,11 @@ It is intended for the following fucntions and roles:
   **Intent → Vision → Discovery → Strategy → Definition → Design → Construction → Validation → Release → Operation → Support → Intelligence → Optimization → Evolvution**
 
 - For every Role and every Lifecycle Stage - Constructor Studio defines (configurable):
-  1. Activities
-  2. Inputs
-  3. Optputs
-  4. Quality gates
-  5. Synchronisation Checkpoints
+  1. Activities - one or more Activities that have to be conducted by a Role at this Stage
+  2. Inputs - input artifacts for Activities on this Stage for this Role
+  3. Optputs - Output of activities at this Stage by this Role
+  4. Quality gates - A set of conditions that have to be met to consider the Activities completed for this Role at thsi Stage
+  5. Synchronisation Checkpoints - conditions tha have to be met from many other Activities by many other Roles on this or previous Stages
 
 For example (graph presented as a flat table):
 
@@ -206,14 +206,15 @@ For example (graph presented as a flat table):
 | SRE | Operations | Monitor production | Running System | Operational Metrics | 
 
 
-Or as graphpresented as a two-dimensialnal (Stages/Roles) table:
+Or as graph presented as a two-dimensional (Roles/Stages) table:
 
-| Phase | Stage | Produc Manager | Architect | Developer | QA | SRE | * | 
-|---|---|---|---|---|---|---|---|
-| Plan | Intent | **Activities:** Identify opportunity, Market analysis, Define business goals<br> **Inputs:** Market trends; Customer feedback<br> **Outputs:** Opportunity Statement<br> **Quality Gate**: | | | | | |
-| Plan | Discovery | **Activities:** Customer interviews; JTBD; Prioritization<br> **Inputs:** Opportunity Statement<br> **Outputs:** Opportunity Problem Statements<br> **Quality gate:** | | | | | |
-| Build | Design | |**Activities:** Design system<br> **Inputs:** Reqirements<br> **Outputs:** Architecture<br> **Quality Gate:**| | | | |
-| Build | Construction | | | **Activities:** Design system<br> **Inputs:** Architecture<br> **Outputs:** Source Code<br> **Quality Gate:** | | | |
+| Role | Plan:Intent | Plan:Discovery | Build:Design | Build:Construction |
+|---|---|---|---|---|
+| Product Manager | **Activities:** Identify opportunity, Market analysis, Define business goals<br> **Inputs:** Market trends; Customer feedback<br> **Outputs:** Opportunity Statement<br> **Quality Gate**: | **Activities:** Customer interviews; JTBD; Prioritization<br> **Inputs:** Opportunity Statement<br> **Outputs:** Opportunity Problem Statements<br> **Quality Gate:** | | |
+| Architect | | | **Activities:** Design system<br> **Inputs:** Reqirements<br> **Outputs:** Architecture<br> **Quality Gate:** | |
+| Developer | | | | **Activities:** Design system<br> **Inputs:** Architecture<br> **Outputs:** Source Code<br> **Quality Gate:** |
+| QA | | | | |
+| SRE | | | | |
 
 
 # 8. User Experience
