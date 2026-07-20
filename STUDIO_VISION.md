@@ -291,7 +291,10 @@ For example:
   - External System
   - Automated Pipeline
 
-Each **Actor** may play one or multiple **Roles**.
+Each **Actor** may play one or multiple **Roles** in one or multiple Projects (en example of a Project can be a whole Product or a new version of a Product or part of a Product or a research project).
+An Actor may play different Roles in different Projects.
+
+
 
 ---
 

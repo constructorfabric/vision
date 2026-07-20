@@ -11,6 +11,8 @@ size: 16:9
 
 ---
 
+Constructor Fabric is a unified, AI-native fabric that connects the entire software development and maintenance lifecycle: Plan > Build > Run
+
 ## 1. Open Design
 
 Constructor Fabric is model-agnostic, tool-agnostic, and open.
@@ -60,7 +62,7 @@ Constructor Fabric is intended to be used by the following groups of people:
 1. Product Management
    - **VP of Product Management** - who defines the product portfolio vision of the company
    - **Product Owner / Product Manager** - who is responsible for maximizing the value of a product by defining its vision, strategy, priorities, and outcomes.
-   - Program Manager
+   - **Technical Program Manager** - responsible for defining technical implementation requirements, coordinating cross-functional execution, and ensuring product goals are translated into deliverable engineering work
    - **UX/UI Designers** - responsible for designing the user experience and user interface of software products to ensure they are intuitive, efficient, accessible, and aligned with user needs and business goals.
 2. R&D
    - **Software Architects** - responsible for defining and guiding the overall structure, design principles, and technical direction of a software system to ensure it meets functional, non-functional, and long-term scalability 
@@ -71,8 +73,11 @@ and maintainability requirements.
 3. DevOps / DCO
    - **DevOps Engineers /SRE** who integrate validation and traceability checks into CI pipelines.
 4. GTM
-   - **CRO / CMO / VP of Sales / REgional GMs** - track the performance of people
-5. External 
+   - **CRO / CMO / VP of Sales / Regional GMs** - prepare materials for successful launch of a product.
+5. Customer Success / Support
+  - **Customer Success Manager (CSM)** - monitors customer health, tracks adoption, manages customer engagements, coordinates with product and engineering teams, and helps customers achieve successful business outcomes.
+  - **Technical Support Engineer** - investigates customer issues, analyzes diagnostics and telemetry, collaborates with engineering, identifies root causes, and tracks incidents through resolution.
+6. External 
    - **Kit and extension authors** who build reusable workflow packages, artifact kinds, and project rules for teams.
 
 ---
@@ -495,7 +500,7 @@ This section describes the high-level scenarios enabled by Constructor Fabric al
 
 ## 6. Elements
 
-Constructor Fabric consists today of 3 core elements:
+Constructor Fabric consists today of 3 core Elements:
 
 1. **Constructor Studio** -  AI-native SDLC automation, traceability, and development governance. Transforms idea → specification → architecture → implementation → production.
 2. **Constructor Gears** -  reusable OSS/BSS modules, platform engines, developer and SRE tooling
@@ -503,9 +508,53 @@ Constructor Fabric consists today of 3 core elements:
 
 It should be possible for any of these elements to be used independently or in combination.
 
-When used in a combination - each of the elements should benefit from other elements and create a synergistic effect.
-
 All 3 elements must work not only with Constructor Fabric stack - but with the other clouds as well - listed in the Integrations section below.
+
+When used in a combination - each of the elements enriches others and benefit from other elements and create a synergistic effect.
+
+### 6.1 Studio → Insight
+
+- Constructor Studio generates code with probes for runtime and code quality measurements.
+- Constructor Studio publishes software architecture, dependency, and implementation metadata to Constructor Insight for deeper operational analysis.
+- Constructor Studio provides requirements, design decisions, and implementation context, enabling Constructor Insight to correlate production behavior with the original engineering intent.
+- Constructor Studio records development activities, code reviews, and quality gates, allowing Constructor Insight to analyze engineering productivity and software quality trends.
+
+### 6.2 Insight → Studio
+
+- Constructor Insight provides test and production intelligence to Constructor Studio for code optimization.
+- Constructor Insight identifies architectural bottlenecks, technical debt, and reliability risks, recommending design and implementation improvements directly within Constructor Studio.
+- Constructor Insight correlates production incidents with source code, requirements, and architecture, helping engineers quickly identify root causes and affected components.
+- Constructor Insight continuously recommends refactoring opportunities, performance optimizations, and security improvements based on real production telemetry and historical trends.
+
+### 6.3 Studio → Gears
+
+- Constructor Studio is built using Constructor Gears modules.
+- Constructor Studio uses Constructor Gears by default to build applications.
+- Constructor Studio discovers and recommends reusable Constructor Gears modules based on application requirements and architecture.
+- Constructor Studio composes applications by assembling Gears into complete domain solutions rather than generating boilerplate code.
+- Constructor Studio contributes reusable workflows, components, and templates back to Constructor Gears for use across future projects.
+
+### 6.4 Gears → Studio
+
+- Studio uses Gears to build applications.
+- Constructor Gears provide reusable domain models, workflows, and APIs that automatically become available within Constructor Studio.
+- Constructor Gears expose AI-enabled implementation patterns and best practices that accelerate application development.
+- Constructor Gears provide standardized UI components, integration adapters, and automation templates that ensure consistency across applications.
+
+### 6.5 Gears → Insight
+
+- Constructor Gears provide production telemetry to Constructor Insight.
+- Constructor Gears publish operational events, business metrics, and dependency information to enrich Constructor Insight's analysis.
+- Constructor Gears expose health, performance, and usage metrics for every reusable component, enabling continuous reliability and capacity analysis.
+- Constructor Gears report configuration changes and lifecycle events, allowing Constructor Insight to correlate operational behavior with deployment and configuration history.
+
+### 6.5 Insight → Gears
+
+- Constructor Insight provides real-time optimization parameters to Constructor Gears.
+- Constructor Insight recommends configuration, scaling, and resource optimization policies that Constructor Gears can automatically apply.
+- Constructor Insight identifies underutilized, inefficient, or vulnerable Gears and recommends upgrades, replacements, or tuning.
+- Constructor Insight continuously validates the operational effectiveness of reusable Gears and feeds optimization recommendations back into their design and implementation.
+
 
 ---
 
