@@ -45,7 +45,7 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 
 # 1.1 What is Constructor Studio
 
-Constructor Studio is an AI-native software construction automation system.
+Constructor Studio is an AI-native integrated software construction workspace.
 
 It brings together every role, artifact, and activity across the software construction lifecycle into a single collaborative environment.
 
@@ -57,7 +57,7 @@ It brings together every role, artifact, and activity across the software constr
 
 Along with Constructor Insight and Constructor Gears, Studio is one of the elements of Constructor Fabric.
 
-- **Studio** - workspace for AI-native software construction
+- **Studio** - AI-native integrated workspace for software construction
 - **Insight** - measurement, analytics, and feedback foundation
 - **Gears** - reusable SaaS building blocks and platform foundation
 
@@ -78,13 +78,24 @@ Constructor Studio is an **integrated** workspace that brings together:
 
 ---
 
-# 1.4 What Studio Covers
+# 1.4 Product Surfaces
+
+It is delivered through several product surfaces:
+
+- Web application in a browser
+- Desktop application for macOS, Linux, Windows, iOS, and Android
+- CLI and terminal workflows
+- IDE plugins and integrations
+
+---
+
+# 1.5 What Studio Covers
 
 Constructor Studio works across the full Software Development Lifecycle (SDLC) from a business and operating-model perspective.
 
 ---
 
-## 1.5 Idea → Specs
+## 1.6 Idea → Specs
 
 - Standardized transformation of business ideas into structured engineering specifications
 - Legacy code-to-spec generation – ingest large repositories of legacy code, generate full and consistent spec set
@@ -95,7 +106,7 @@ Constructor Studio works across the full Software Development Lifecycle (SDLC) f
 
 ---
 
-## 1.6 Specs → Code
+## 1.7 Specs → Code
 
 - AI-native transformation of specifications into implementation, tests, and workflows
 - Incremental decomposition and controlled generation across the SDLC lifecycle
@@ -104,7 +115,7 @@ Constructor Studio works across the full Software Development Lifecycle (SDLC) f
 
 ---
 
-## 1.7 Code → Production
+## 1.8 Code → Production
 
 - Continuous validation between specifications, architecture, code, tests, and delivery artifacts
 - Integrated governance, consistency analysis, and development-time validation workflows

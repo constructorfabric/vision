@@ -12,15 +12,15 @@ size: 16:9
 <div class="cols">
 <div>
 
-1. Architecture Definition
-2. Core Runtime and Boundaries
+1. Architecture Alignment
+2. Key Terms and Runtime Boundaries
 3. Operating Model
 
 </div>
 <div>
 
-4. Capabilities and Example Flows
-5. Reuse, Platform, and Ecosystem
+4. Lifecycle Capabilities and Example Flows
+5. AI, DevOps/SRE, Reuse, and Ecosystem
 6. Closing Synthesis
 
 </div>
@@ -30,78 +30,130 @@ size: 16:9
 
 <!-- _class: lead -->
 
-# 1. Architecture Definition
+# 1. Architecture Alignment
 
 ---
 
-# 1.1 What Constructor Studio Is
+# 1.1 Source of Truth
 
-Studio is a runtime and automation engine for your SDLC flows.
+This document follows `STUDIO_VISION.md` and `CONSTRUCTOR_FABRIC_VISION.md`.
 
-- It turns fragmented tools, artifacts, teams, and AI assistants into governed delivery automation
-- It provides a shared engine for domain objects, workflows, content, collaboration, actions, and agents
+- `STUDIO_VISION.md` defines Constructor Studio as the product and workspace
+- `CONSTRUCTOR_FABRIC_VISION.md` defines the Fabric lifecycle vocabulary and Constructor Fabric context
+- This document describes the architecture that implements that product vision
+- Runtime, engine, gateway, kits, and connectors are architectural components of Studio, not competing definitions of Studio
+
+---
+
+# 1.2 What Constructor Studio Is
+
+Constructor Studio is an AI-native integrated software construction workspace.
+
+Architecturally, Studio is implemented through customizable user interfaces, Studio Engine, AI runtime, Studio Kits, and connectors.
+
+- It turns fragmented tools, artifacts, teams, and AI assistants into governed software construction workflows
+- It provides shared architecture for lifecycle objects, workflows, content, collaboration, actions, models, and agents
 - It does not enforce one process: teams compose flows from Studio Kits and adapt them to their delivery model
-- It is built on Constructor Gears and ships with a Gears Kit for building SaaS products on the same foundation
-- It is integrated with Insight for advanced metrics collection and analytics
+- It is built on Constructor Gears and includes a Gears Kit for building SaaS products on the same foundation
+- It is integrated with Insight for telemetry, metrics, analytics, and operating feedback
+
+---
+
+# 1.3 Lifecycle Scope
+
+Studio covers the Software Construction Lifecycle using the Fabric lifecycle vocabulary.
+
+```text
+Plan -> Build -> Operate
+```
+
+At detailed level, Studio can support the full 14-phase lifecycle:
+
+```text
+Intent -> Vision -> Discovery -> Strategy -> Definition -> Design -> Construction -> Validation -> Release -> Operation -> Support -> Intelligence -> Optimization -> Evolution
+```
+
+Architecture must support entry before PRD, including vision, discovery, strategy, market research, competitive research, and definition.
 
 ---
 
 <!-- _class: slide-with-large-embedded-image -->
 
-# 1.2 Architecture Overview
-
+# 1.4 Architecture Overview
 <div class="embedded-image">
   <img src="../assets/img/studio-arch-vision.png" alt="Constructor Studio Arch Vision" />
 </div>
 
 ---
 
-# 1.3 One-Sentence Architecture
+# 1.5 One-Sentence Architecture
 
-Studio is an extensible runtime for governed automation over software delivery objects.
+Studio architecture is an extensible workspace runtime for governed automation over Software Construction Lifecycle objects.
 
 ```text
 People + Tools + Artifacts + AI
         |
         v
-Studio Engine + Studio Kits + Connectors
+Studio Interfaces + Studio Engine + AI Runtime + Studio Kits + Connectors
         |
         v
-Validated flows across planning, design, coding, testing, release, and operations
+Validated flows across Plan, Build, and Operate
 ```
 
-The core product is not a fixed workflow. The core product is the engine that runs many workflows safely.
+The product is the workspace. The architecture provides the engine, AI runtime, kits, and connectors that let the workspace run many workflows safely.
 
 ---
 
-# 1.4 The Four Architecture Layers
+# 1.6 The Three Architecture Layers
 
-- **Studio Interfaces** - Web, desktop, CLI, terminal UI, IDE plugins, mobile client, MCP server, APIs, partner apps, and branded experiences
-- **Studio Engine** - Core domain objects, base scenarios, collaboration, content management, workflow management, actions, workers, and agent builder
-- **Studio Kits Runtime** - Kit-defined workflows, validators, policies, prompts, templates, agents, dashboards, and domain-specific logic
-- **Integration Plane** - Pre-built and third-party connectors to SDLC tools, cloud systems, identity, CI/CD, observability, and enterprise platforms
+- **Studio Interfaces** - Web, desktop, CLI, terminal UI, IDE plugins, mobile client, MCP server, APIs, partner-provided interfaces, and branded experiences
+- **Studio Engine** - Tenants and user management, Studio Kits runtime, Gen AI, Core lifecycle objects, base scenarios, collaboration, content management, workflow management, actions, workers, and agent builder
+- **Integration Plane** - Pre-built and third-party connectors to lifecycle tools, cloud systems, identity, CI/CD, observability, and enterprise platforms
 
 ---
 
 <!-- _class: lead -->
 
-# 2. Core Runtime and Boundaries
+# 2. Key Terms and Runtime Boundaries
 
 ---
 
-# 2.1 Runtime Boundary
+# 2.1 Key Terms
 
-Studio sits between existing systems of record and automated delivery actions.
+- **Workspace** - the collaborative product environment where people, AI agents, artifacts, workflows, and governance meet
+- **Studio Engine** - the internal runtime that manages lifecycle objects, workflows, actions, state, evidence, and automation modes
+- **Studio Kit** - a packaged automation product that adds domain-specific process automation capabilities with help of customizable actions, workflows, durable object types, templates, prompts, validators, policies, dashboards, and connectors
+- **Connector** - an integration adapter that reads from or writes to external systems under policy control
+- **Object** - a normalized Studio representation of a lifecycle artifact, actor, decision, signal, or system element
+- **Object Type** - the schema, lifecycle states, relationships, and rules for a class of objects
+- **Workflow** - a controlled sequence of actions, validations, approvals, and write-back steps
+- **Action** - a deterministic, AI-assisted, human-driven, or connector-backed operation over one or more objects
+- **Worker** - an executable unit that performs an action inside controlled runtime boundaries
+- **Agent** - an AI-assisted worker or coordinated set of workers with defined tools, policies, and approval gates
+- **Validator** - a check that decides whether an artifact, candidate change, or workflow result satisfies rules
+- **Policy** - an organization, tenant, team, project, or workflow rule that constrains what Studio may recommend, execute, or write back
+- **Quality Gate** - a required validation or approval checkpoint before a lifecycle state can advance
+- **Evidence** - stored proof of inputs, decisions, validation results, approvals, actions, costs, and outcomes
+- **Extension** - a Kit-defined addition to an existing Studio object type, workflow, interface, or capability
+- **Plugin** - an installable extension that adds interface or executable behavior
+- **Model** - an AI or Large Language Model used by the AI Runtime; it does not mean a Studio domain or object model
+- **Application** - software constructed using Studio; it is distinct from the Studio workspace and its interfaces
 
-- Systems of record remain external: docs, tickets, repositories, CI/CD, observability, chat, and cloud platforms
-- Studio mirrors selected artifacts into its own governed object model
-- Studio executes workflows through controlled actions, workers, agents, and connectors
-- Studio records evidence, state changes, validation results, and audit events
+---
+
+# 2.2 Runtime Boundary
+
+Studio sits between existing systems of record and governed lifecycle actions.
+
+- Systems of record remain external: research sources, docs, tickets, repositories, CI/CD, observability, cloud platforms, and support systems
+- Studio mirrors selected lifecycle artifacts, signals, and relationships into its governed object model
+- Studio executes workflows through controlled actions, workers, agents, AI runtime, and connectors
+- Studio records evidence, state changes, validation results, model usage, costs, approvals, and audit events
 - Studio can run read-only, recommendation-only, approval-gated, or write-back automation modes
 
 ---
 
-# 2.2 Connector and Write-Back Model
+# 2.3 Connector and Write-Back Model
 
 Studio integration is connector-based and policy-controlled.
 
@@ -112,15 +164,15 @@ Studio integration is connector-based and policy-controlled.
 - Write-back adapters update external systems only after the required gates pass
 
 ```text
-Confluence / Office / Jira / ADO / GitHub / GitLab / CI / Cloud / Observability
+Research / Docs / Jira / ADO / GitHub / GitLab / CI / Cloud / Observability / Support
                                  |
                                  v
-                 Studio runtime and automation engine
+                      Studio workspace runtime
 ```
 
 ---
 
-# 2.3 Studio Engine
+# 2.4 Studio Engine
 
 Studio provides the engine that every **Studio Kit** uses.
 
@@ -129,40 +181,42 @@ Studio provides the engine that every **Studio Kit** uses.
 
 **Core engine entities**
 
-- Core domain objects
-- Object relationships
+- Lifecycle objects
+- Object types and relationships
 - State transitions
 - Events and history
-- Policies and validation status
+- Policies, validators, and quality gates
+- Evidence, audit, and cost records
 
 </div>
 <div>
 
 **Base object types**
 
-- Projects and workspaces
-- Org chart, teams, users, roles
-- Docs, code, PRs, commits
-- Workflows, actions, approvals
-- Notifications, logs, audit
+- Tenants, organizations, teams, users, roles
+- Workspaces and projects
+- Intent, vision, discovery, strategy, definition
+- Designs, code, PRs, commits, releases
+- Operations, support, intelligence, optimization, evolution
+- Workflows, actions, approvals, notifications, logs, audit
 
 </div>
 </div>
 
 ---
 
-# 2.4 Studio Engine Capabilities
+# 2.5 Studio Engine Capabilities
 
 <div class="cols">
 <div>
 
 **Collaboration and content**
 
-- SDLC artifacts index
+- SCLC artifact index
 - Notification and collaboration
 - Content management
 - Editor and preview
-- Artifact metrics
+- Lifecycle metrics
 - Human-in-the-loop decisions
 
 </div>
@@ -182,7 +236,21 @@ Studio provides the engine that every **Studio Kit** uses.
 
 ---
 
-# 2.5 Studio Kits Carry the Logic
+# 2.6 AI Runtime and Model Gateway
+
+Studio has a first-class AI runtime layer rather than treating model calls as hidden implementation detail.
+
+- Model gateway for access to supported AI and Large Language Models
+- Multi-model routing by task type and quality/cost target, including local and open models with fallback
+- Token budgets and spending limits per user, model, task type, and agent
+- Prompt and prefix caching
+- Context compression and compaction
+- Batching, output caps, and structured output
+- Cost observability per user, model, task type, and agent, including overrun alerts
+
+---
+
+# 2.7 Studio Kits Carry the Logic
 
 All process-specific logic comes in Studio Kits.
 
@@ -196,28 +264,29 @@ A Kit can package:
 - Dashboards, UI plugins, and agent experiences
 - Deployment patterns and infrastructure recipes
 
-The platform provides the runtime. Kits define how the runtime behaves for a specific delivery domain.
+The Studio Engine provides the runtime. Kits define how the runtime behaves for a specific delivery domain.
 
 ---
 
-# 2.6 Multi-Tenant Product Foundation
+# 2.8 Multi-Tenant Product Foundation
 
 Studio is multi-tenant and multi-user by design.
 
 A single Studio instance can serve multiple organizations and teams.
 
-- Tenants and organizations
-- Teams, projects, and workspaces
+- **Tenant** - isolated commercial, operational, and security boundary
+- **Organization** - customer or business unit that owns governance, integrations, users, and policies
+- **Team** - group of users and agents executing lifecycle work
+- **Workspace** - collaboration boundary for related products, programs, or initiatives
+- **Project** - scoped delivery unit inside a workspace
 - Users, roles, RBAC, ABAC, and delegated administration
-- Tenant isolation and policy boundaries
-- Audit, approvals, and evidence
-- Usage tracking, limits, and billing-ready foundations
+- Tenant isolation, policy boundaries, audit, approvals, evidence, usage tracking, limits, and billing-ready foundations
 
 Studio is ready to be operated as a SaaS product.
 
 ---
 
-# 2.7 Infrastructure Agnostic
+# 2.9 Infrastructure Agnostic
 
 Studio is infrastructure agnostic.
 
@@ -227,15 +296,15 @@ It can run on different infrastructure models:
 - Private cloud
 - On-premises environments (Windows, Linux)
 
-Studio also includes integrated deployment automation so generated apps, workflows, and services can move through governed environments.
+Studio also includes integrated deployment automation so generated applications, workflows, and services can move through governed environments.
 
 ```text
-Build -> Package -> Deploy -> Observe -> Feed telemetry back into Studio
+Plan -> Build -> Package -> Deploy -> Observe -> Learn -> Feed evidence back into Studio
 ```
 
 ---
 
-# 2.8 Built Using Gears
+# 2.10 Built Using Gears
 
 Studio is built using Constructor Gears, the third element of Constructor Fabric.
 
@@ -251,7 +320,7 @@ Gears provides reusable SaaS building blocks used by Studio itself:
 
 ---
 
-# 2.9 Studio Comes With a Gears Kit
+# 2.11 Studio Comes With a Gears Kit
 
 Studio ships with a Gears Kit.
 
@@ -260,7 +329,7 @@ This lets other vendors build SaaS products on Gears as well.
 The Gears Kit can include:
 
 - Reference SaaS architecture
-- Multi-tenant app templates
+- Multi-tenant application templates
 - Identity, RBAC, ABAC, audit, and billing patterns
 - Deployment automation
 - DevOps and SRE workflows
@@ -277,7 +346,7 @@ The Gears Kit can include:
 
 # 3.1 Objects, Actions, Validators
 
-Studio models delivery as objects connected by executable actions.
+Studio models the Software Construction Lifecycle as objects connected by executable actions.
 
 ```text
 Object(s) + Context + Rules
@@ -299,9 +368,9 @@ This makes automation inspectable, repeatable, and governable.
 
 ---
 
-# 3.2 Shadow SDLC Graph
+# 3.2 Studio Lifecycle Graph
 
-Studio mirrors SDLC delivery artifacts and their relationships.
+The Studio Lifecycle Graph is Studio's internal normalized representation of selected external artifacts, relationships, state, evidence, and lifecycle signals. It mirrors systems of record without replacing them.
 
 <div class="cols">
 <div>
@@ -310,11 +379,13 @@ Studio mirrors SDLC delivery artifacts and their relationships.
 
 - Person / Team / Role / Approval
 - Workspace / Project / Tenant
+- Intent / Vision / Discovery / Strategy / Definition
 - Requirement / PRD / Design / ADR
 - Task / Epic / Bug / Decision
 - Repo / File / Branch / Commit / PR
 - Test / Build / Release / Deployment
-- Alert / Incident / Runbook / Postmortem
+- SLO / Error Budget / Alert / Incident / Runbook / Postmortem
+- Insight / Optimization / Evolution item
 
 </div>
 <div>
@@ -339,13 +410,16 @@ Studio mirrors SDLC delivery artifacts and their relationships.
 Studio treats actions as executable edges in the graph, for example:
 
 ```text
-Intent ------ clarify_requirement() ----> Requirement
-Requirement - create_design() ----------> Design
+Intent ------ formulate_vision() --------> Vision
+Vision ------ run_discovery() ----------> Discovery Findings
+Discovery --- define_strategy() --------> Strategy
+Strategy ---- define_product() ---------> Definition / PRD
+Definition / Requirement - create_design() -> Design
 Design ------ decompose_work() ---------> Tasks
 Task -------- implement_change() -------> Pull Request
 PR ---------- validate_pr() ------------> Review Findings
 Bug --------- reproduce_bug() ----------> Failing Test
-Release ----- deploy() -----------------> Deployment
+Release ----- safe_deploy() ------------> Deployment
 Incident ---- create_postmortem() ------> Postmortem + Prevention Tasks
 ```
 
@@ -355,32 +429,34 @@ Each edge can be deterministic, AI-assisted, human-driven, or connector-backed.
 
 <!-- _class: lead -->
 
-# 4. Capabilities and Example Flows
+# 4. Lifecycle Capabilities and Example Flows
 
 ---
 
-# 4.1 Default SDLC Flows
+# 4.1 Default SCLC Flows
 
-Studio ships with default flows through Kits.
+Studio ships with default flows through Kits across Plan, Build, and Operate.
 
 <div class="cols">
 <div>
 
-**Generation**
+**Plan and Build**
 
-- Intent -> Requirement
-- Requirement -> Design
+- Intent -> Vision -> Discovery -> Strategy -> Definition
+- Definition -> Design
 - Design -> Decomposition
 - Decomposition -> Tasks
 - Tasks -> Estimates
-- Tasks -> Code and tests
+- Tasks -> Construction and Validation
 - Bugs -> Fixes
+- Validation -> Release
 
 </div>
 <div>
 
-**Quality assessment**
+**Operate and quality assessment**
 
+- Release -> Operation -> Support -> Intelligence -> Optimization -> Evolution
 - Content structure
 - Content relevance
 - Gap analysis
@@ -394,17 +470,37 @@ Studio ships with default flows through Kits.
 
 ---
 
-# 4.2 Workflow Example: Requirements to Tasks
+# 4.2 Workflow Example: Plan Before PRD
 
 ```text
-PRD in Confluence / Office / Git
-      | create_design(PRD, repo, SaaS Kit, templates, rules)
+Market signal / customer problem / investment thesis
+      | formulate_vision(research sources, Studio Kit, examples, policies)
+      v
+Candidate Vision
+      | validators: market evidence, target customer, value proposition, strategic fit
+      v
+Approved Vision
+      | run_discovery(Vision, interviews, competitive research, telemetry, constraints)
+      v
+Discovery Findings
+      | validators: source quality, contradictions, problem clarity, evidence coverage
+      v
+Strategy and Definition candidates
+```
+
+---
+
+# 4.3 Workflow Example: Definition to Tasks
+
+```text
+Definition / PRD in Confluence / Office / Git
+      | create_design(Definition, repo, SaaS Kit, templates, rules)
       v
 Candidate Design
       | validators: coverage, architecture, security, multi-tenancy, RBAC/ABAC
       v
 Approved Design
-      | decompose_work(Design, PRD, repo, team capacity)
+      | decompose_work(Design, Definition, repo, team capacity)
       v
 Candidate Tasks
       | validators: missing requirements, duplicates, ownership, task size
@@ -414,7 +510,7 @@ Jira / ADO / Linear tasks
 
 ---
 
-# 4.3 Workflow Example: Gap Analysis
+# 4.4 Workflow Example: Gap Analysis
 
 ```text
 Requirement R-17 exists
@@ -437,7 +533,7 @@ Studio recommends:
 
 ---
 
-# 4.4 Workflow Example: Bug Report to Fix PR
+# 4.5 Workflow Example: Bug Report to Fix PR
 
 ```text
 Bug report
@@ -457,7 +553,7 @@ This flow is a strong first demo because success is measurable.
 
 ---
 
-# 4.5 Example: Research Flow
+# 4.6 Example: Research Flow
 
 ```text
 Research question
@@ -475,28 +571,60 @@ The same runtime works because the pattern is the same: objects, actions, valida
 
 ---
 
-# 4.6 Example Journeys
+# 4.7 Workflow Example: DevOps/SRE Safe Deployment
 
 ```text
-1. Plan -> PRD -> ADR -> Design -> Decomposition -> Tasks -> Code -> PR -> Release
-2. PR -> Retrieve design context -> Validate -> Fix findings -> Revalidate -> Ready for review
-3. Codebase -> Reverse engineer -> Reconstructed design -> Gap validation
-4. Changed object -> Traceability analysis -> Staleness detection -> Recommendations
-5. Release candidate -> Impact analysis -> Coverage validation -> Approval -> Release decision
-6. Bug report -> Reproduction -> Failing test -> Fix PR
-7. Research question -> Sources -> Synthesis -> Review -> Published brief
-8. Vendor SaaS idea -> Gears Kit -> Generated service -> Deployment automation
+Release candidate
+  -> verify SLOs and error budgets
+  -> validate deployment topology, regions, failover, DR, and RTO/RPO assumptions
+  -> check golden-path compliance, SBOM, secrets, network policy, and CI/CD gates
+  -> prepare canary or blue-green rollout
+  -> deploy with automated rollback triggers tied to SLO burn and health signals
+  -> update DORA, reliability, cost, and deployment evidence dashboards
+  -> feed incidents, postmortems, and production drift back into Definition, Design, and Optimization
+```
+
+---
+
+# 4.8 Example Journeys
+
+```text
+1. Intent -> Vision -> Discovery -> Strategy -> Definition
+2. Definition -> ADR -> Design -> Decomposition -> Tasks -> Code -> PR -> Release
+3. PR -> Retrieve design context -> Validate -> Fix findings -> Revalidate -> Ready for review
+4. Codebase -> Reverse engineer -> Reconstructed design -> Gap validation
+5. Changed object -> Traceability analysis -> Staleness detection -> Recommendations
+6. Release candidate -> Impact analysis -> Coverage validation -> Approval -> Release decision
+7. Approved release -> SLO validation -> Canary / blue-green -> Rollback or promote -> Evidence
+8. Incident -> Root-cause analysis -> Postmortem -> Prevention tasks -> Optimization
+9. Bug report -> Reproduction -> Failing test -> Fix PR
+10. Research question -> Sources -> Synthesis -> Review -> Published brief
+11. Vendor SaaS idea -> Gears Kit -> Generated service -> Deployment automation
 ```
 
 ---
 
 <!-- _class: lead -->
 
-# 5. Reuse, Platform, and Ecosystem
+# 5. AI, DevOps/SRE, Reuse, and Ecosystem
 
 ---
 
-# 5.1 Studio Kit Types
+# 5.1 DevOps/SRE Architecture Capabilities
+
+Studio treats DevOps/SRE as lifecycle automation, not only infrastructure plumbing.
+
+- SLO and error-budget definition from product definition and non-functional requirements
+- Deployment topology planning for environments, regions, failover, DR, RTO, and RPO
+- Golden paths through approved templates, platform self-service, and policy-backed defaults
+- CI/CD guardrails for reliability, security, compliance, and release readiness
+- Safe deployments through canary, blue-green, and automated rollback
+- Reliability dashboards for SLO burn, error budgets, and DORA
+- Incident-to-architecture feedback loop from alerts, postmortems, telemetry, and support signals
+
+---
+
+# 5.2 Studio Kit Types
 
 <div class="cols">
 <div>
@@ -529,7 +657,7 @@ The same runtime works because the pattern is the same: objects, actions, valida
 
 ---
 
-# 5.2 What a Kit Contains
+# 5.3 What a Kit Contains
 
 A Studio Kit is a packaged automation product.
 
@@ -547,7 +675,7 @@ Kits are how Studio scales from one product to many domains.
 
 ---
 
-# 5.3 Gears Kit for SaaS Vendors
+# 5.4 Gears Kit for SaaS Vendors
 
 The Gears Kit turns Studio into a SaaS factory for vendors.
 
@@ -565,7 +693,7 @@ Vendors can use Studio to build products on Gears, while Studio itself remains a
 
 ---
 
-# 5.4 Developer Experience
+# 5.5 Developer Experience
 
 Studio starts where developers and delivery teams already work.
 
@@ -584,9 +712,12 @@ The experience is adoption-first: read, recommend, validate, then automate.
 
 # 6. Closing Synthesis
 
-- Studio is a runtime and automation engine for SDLC and adjacent knowledge-work flows
-- The Studio Engine provides core objects, scenarios, collaboration, content, workflows, actions, and agent building
+- Studio is an AI-native integrated software construction workspace
+- The architecture implements Studio through interfaces, Studio Engine, AI runtime, Studio Kits, and connectors
+- Studio supports the Fabric Plan / Build / Operate framing and the 14-phase Software Construction Lifecycle
+- Studio starts before PRD with Intent, Vision, Discovery, Strategy, and Definition
+- The AI Runtime and Model Gateway provide routing, token budgets, caching, context compression, and cost observability
+- DevOps/SRE capabilities include SLOs, error budgets, golden paths, safe deployments, reliability dashboards, and incident feedback loops
 - Studio Kits carry process logic and allow teams to compose their own way of working
 - Studio ships with default Kits for SaaS, mobile, and web development but does not enforce one process
-- Studio is multi-tenant, multi-user, infrastructure agnostic, and SaaS-ready
-- Studio is built on Gears and includes a Gears Kit so other vendors can build SaaS products on the same foundation
+- Studio is multi-tenant, multi-user, infrastructure agnostic, SaaS-ready, built on Gears, and integrated with Insight
