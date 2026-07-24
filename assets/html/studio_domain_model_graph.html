@@ -248,6 +248,20 @@
       gap: 18px;
     }
 
+    .bucket-column {
+      display: grid;
+      align-content: start;
+      gap: 18px;
+    }
+
+    .buckets.stacked {
+      grid-template-columns: minmax(292px, calc(100vw - 48px));
+    }
+
+    .buckets.stacked .node-stack {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
     .bucket {
       position: relative;
       min-height: 180px;
@@ -265,21 +279,16 @@
     }
 
     .bucket-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      min-height: 46px;
+      display: grid;
+      gap: 1px;
+      min-height: 54px;
       margin-bottom: 8px;
-      padding: 8px 9px 10px;
+      padding: 4px;
       border-bottom: 1px solid rgba(83, 108, 145, 0.2);
     }
 
     .bucket-heading {
       position: relative;
-      display: flex;
-      align-items: center;
-      gap: 9px;
       min-width: 0;
       outline: none;
       cursor: help;
@@ -329,60 +338,34 @@
       line-height: 1.5;
     }
 
-    .bucket-icon {
-      display: grid;
-      place-items: center;
-      width: 28px;
-      height: 28px;
-      flex: 0 0 auto;
-      border: 1px solid color-mix(in srgb, var(--bucket-color) 48%, transparent);
-      border-radius: 8px;
-      background: color-mix(in srgb, var(--bucket-color) 10%, transparent);
-      color: var(--bucket-color);
-      font-size: 13px;
-      font-weight: 850;
-    }
-
     .bucket-title {
       overflow: hidden;
       margin: 0;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 850;
       letter-spacing: 0.055em;
+      line-height: 1.35;
       text-overflow: ellipsis;
       text-transform: uppercase;
       white-space: nowrap;
     }
 
-    .bucket-count {
-      display: inline-grid;
-      place-items: center;
-      min-width: 23px;
-      height: 20px;
-      padding: 0 6px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.055);
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 10px;
-    }
-
-    .bucket-layer {
-      flex: 0 0 auto;
-      padding: 3px 5px;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      border-radius: 999px;
+    .bucket-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       color: var(--faint);
       font-family: var(--mono);
-      font-size: 7px;
-      font-weight: 850;
-      letter-spacing: 0.08em;
+      font-size: 8px;
+      font-weight: 750;
+      letter-spacing: 0.07em;
+      line-height: 1.2;
       text-transform: uppercase;
     }
 
+    .bucket-meta-divider { opacity: 0.55; }
+
     .bucket[data-layer="extension"] .bucket-layer {
-      border-color: color-mix(in srgb, var(--bucket-color) 46%, transparent);
-      background: color-mix(in srgb, var(--bucket-color) 10%, transparent);
       color: color-mix(in srgb, var(--bucket-color) 82%, white);
     }
 
@@ -614,6 +597,7 @@
           <input id="search" class="search" type="search" placeholder="Find object, property, method…" aria-label="Find lifecycle object, property, or method" autocomplete="off">
         </label>
         <button class="control active" id="relations-toggle" type="button">Relationships</button>
+        <button class="control" id="layout-toggle" type="button" aria-pressed="false">Stack categories</button>
         <button class="control" id="expand-all" type="button">Expand all</button>
         <button class="control" id="collapse-all" type="button">Collapse all</button>
         <button class="control" id="reset" type="button">Reset</button>
@@ -641,21 +625,24 @@
   {
     "meta": {
       "title": "Studio Shadow Graph",
-      "subtitle": "Core software-delivery objects with explicitly isolated Kit-defined extensions",
-      "version": "0.9.0",
+      "subtitle": "Core software-construction objects with explicitly isolated Plan, Build, Operate and App Security Kits",
+      "version": "1.2.3",
       "status": "review candidate"
     },
     "buckets": [
-      { "id": "graph", "name": "Core Model & Provenance", "description": "Canonical object types, graph projections, mappings, identity resolution, change history and source provenance.", "icon": "◎", "color": "#ef88ba", "layer": "core", "entity_order": ["lifecycle-graph", "object-type", "lifecycle-phase", "object-mapping", "canonical-identity", "shadow-node", "link", "change-record", "provenance", "sync-snapshot"] },
-      { "id": "identity", "name": "Organization & Identity", "description": "Tenants, organizations, teams, people, roles, skills, assignments and explicit ownership boundaries.", "icon": "ID", "color": "#72d997", "layer": "core", "entity_order": ["tenant", "organization", "org-unit", "team", "role", "skill", "person", "person-profile", "role-assignment", "ownership"] },
-      { "id": "planning", "name": "Product & Work", "description": "Provider-neutral product structures, delivery scopes, objectives, milestones, risks and configurable work items.", "icon": "PL", "color": "#f4bb63", "layer": "core", "entity_order": ["portfolio", "product", "workspace", "project", "objective", "milestone", "risk", "work-item-type", "work-item"] },
-      { "id": "content", "name": "Content: Code & Docs", "description": "Source-aware repositories, documents, Markdown structures, templates, pull requests, commits, reviews, comments and normalized text.", "icon": "CT", "color": "#48d9cf", "layer": "core", "entity_order": ["doc-space", "document", "repository", "branch", "repository-file", "pull-request", "commit", "code-review", "template", "template-rule", "markdown-document",  "comment", "text-content", "markdown-section", "text-chunk"] },
-      { "id": "delivery", "name": "Build & Delivery", "description": "Software components, continuous integration, tests, build artifacts, releases and deployment records.", "icon": "BD", "color": "#63a7ff", "layer": "core", "entity_order": ["component", "build", "ci-check", "test-case", "build-artifact", "test-result", "release", "deployment"] },
-      { "id": "operations", "name": "Operate & Feedback", "description": "Runtime services and environments with SLOs, error budgets, telemetry, alerts and incidents.", "icon": "OP", "color": "#f08a72", "layer": "core", "entity_order": ["service", "environment", "slo", "error-budget", "operational-signal", "alert", "incident"] },
-      { "id": "automation", "name": "Automation & Controls", "description": "Governed workflows, actions, policies, validation, approvals, notifications, executions and evidence.", "icon": "▶", "color": "#fb7185", "layer": "core", "entity_order": ["policy", "workflow", "trigger", "action", "worker", "validator", "quality-gate", "event", "candidate-change", "approval", "notification", "workflow-run", "action-run", "evidence"] },
-      { "id": "ai", "name": "AI & Collaboration", "description": "Models, tools, agents, prompts, conversations, context snapshots, messages and auditable tool calls.", "icon": "AI", "color": "#70c7ff", "layer": "core", "entity_order": ["model", "mcp-server", "tool", "prompt-template", "agent", "conversation", "context-snapshot", "message", "tool-call"] },
-      { "id": "connectors", "name": "External Systems", "description": "Policy-controlled integrations that synchronize source control, documentation, planning, artifacts and tests.", "icon": "EX", "color": "#a685ff", "layer": "core", "entity_order": ["connector", "repository-manager", "docs-storage", "issue-tracker", "artifact-registry", "test-management"] },
-      { "id": "kits", "name": "Kit-Defined Extensions", "description": "Opinionated roles, guidance and lifecycle artifacts installed by versioned domain Kits.", "icon": "KT", "color": "#d995ff", "layer": "extension", "entity_order": ["kit", "kit-role", "checklist", "reference-architecture", "design-guideline", "roadmap", "roadmap-swimlane", "roadmap-item", "intent", "vision", "discovery", "strategy", "definition", "requirement", "design", "architecture-decision", "decomposition", "api-contract", "runbook", "postmortem"] }
+      { "id": "kit-management", "name": "Kits Management", "description": "Versioned Kit packages and their reusable role definitions across lifecycle scopes.", "color": "#b293ff", "layer": "core", "column": "integrations", "entity_order": ["kit", "kit-role"] },
+      { "id": "connectors", "name": "Integrations", "description": "Policy-controlled integrations that synchronize source control, documentation, planning, artifacts and tests.", "color": "#a685ff", "layer": "core", "column": "integrations", "entity_order": ["connector", "repository-manager", "docs-storage", "issue-tracker", "artifact-registry", "test-management"] },
+      { "id": "graph", "name": "Core Model & Provenance", "description": "Canonical object types, graph projections, mappings, identity resolution, change history and source provenance.", "color": "#ef88ba", "layer": "core", "entity_order": ["lifecycle-graph", "object-type", "lifecycle-phase", "object-mapping", "canonical-identity", "shadow-node", "link", "change-record", "provenance", "sync-snapshot"] },
+      { "id": "identity", "name": "Organization & Identity", "description": "Tenants, organizations, teams, people, roles, skills, assignments and explicit ownership boundaries.", "color": "#72d997", "layer": "core", "entity_order": ["tenant", "organization", "org-unit", "team", "role", "skill", "person", "person-profile", "role-assignment", "ownership"] },
+      { "id": "planning", "name": "Projects & Work", "description": "Provider-neutral workspaces, projects, objectives, milestones, risks and configurable work items.", "color": "#f4bb63", "layer": "core", "entity_order": ["workspace", "project", "objective", "milestone", "risk", "work-item-type", "work-item"] },
+      { "id": "content", "name": "Content: Code & Docs", "description": "Source-aware repositories, documents, Markdown structures, templates, checklists, comments and normalized text.", "color": "#48d9cf", "layer": "core", "column": "content", "entity_order": ["doc-space", "document", "repository", "branch", "repository-file", "template", "template-rule", "markdown-document", "checklist", "comment", "text-content", "markdown-section", "text-chunk"] },
+      { "id": "changes", "name": "Content: Change Tracking", "description": "Durable proposed and applied code changes with commits and human review records.", "color": "#4fb8d8", "layer": "core", "column": "content", "entity_order": ["pull-request", "commit", "code-review"] },
+      { "id": "automation", "name": "Automation & Controls", "description": "Governed workflows, actions, policies, validation, approvals, notifications, custom durable objects, retryable executions and evidence.", "color": "#fb7185", "layer": "core", "entity_order": ["policy", "workflow", "trigger", "action", "worker", "validator", "quality-gate", "event", "candidate-change", "custom-durable-object", "approval", "notification", "workflow-run", "action-run", "evidence"] },
+      { "id": "ai", "name": "AI & Collaboration", "description": "Models, tools, agents, prompts, conversations, context snapshots, messages and auditable tool calls.", "color": "#70c7ff", "layer": "core", "entity_order": ["model", "mcp-server", "tool", "prompt-template", "agent", "conversation", "context-snapshot", "message", "tool-call"] },
+      { "id": "kits", "name": "Kit: SDLC Plan", "description": "Opinionated product structures and durable lifecycle objects from intent through requirements and roadmap commitments.", "color": "#d995ff", "layer": "extension", "entity_order": ["portfolio", "product", "roadmap", "roadmap-swimlane", "roadmap-item", "intent", "vision", "discovery", "strategy", "definition", "requirement"] },
+      { "id": "delivery", "name": "Kit: SDLC Build", "description": "Opinionated architecture, construction, validation, release and deployment objects for building software.", "color": "#d995ff", "layer": "extension", "entity_order": ["reference-architecture", "design-guideline", "design", "architecture-decision", "decomposition", "api-contract", "component", "test-case", "build", "ci-check", "build-artifact", "test-result", "release", "deployment"] },
+      { "id": "operations", "name": "Kit: SDLC Operate", "description": "Opinionated runtime, reliability, incident-response and learning objects for operating software.", "color": "#d995ff", "layer": "extension", "column": "operate", "entity_order": ["service", "environment", "slo", "error-budget", "runbook", "operational-signal", "alert", "incident", "postmortem"] },
+      { "id": "appsec", "name": "Kit: App Sec Scanner", "description": "Application-security assessment results, actionable findings and evidence-backed grading of vulnerability fixes.", "color": "#d995ff", "layer": "extension", "column": "operate", "entity_order": ["assessment-summary", "security-finding", "vulnerability-fix-grade"] }
     ],
     "entities": [
       {
@@ -889,7 +876,7 @@
       {
         "id": "issue-tracker",
         "bucket": "connectors",
-        "name": "Planning Connector",
+        "name": "Issue Tracker Connector",
         "kind": "connector specialization",
         "description": "A connector specialization for backlogs, requirements, work items, comments, state transitions and delivery planning.",
         "properties": [
@@ -1155,7 +1142,7 @@
       },
       {
         "id": "portfolio",
-        "bucket": "planning",
+        "bucket": "kits",
         "name": "Portfolio",
         "kind": "investment aggregate",
         "description": "A governed collection of products, programs and initiatives managed against strategy, investment and outcome objectives.",
@@ -1172,7 +1159,7 @@
       },
       {
         "id": "product",
-        "bucket": "planning",
+        "bucket": "kits",
         "name": "Product",
         "kind": "value-delivery aggregate",
         "description": "A long-lived value proposition with users, outcomes, ownership, roadmap and one or more delivery projects or services.",
@@ -1299,26 +1286,28 @@
       },
       {
         "id": "kit",
-        "bucket": "kits",
+        "bucket": "kit-management",
         "name": "Kit",
         "kind": "domain extension package",
-        "description": "A versioned package that introduces opinionated object types, role definitions, templates, checklists, workflows and guidance without changing the core domain model.",
+        "description": "A versioned Plan, Build or Operate package that introduces opinionated durable object types, roles, templates, controls, workflows and guidance without changing the core domain model.",
         "properties": [
           { "name": "id", "type": "KitId", "required": true },
           { "name": "name", "type": "string", "required": true },
+          { "name": "lifecycle_scope", "type": "plan | build | operate", "required": true },
           { "name": "version", "type": "string", "required": true },
           { "name": "artifact_type_refs", "type": "TypeId[]" },
+          { "name": "durable_object_type_refs", "type": "TypeId[]" },
           { "name": "role_refs", "type": "EntityId[]" },
           { "name": "template_refs", "type": "EntityId[]" },
           { "name": "compatibility", "type": "VersionRange" },
           { "name": "status", "type": "draft | published | deprecated" }
         ],
-        "methods": ["validate() -> ValidationResult", "install(scope) -> KitInstallation", "upgrade(version) -> MigrationPlan", "list_extensions() -> ObjectType[]"],
-        "examples": ["Product Management Kit", "Architecture Kit", "Security Kit", "Operations Kit"]
+        "methods": ["validate() -> ValidationResult", "install(scope) -> KitInstallation", "upgrade(version) -> MigrationPlan", "list_extensions() -> ObjectType[]", "create_durable_object(type, data) -> CustomDurableObject"],
+        "examples": ["SDLC Plan Kit", "SDLC Build Kit", "SDLC Operate Kit", "Security extension Kit"]
       },
       {
         "id": "kit-role",
-        "bucket": "kits",
+        "bucket": "kit-management",
         "name": "Kit Role Definition",
         "kind": "role specialization",
         "description": "An opinionated responsibility profile supplied by a Kit and implemented through the generic core Role and Role Assignment objects.",
@@ -1333,6 +1322,29 @@
         ],
         "methods": ["instantiate(scope) -> Role", "list_responsibilities() -> Responsibility[]", "validate_assignment(principal) -> ValidationResult"],
         "examples": ["Product Manager", "Architect", "Security Expert", "Discovery Lead", "Release Manager"]
+      },
+      {
+        "id": "custom-durable-object",
+        "bucket": "automation",
+        "name": "Custom Durable Object",
+        "kind": "Kit-defined durable entity",
+        "description": "A versioned, stateful lifecycle object introduced by a Kit from an extensible Object Type, persisted with stable identity, ownership, links and complete change history.",
+        "properties": [
+          { "name": "id", "type": "EntityId", "required": true },
+          { "name": "kit_ref", "type": "KitId", "required": true },
+          { "name": "object_type_ref", "type": "TypeId", "required": true },
+          { "name": "lifecycle_phase_ref", "type": "PhaseId?" },
+          { "name": "key", "type": "string", "required": true },
+          { "name": "title", "type": "string", "required": true },
+          { "name": "state", "type": "string", "required": true },
+          { "name": "data", "type": "JSON", "required": true },
+          { "name": "owner_ref", "type": "ActorRef?" },
+          { "name": "version", "type": "integer", "required": true },
+          { "name": "created_at", "type": "timestamp", "required": true },
+          { "name": "updated_at", "type": "timestamp", "required": true }
+        ],
+        "methods": ["validate() -> ValidationResult", "transition(state, actor) -> ChangeRecord", "link(target, type) -> Link", "get_history() -> ChangeRecord[]"],
+        "examples": ["Research claim", "Product hypothesis", "Security exception", "Customer signal", "Custom approval record"]
       },
       {
         "id": "intent",
@@ -1446,7 +1458,7 @@
       },
       {
         "id": "design",
-        "bucket": "kits",
+        "bucket": "delivery",
         "name": "Design",
         "kind": "lifecycle artifact",
         "description": "A technical design describing architecture, interfaces, data, security, operations and trade-offs for an approved definition.",
@@ -1464,7 +1476,7 @@
       },
       {
         "id": "architecture-decision",
-        "bucket": "kits",
+        "bucket": "delivery",
         "name": "Architecture Decision",
         "kind": "decision record",
         "description": "A durable decision record capturing context, considered options, rationale and consequences.",
@@ -1483,7 +1495,7 @@
       },
       {
         "id": "decomposition",
-        "bucket": "kits",
+        "bucket": "delivery",
         "name": "Decomposition",
         "kind": "planning artifact",
         "description": "A traceable breakdown of an approved definition or design into components, capabilities, work items and validation scope.",
@@ -1541,8 +1553,8 @@
       },
       {
         "id": "code-review",
-        "bucket": "content",
-        "name": "Code Review",
+        "bucket": "changes",
+        "name": "Review",
         "kind": "review record",
         "description": "A review decision and discussion for a proposed repository change, including required reviewers and findings.",
         "properties": [
@@ -1558,7 +1570,7 @@
       },
       {
         "id": "pull-request",
-        "bucket": "content",
+        "bucket": "changes",
         "name": "Pull Request",
         "kind": "entity",
         "description": "A proposed repository change with review, discussion and merge state.",
@@ -1663,7 +1675,7 @@
       },
       {
         "id": "commit",
-        "bucket": "content",
+        "bucket": "changes",
         "name": "Commit",
         "kind": "immutable entity",
         "description": "An immutable repository snapshot with authorship and parent lineage.",
@@ -1708,7 +1720,7 @@
       },
       {
         "id": "api-contract",
-        "bucket": "kits",
+        "bucket": "delivery",
         "name": "API Contract",
         "kind": "interface artifact",
         "description": "A versioned machine- or human-readable contract for an API, event, command or integration boundary.",
@@ -1725,7 +1737,7 @@
       },
       {
         "id": "reference-architecture",
-        "bucket": "kits",
+        "bucket": "delivery",
         "name": "Reference Architecture",
         "kind": "architecture standard",
         "description": "A reusable approved architecture pattern describing expected components, boundaries, qualities and deployment choices.",
@@ -1742,7 +1754,7 @@
       },
       {
         "id": "design-guideline",
-        "bucket": "kits",
+        "bucket": "delivery",
         "name": "Design Guideline",
         "kind": "architecture guidance",
         "description": "A reusable design rule or recommendation with rationale, applicability and validation guidance.",
@@ -1966,7 +1978,7 @@
       },
       {
         "id": "runbook",
-        "bucket": "kits",
+        "bucket": "operations",
         "name": "Runbook",
         "kind": "operational artifact",
         "description": "A versioned, executable or human-guided procedure for operating, diagnosing or recovering a service.",
@@ -1983,7 +1995,7 @@
       },
       {
         "id": "postmortem",
-        "bucket": "kits",
+        "bucket": "operations",
         "name": "Postmortem",
         "kind": "learning artifact",
         "description": "A blameless incident analysis recording impact, timeline, contributing factors, corrective actions and follow-up ownership.",
@@ -2044,7 +2056,7 @@
       },
       {
         "id": "checklist",
-        "bucket": "kits",
+        "bucket": "content",
         "name": "Checklist",
         "kind": "control artifact",
         "description": "A versioned set of required or advisory checks used by people, workflows and quality gates.",
@@ -2245,24 +2257,28 @@
         "id": "action-run",
         "bucket": "automation",
         "name": "Action Run",
-        "kind": "execution record",
-        "description": "One attempt to execute an action with immutable inputs, outputs, costs, logs and evidence.",
+        "kind": "immutable execution attempt",
+        "description": "One durable execution attempt for an action, preserving retry lineage, inputs, outputs, gate results, costs and evidence until a retry passes its Quality Gate or policy is exhausted.",
         "properties": [
           { "name": "id", "type": "ExecutionId", "required": true },
           { "name": "action_ref", "type": "EntityId", "required": true },
           { "name": "worker_ref", "type": "EntityId?" },
-          { "name": "candidate_change_ref", "type": "ChangeId?" },
+          { "name": "quality_gate_ref", "type": "EntityId", "required": true },
+          { "name": "retry_of_ref", "type": "ExecutionId?" },
           { "name": "attempt", "type": "integer", "required": true },
-          { "name": "status", "type": "queued | running | waiting | succeeded | failed | cancelled" },
+          { "name": "candidate_change_ref", "type": "ChangeId?" },
+          { "name": "retry_policy", "type": "RetryPolicy?" },
+          { "name": "status", "type": "queued | running | waiting | gate_failed | succeeded | failed | cancelled" },
           { "name": "input", "type": "JSON" },
           { "name": "output", "type": "JSON?" },
+          { "name": "gate_result", "type": "GateResult?" },
           { "name": "error", "type": "ExecutionError?" },
           { "name": "started_at", "type": "timestamp" },
           { "name": "completed_at", "type": "timestamp?" },
           { "name": "cost", "type": "Cost?" }
         ],
-        "methods": ["get_logs() -> TextContent", "list_evidence() -> Evidence[]", "cancel() -> void", "retry() -> ActionRun"],
-        "examples": ["Tool invocation", "Human task", "Agent execution", "Connector write-back"]
+        "methods": ["evaluate_gate() -> GateResult", "can_retry() -> boolean", "retry(input?) -> ActionRun", "get_logs() -> TextContent", "list_evidence() -> Evidence[]", "cancel() -> void"],
+        "examples": ["Initial tool invocation", "Validation repair retry", "Human task attempt", "Connector write-back retry"]
       },
       {
         "id": "validator",
@@ -2671,6 +2687,74 @@
         ],
         "methods": ["list_changes() -> ChangeRecord[]", "replay() -> SyncResult", "diff(previous) -> SnapshotDiff"],
         "examples": ["GitHub incremental sync", "Nightly Confluence crawl", "Webhook micro-batch"]
+      },
+      {
+        "id": "assessment-summary",
+        "bucket": "appsec",
+        "name": "Assessment Summary",
+        "kind": "security assessment aggregate",
+        "description": "A durable summary of one application-security assessment over a project, repository and revision, including scanner coverage, severity counts and overall risk.",
+        "properties": [
+          { "name": "id", "type": "AssessmentId", "required": true },
+          { "name": "scope_ref", "type": "EntityRef", "required": true },
+          { "name": "repository_ref", "type": "EntityId", "required": true },
+          { "name": "revision", "type": "SHA", "required": true },
+          { "name": "scanner_ref", "type": "SourceId", "required": true },
+          { "name": "assessment_types", "type": "SecurityAssessmentType[]", "required": true },
+          { "name": "severity_counts", "type": "SeverityCounts", "required": true },
+          { "name": "risk_score", "type": "decimal?" },
+          { "name": "status", "type": "queued | running | completed | failed" },
+          { "name": "started_at", "type": "timestamp", "required": true },
+          { "name": "completed_at", "type": "timestamp?" }
+        ],
+        "methods": ["list_findings(filter?) -> SecurityFinding[]", "highest_severity() -> Severity?", "meets_policy(policy) -> boolean", "to_evidence() -> Evidence"],
+        "examples": ["Pull-request SAST summary", "Dependency scan summary", "Container assessment", "Infrastructure-as-code assessment"]
+      },
+      {
+        "id": "security-finding",
+        "bucket": "appsec",
+        "name": "Finding",
+        "kind": "security finding",
+        "description": "An actionable application-security issue discovered by an assessment, with stable fingerprint, severity, details, affected subject and remediation lifecycle.",
+        "properties": [
+          { "name": "id", "type": "FindingId", "required": true },
+          { "name": "assessment_ref", "type": "AssessmentId", "required": true },
+          { "name": "fingerprint", "type": "Hash", "required": true },
+          { "name": "severity", "type": "critical | high | medium | low | info", "required": true },
+          { "name": "title", "type": "string", "required": true },
+          { "name": "details", "type": "TextContent", "required": true },
+          { "name": "category", "type": "vulnerability | misconfiguration | secret | dependency | license" },
+          { "name": "rule_id", "type": "string?" },
+          { "name": "cwe_ids", "type": "string[]" },
+          { "name": "cve_ids", "type": "string[]" },
+          { "name": "subject_ref", "type": "EntityRef", "required": true },
+          { "name": "location", "type": "CodeLocation?" },
+          { "name": "status", "type": "open | triaged | accepted | false_positive | fixed" },
+          { "name": "detected_at", "type": "timestamp", "required": true }
+        ],
+        "methods": ["create_remediation_work() -> WorkItem", "accept_risk(actor, reason) -> Approval", "mark_false_positive(actor, reason) -> void", "verify(fix) -> VulnerabilityFixGrade"],
+        "examples": ["SQL injection", "Exposed secret", "Critical dependency CVE", "Insecure cloud policy", "Missing authorization check"]
+      },
+      {
+        "id": "vulnerability-fix-grade",
+        "bucket": "appsec",
+        "name": "Vulnerability Fix Grade",
+        "kind": "fix verification record",
+        "description": "An evidence-backed grade for a proposed or applied vulnerability fix, measuring remediation completeness, regression safety and residual risk.",
+        "properties": [
+          { "name": "id", "type": "GradeId", "required": true },
+          { "name": "finding_ref", "type": "FindingId", "required": true },
+          { "name": "fix_ref", "type": "EntityRef", "required": true },
+          { "name": "grade", "type": "A | B | C | D | F | ungraded", "required": true },
+          { "name": "score", "type": "0..100", "required": true },
+          { "name": "criteria", "type": "FixGradeCriterion[]", "required": true },
+          { "name": "residual_severity", "type": "critical | high | medium | low | none" },
+          { "name": "evidence_refs", "type": "EvidenceId[]" },
+          { "name": "status", "type": "pending | passed | failed" },
+          { "name": "graded_at", "type": "timestamp?" }
+        ],
+        "methods": ["evaluate(fix) -> VulnerabilityFixGrade", "passes(minimum_grade) -> boolean", "list_evidence() -> Evidence[]", "explain() -> TextContent"],
+        "examples": ["Complete fix with regression coverage", "Partial mitigation", "Fix introduces regression", "Finding remains exploitable"]
       }
     ],
     "relationships": [
@@ -2937,7 +3021,30 @@
       { "from": "action-run", "to": "candidate-change", "type": "references", "label": "produces" },
       { "from": "tool-call", "to": "approval", "type": "references", "label": "authorized by" },
       { "from": "person", "to": "message", "type": "member", "label": "authors" },
-      { "from": "agent", "to": "message", "type": "member", "label": "authors" }
+      { "from": "agent", "to": "message", "type": "member", "label": "authors" },
+      { "from": "kit", "to": "custom-durable-object", "type": "composes", "label": "introduces" },
+      { "from": "custom-durable-object", "to": "object-type", "type": "references", "label": "instance of" },
+      { "from": "custom-durable-object", "to": "lifecycle-phase", "type": "references", "label": "classified in" },
+      { "from": "custom-durable-object", "to": "change-record", "type": "composes", "label": "has history" },
+      { "from": "action-run", "to": "action-run", "type": "references", "label": "retries", "visual": false },
+      { "from": "action-run", "to": "quality-gate", "type": "references", "label": "evaluated by" },
+      { "from": "kit", "to": "assessment-summary", "type": "composes", "label": "introduces" },
+      { "from": "kit", "to": "security-finding", "type": "composes", "label": "introduces" },
+      { "from": "kit", "to": "vulnerability-fix-grade", "type": "composes", "label": "introduces" },
+      { "from": "connector", "to": "assessment-summary", "type": "derives", "label": "produces" },
+      { "from": "assessment-summary", "to": "project", "type": "references", "label": "scoped to" },
+      { "from": "assessment-summary", "to": "repository", "type": "references", "label": "assesses" },
+      { "from": "assessment-summary", "to": "pull-request", "type": "references", "label": "may assess" },
+      { "from": "assessment-summary", "to": "commit", "type": "references", "label": "scans revision" },
+      { "from": "assessment-summary", "to": "security-finding", "type": "composes", "label": "contains" },
+      { "from": "assessment-summary", "to": "evidence", "type": "derives", "label": "records" },
+      { "from": "security-finding", "to": "repository-file", "type": "references", "label": "located in" },
+      { "from": "security-finding", "to": "work-item", "type": "references", "label": "remediated by" },
+      { "from": "security-finding", "to": "vulnerability-fix-grade", "type": "composes", "label": "graded by" },
+      { "from": "security-finding", "to": "evidence", "type": "references", "label": "supported by" },
+      { "from": "vulnerability-fix-grade", "to": "pull-request", "type": "references", "label": "evaluates fix in" },
+      { "from": "vulnerability-fix-grade", "to": "commit", "type": "references", "label": "verifies fix at" },
+      { "from": "vulnerability-fix-grade", "to": "evidence", "type": "composes", "label": "records" }
     ]
   }
   </script>
@@ -2947,6 +3054,7 @@
     const state = {
       selected: null,
       relationsVisible: true,
+      categoriesStacked: false,
       query: ''
     };
 
@@ -2957,6 +3065,7 @@
     const canvasElement = document.getElementById('canvas');
     const workspaceElement = document.getElementById('workspace');
     const searchElement = document.getElementById('search');
+    const layoutToggleElement = document.getElementById('layout-toggle');
     const emptyStateElement = document.getElementById('empty-state');
     let frame = 0;
 
@@ -3033,21 +3142,36 @@
         <span class="stat"><strong>${model.relationships.length}</strong> relationships</span>
         <span class="stat">version <strong>${escapeHtml(model.meta.version)}</strong></span>`;
 
-      bucketsElement.style.setProperty('--bucket-count', model.buckets.length);
-      bucketsElement.innerHTML = model.buckets.map(bucket => {
-        const entityOrder = new Map(bucket.entity_order.map((entityId, index) => [entityId, index]));
-        const entities = model.entities
-          .filter(entity => entity.bucket === bucket.id)
-          .sort((left, right) => entityOrder.get(left.id) - entityOrder.get(right.id));
-        return `
-          <section class="bucket" data-bucket-id="${bucket.id}" data-layer="${escapeHtml(bucket.layer)}" style="--bucket-color:${bucket.color}">
-            <header class="bucket-header">
-              <div class="bucket-heading" tabindex="0" aria-describedby="tooltip-${bucket.id}"><span class="bucket-icon">${escapeHtml(bucket.icon)}</span><h2 class="bucket-title">${escapeHtml(bucket.name)}</h2><span class="bucket-layer">${bucket.layer === 'extension' ? 'Kit' : 'Core'}</span><span class="bucket-tooltip" id="tooltip-${bucket.id}" role="tooltip"><strong class="bucket-tooltip-title">${escapeHtml(bucket.name)}</strong><span class="bucket-tooltip-description">${escapeHtml(bucket.description)}</span></span></div>
-              <span class="bucket-count">${entities.length}</span>
-            </header>
-            <div class="node-stack">${entities.map(nodeMarkup).join('')}</div>
-          </section>`;
-      }).join('');
+      const columns = [];
+      const columnById = new Map();
+      model.buckets.forEach(bucket => {
+        const columnId = bucket.column || bucket.id;
+        if (!columnById.has(columnId)) {
+          const column = { id: columnId, buckets: [] };
+          columns.push(column);
+          columnById.set(columnId, column);
+        }
+        columnById.get(columnId).buckets.push(bucket);
+      });
+
+      bucketsElement.style.setProperty('--bucket-count', columns.length);
+      bucketsElement.innerHTML = columns.map(column => `
+        <div class="bucket-column" data-column-id="${escapeHtml(column.id)}">
+          ${column.buckets.map(bucket => {
+            const entityOrder = new Map(bucket.entity_order.map((entityId, index) => [entityId, index]));
+            const entities = model.entities
+              .filter(entity => entity.bucket === bucket.id)
+              .sort((left, right) => entityOrder.get(left.id) - entityOrder.get(right.id));
+            return `
+              <section class="bucket" data-bucket-id="${bucket.id}" data-layer="${escapeHtml(bucket.layer)}" style="--bucket-color:${bucket.color}">
+                <header class="bucket-header">
+                  <div class="bucket-heading" tabindex="0" aria-describedby="tooltip-${bucket.id}"><h2 class="bucket-title">${escapeHtml(bucket.name)}</h2><span class="bucket-tooltip" id="tooltip-${bucket.id}" role="tooltip"><strong class="bucket-tooltip-title">${escapeHtml(bucket.name)}</strong><span class="bucket-tooltip-description">${escapeHtml(bucket.description)}</span></span></div>
+                  <small class="bucket-meta"><span class="bucket-layer">${bucket.layer === 'extension' ? 'Kit' : 'Core'}</span><span class="bucket-meta-divider" aria-hidden="true">·</span><span class="bucket-count">${entities.length} element${entities.length === 1 ? '' : 's'}</span></small>
+                </header>
+                <div class="node-stack">${entities.map(nodeMarkup).join('')}</div>
+              </section>`;
+          }).join('')}
+        </div>`).join('');
 
       bucketsElement.querySelectorAll('.node-toggle').forEach(button => {
         const updateOverflowTooltip = () => {
@@ -3228,7 +3352,10 @@
       document.querySelectorAll('.bucket').forEach(bucket => {
         const visible = bucket.querySelectorAll('.node:not(.filtered)').length;
         bucket.style.display = visible ? '' : 'none';
-        bucket.querySelector('.bucket-count').textContent = visible;
+        bucket.querySelector('.bucket-count').textContent = `${visible} element${visible === 1 ? '' : 's'}`;
+      });
+      document.querySelectorAll('.bucket-column').forEach(column => {
+        column.style.display = [...column.querySelectorAll('.bucket')].some(bucket => bucket.style.display !== 'none') ? '' : 'none';
       });
       emptyStateElement.classList.toggle('visible', visibleCount === 0);
       scheduleRelationships();
@@ -3236,6 +3363,14 @@
 
     document.getElementById('expand-all').addEventListener('click', () => setAllExpanded(true));
     document.getElementById('collapse-all').addEventListener('click', () => setAllExpanded(false));
+    layoutToggleElement.addEventListener('click', () => {
+      state.categoriesStacked = !state.categoriesStacked;
+      bucketsElement.classList.toggle('stacked', state.categoriesStacked);
+      layoutToggleElement.classList.toggle('active', state.categoriesStacked);
+      layoutToggleElement.setAttribute('aria-pressed', String(state.categoriesStacked));
+      workspaceElement.scrollTo({ left: 0, behavior: 'smooth' });
+      scheduleRelationships();
+    });
     document.getElementById('relations-toggle').addEventListener('click', event => {
       state.relationsVisible = !state.relationsVisible;
       event.currentTarget.classList.toggle('active', state.relationsVisible);
@@ -3246,7 +3381,11 @@
       state.query = '';
       clearSelection();
       state.relationsVisible = true;
+      state.categoriesStacked = false;
       document.getElementById('relations-toggle').classList.add('active');
+      bucketsElement.classList.remove('stacked');
+      layoutToggleElement.classList.remove('active');
+      layoutToggleElement.setAttribute('aria-pressed', 'false');
       setAllExpanded(false);
       applySearch();
       workspaceElement.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
