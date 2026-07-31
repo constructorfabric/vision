@@ -27,7 +27,7 @@ composable, secure-by-default platform components — **gears** — for tenancy,
 
 This vision is a living document, developed in the open.
 
-The authoritative definitions live in the public repositories — the Architecture Manifest, the gear catalog, the expert checklists, and each gear's PRD → DESIGN → ADR chain — all traceable, all inspectable.
+The authoritative definitions live in the public repositories — the Architecture Manifest, the gear catalog, the expert checklists, and each gear's PRD → ADR → DESIGN chain — all traceable, all inspectable.
 
 The vision states where the estate is going; the repositories state how it gets there.
 
