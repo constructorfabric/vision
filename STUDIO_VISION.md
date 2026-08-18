@@ -45,7 +45,7 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 
 # 1.1 What is Constructor Studio
 
-Constructor Studio is an AI-native integrated product for software construction and other knowledge processes automation, such as research, science, market intelligence, compliance, operations and business intelligence.
+Constructor Studio is an AI-native integrated product for automation of software construction and other knowledge processes, such as research, science, market intelligence, compliance, operations and business intelligence.
 
 Software construction is one of Studio's first-class scenarios: Studio brings roles, artifacts, systems, and activities across the SDLC into a single collaborative environment where humans and AI can work under shared context, governance, automation, and traceability.
 
@@ -57,7 +57,7 @@ Software construction is one of Studio's first-class scenarios: Studio brings ro
 
 Along with Constructor Insight and Constructor Gears, Studio is one of the elements of Constructor Fabric.
 
-- **Studio** - AI-native integrated product for software construction and knowledge processes automation
+- **Studio** - AI-native integrated product for automation of software construction and knowledge processes
 - **Insight** - measurement, analytics, and feedback foundation
 - **Gears** - reusable SaaS services and platforms building blocks and foundation
 
@@ -889,7 +889,7 @@ Measure accepted knowledge changes rate, AI cost per accepted change, intent-to-
 - **Skyrocketing AI costs** - Uncontrollable use of LLMs - when applied to an old-style SDLC - leads to growing bills from LLM providers
 - **Gravity shift** - The weight shifts from content generation to control
 - **New bottleneck** - Validation, coordination, governance, and quality
-- **Product** - AI-native integrated solution for software construction and knowledge processesing
+- **Product** - AI-native integrated solution for automation of software construction and knowledge processes
 - **Key Scenarios** - SDLC, research, knowldge processing workflows
 - **Operating model** - Stable Studio core service plus Studio Kits for SDLC, research, science, compliance, M&A, and customer-specific workflows
 - **Growth path** - Studio UI foundation → SaaS automation with customizable workflows and Kits → end-to-end construction, deployment, and operations
