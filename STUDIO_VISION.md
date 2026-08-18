@@ -104,7 +104,7 @@ It is delivered through several product surfaces:
 - IDE plugins and integrations
 - APIs, webhooks, MCP interface, and import/export flows
 
-Studio is designed for cloud SaaS, private cloud, and on-prem deployments, with subscription plans on top of an open-core foundation.
+Studio is offered either as a SaaS service hosted by Constructor Fabric or as a self-hosted service (open-source) for private cloud and on-prem deployments. The hosted SaaS model is described in the business section below (8.2).
 
 ---
 
@@ -771,7 +771,7 @@ Studio does not need to beat them at CI/CD. Studio improves work across them whi
 Open-core model:
 
 - Open-core foundation for trust, extensibility, and reduced lock-in
-- Cloud SaaS subscription plans for easier trial and adoption
+- Cloud SaaS service with subscription plans for easier trial and adoption
 - Team, company, and enterprise plans based on seats, automation volume and support
 - Private cloud and on-prem deployments
 - Commercial Kits, partner Kits, and professional services for proprietary workflows
@@ -787,7 +787,23 @@ Knowledge inventory -> recommendations -> approved automation -> Kit ecosystem -
 
 ---
 
-# 8.2. Moat Flywheel
+<!-- _class: body-sm -->
+
+# 8.2. Constructor Studio as SaaS
+
+Constructor Studio SaaS is a hosted service operated by Constructor Fabric, with
+self-registration for individuals and teams.
+
+1. Built on the open-source Studio foundation, with bi-directional migration between hosted and self-hosted deployments
+2. Integrates with common git hosting services, issue trackers, identity providers, collaboration tools, and knowledge systems
+3. Supports customizations using the same Studio Kits as the self-hosted version
+4. Provides pre-installed Kits for common software construction and knowledge-processes
+5. Provides infrastructure capabilities for build, deployment, service operations, runtime workflows, and automation
+6. Integrates with Virtuozzo Cloud and popular public cloud infrastructure providers for end-to-end service deployment and production operations
+
+---
+
+# 8.3. Moat Flywheel
 
 ```text
 Open-source core adoption
@@ -807,7 +823,7 @@ The moat is not one model or one agent. It is open-core distribution plus valida
 
 <!-- _class: body-sm -->
 
-# 8.3. Credible Wedge
+# 8.4. Credible Wedge
 
 #### Phase 1: Studio CLI PoC
 
@@ -829,7 +845,7 @@ The moat is not one model or one agent. It is open-core distribution plus valida
 
 <!-- _class: body-sm -->
 
-# 8.4. Expansion Roadmap
+# 8.5. Expansion Roadmap
 
 #### Phase 3: SaaS model and Automation
 
@@ -849,7 +865,7 @@ The moat is not one model or one agent. It is open-core distribution plus valida
 
 ---
 
-# 8.5. Key Investor Objections
+# 8.6. Key Investor Objections
 
 ## “This is too broad.”
 
