@@ -232,15 +232,20 @@ The strategic problem is controlling the full AI-assisted software delivery: val
 
 ---
 
+<!-- _class: body-sm -->
+
 # 2.2 Constructor Studio Differentiators
 
 Although Constructor Studio is not the first and not the only AI-assisted tool for complex knowledge work, it has a unique combination of differentiators:
 
 1. Observability and control over existing knowledge, processes, and systems
 2. End-to-end cost optimization across software construction and knowledge processes - including AI and operational costs in production
-3. End-to-end automation, including full SDLC automation from intent to production operations
-4. Support for large and professional software organizations
-5. Ability to adapt to any Software Development Lifecycle (SDLC), lifecycle model, and customer-specific workflow
+3. End-to-end automation, including full SDLC automation from intent to operations
+4. Focus on better software artifacts and code - more optimized, more secure, more consistent with defined architecture and standards
+5. Support for large and professional software organizations
+6. Ability to adapt to any Software Development Lifecycle (SDLC), and workflows
+
+This includes deeper quality gates: spec and code quality and consistency validation, static code analyzers, linter-level architecture validation, built-in security scanners, and policy-driven quality gates before changes are accepted.
 
 ---
 
