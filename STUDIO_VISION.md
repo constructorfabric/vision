@@ -145,16 +145,17 @@ Studio ships with default Kits while allowing customers and partners to build th
 
 Example domain Kits:
 
-- **SaaS** development Kit
-- **Mobile** development Kit
-- **Research and science** Kit
-- **Security & Compliance** review Kit
-- **M&A technology diligence** Kit
-- **Custom business process** Kit
+- **Default SDLC Kit** for general purpose software development
+- **Specialized SDLC** Kit for SaaS apps development
+- **Specialized SDLC** Kits for other software categories
+- **Research and science** Kits
+- **Security & Compliance** review Kits
+- **M&A technology diligence** Kits
+- **Custom business process** Kits
 
 ---
 
-# 1.8 SDLC Kit: Idea → Specs
+# 1.8 Default SDLC Kit: Idea → Specs
 
 - Standardized transformation of business ideas into structured engineering specifications
 - Legacy code-to-spec generation – ingest large repositories of legacy code, generate full and consistent spec set
@@ -165,7 +166,7 @@ Example domain Kits:
 
 ---
 
-# 1.9 SDLC Kit: Specs → Code
+# 1.9 Default SDLC Kit: Specs → Code
 
 - AI-native transformation of specifications into implementation, tests, and workflows
 - Incremental decomposition and controlled generation across the SDLC lifecycle
@@ -175,7 +176,7 @@ Example domain Kits:
 
 ---
 
-# 1.10 SDLC Kit: Code → Production
+# 1.10 Default SDLC Kit: Code → Production
 
 - Continuous validation between specifications, architecture, code, tests, and delivery artifacts
 - Integrated governance, consistency analysis, and development-time validation workflows
@@ -366,9 +367,9 @@ Initial target customers include Software construction teams of 5+ people that:
 
 ---
 
-# 5. Studio SDLC Kit
+# 5. Default SDLC Kit Deep Dive
 
-## 5.1 SDLC Kit - Users & Actors
+## 5.1 Default SDLC Kit - Users & Actors
 
 SDLC Kits bring software development specific **Actors** - anything that performs a transformation in the Software Construction Lifecycle. Today that includes mostly humans. Tomorrow it will also include AI agents and external systems.
 For example:
@@ -385,7 +386,7 @@ An Actor may play different Roles in different Projects.
 
 ---
 
-## 5.2 SDLC Kit - Managed Functions and Roles
+## 5.2 Default SDLC Kit - Managed Functions and Roles
 
 SDLC Kits are typically intended for the following functions and roles:
   - **Product Management** - Define what should be built
@@ -399,7 +400,7 @@ SDLC Kits are typically intended for the following functions and roles:
 
 ---
 
-# 5.3. SDLC Kit - Managed Product Lifecycle
+# 5.3. Default SDLC Kit - Managed Product Lifecycle
 
 SDLC Kits may expand the business scope from SDLC to Software Construction Lifecycle (SCLC).
 
@@ -411,7 +412,7 @@ The business promise is not a mandated process. The promise is continuity from i
 
 ---
 
-## 5.4 SDLC Kit - End-to-End Lifecycle Continuity
+## 5.4 Default SDLC Kit - End-to-End Lifecycle Continuity
 
 At a more detailed level, SDLC Kits can support the full lifecycle chain:
 
@@ -423,11 +424,11 @@ Studio preserves continuity by mapping roles, activities, inputs, outputs, quali
 
 ---
 
-# 5.5. SDLC Kit - Defaults Without Lock-In
+# 5.5. Default SDLC Kit - Defaults Without Lock-In
 
 SDLC Kits can be team-optimized and define their own processes:
 
-- Teams can start from default flows for SaaS, mobile, and web development
+- Teams can start from default flows for SaaS, mobile, and web product development
 - Common templates can cover bug-to-fix, requirements-to-tasks, PR validation, and release readiness
 - Organizations can adapt, replace, or extend defaults to match their own operating model
 - Customers keep their tools, terminology, governance model, and preferred delivery style
@@ -438,9 +439,9 @@ The business value is faster adoption without forcing a methodology migration.
 
 # 5.6. Beyond SDLC
 
-Studio is not limited to software delivery Kits only. The same operating model can support a broader class of high-value knowledge workflows where control, traceability, collaboration, and supervised automation matter.
+Studio is not limited to software delivery Kits only. The same operating model can support a broader class of high-value knowledge workflows where control, traceability, collaboration, and supervised automation matter packaged as Kits.
 
-Examples:
+Workflows examples:
 
 - Research and science workflows
 - Market analysis and competitive intelligence
@@ -816,7 +817,7 @@ Open-source core adoption
 ```
 
 <div class="accent">
-The moat is not one model or one agent. It is open-core distribution plus validated workflows, reusable kits, accumulated customer evidence, benchmarks, ecosystem reach, and enterprise trust.
+The moat is not one model or one agent. It is open-core distribution plus validated workflows, reusable Kits, accumulated customer evidence, benchmarks, ecosystem reach, and enterprise trust.
 </div>
 
 ---
@@ -852,7 +853,7 @@ The moat is not one model or one agent. It is open-core distribution plus valida
 - Deployable SaaS product with trial/free/paid subscriptions
 - Workflows automation runtime with pre-defined triggers, actions and connectors
 - Fully customizable UI/UX, workflows, dashboards and notifications
-- Runtime kits automation - install, configuration, test, upgrade
+- Runtime Kits automation - install, configuration, test, upgrade
 - Integrated Studio Kits builder and certification
 
 #### Phase 4: End-to-end construction, deployment, and operations
