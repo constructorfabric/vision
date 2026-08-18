@@ -30,6 +30,11 @@ jobs:
 
       - name: Build vision pages
         run: make site
+        env:
+          # Repo variable Settings > Secrets and variables > Actions > Variables.
+          # Falls back to show-md if the repo variable isn't set.
+          PREVIEW_ENGINE: ${{ vars.PREVIEW_ENGINE || 'show-md' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
