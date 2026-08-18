@@ -94,17 +94,17 @@ Constructor Studio is an **integrated** product that brings together:
 
 ---
 
-# 1.4 Product Surfaces and Deployments
+# 1.4 How Users Access Studio and Deployments
 
-It is delivered through several product surfaces:
+Studio is available through several user interfaces and integration methods:
 
-- Web application in a browser (self-hosted, SaaS)
+- Web application in a browser (self-hosted, Constructor Fabric -hosted SaaS)
 - Desktop application for macOS, Linux, Windows, iOS, and Android
 - CLI and terminal workflows
-- IDE plugins and integrations
+- IDE plugins and integrations into other systems (e.g. GitHub, Confluence)
 - APIs, webhooks, MCP interface, and import/export flows
 
-Studio is offered either as a SaaS service hosted by Constructor Fabric or as a self-hosted service (open-source) for private cloud and on-prem deployments. The hosted SaaS model is described in the business section below (8.2).
+Studio is offered either as a SaaS service hosted by Constructor Fabric or as a self-hosted service (open-source) for private cloud and on-prem deployments. The Constructor Fabric -hosted SaaS model is described in the business section below (8.2).
 
 ---
 
