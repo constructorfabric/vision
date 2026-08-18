@@ -38,6 +38,7 @@ Source basis: user's Marp draft, refined for investor narrative, wedge, moat, RO
 ---
 
 <!-- _class: lead -->
+<!-- _class: vcenter -->
 
 # 1. Product Definition
 
@@ -69,7 +70,7 @@ Studio helps teams safely, effectively, and predictably move complex knowledge w
 
 Studio is intended for two broad audience groups:
 
-**1. Software vendor organizations**
+## 1.3.1 Software vendor organizations
 
 - SaaS, cloud, mobile, service-provider and other teams adopting AI
 - Engineering and product organizations that need control, security, traceability, and delivery quality
@@ -78,7 +79,7 @@ Studio is intended for two broad audience groups:
 
 ---
 
-**2. Other knowledge-heavy organizations**
+## 1.3.2 Other knowledge-heavy organizations
 
 - Researchers and scientists managing complex knowledge workflows
 - Strategy, market intelligence, M&A, compliance, and operations teams
