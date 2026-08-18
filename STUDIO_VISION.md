@@ -155,7 +155,7 @@ Example domain Kits:
 
 ---
 
-# 1.8 Default SDLC Kit: Idea → Specs
+# 1.8 Default SDLC Kit: Idea → Specs flows
 
 - Standardized transformation of business ideas into structured engineering specifications
 - Legacy code-to-spec generation – ingest large repositories of legacy code, generate full and consistent spec set
@@ -166,7 +166,7 @@ Example domain Kits:
 
 ---
 
-# 1.9 Default SDLC Kit: Specs → Code
+# 1.9 Default SDLC Kit: Specs → Code flow
 
 - AI-native transformation of specifications into implementation, tests, and workflows
 - Incremental decomposition and controlled generation across the SDLC lifecycle
@@ -176,7 +176,7 @@ Example domain Kits:
 
 ---
 
-# 1.10 Default SDLC Kit: Code → Production
+# 1.10 Default SDLC Kit: Code → Production flow
 
 - Continuous validation between specifications, architecture, code, tests, and delivery artifacts
 - Integrated governance, consistency analysis, and development-time validation workflows
@@ -282,14 +282,14 @@ Constructor Studio condenses the information fed into AI models by using summari
 ## 3.1.3 Quality/cost benchmarking
 
 Constructor Studio provides the tools to measure and monitor the overall costs of software development.
-  - Cost of AI tokens
-  - Cost of compute in development - through tight integration with Constructor Insight
+  - Cost of AI tokens - by user, team, workflow, Activity, model, and provider
+  - Cost of compute in development - across build, test, analysis, and sandbox workloads
 
 ---
 
 ## 3.1.4 Other cost-saving techniques
-  - Prompt/version A/B testing
-  - Incremental analysis & revalidation
+  - Prompt/version A/B testing - compare prompt or workflow variants by quality and cost
+  - Incremental analysis & revalidation - re-check only changed artifacts and dependencies
 
 Constructor Studio always provides the most cost-effective software development - while it is shipped with the most optimal configuration available at the moment, it is possible later, while using Studio, to request the most up-to-date configuration (model routing, context compression) and optionally apply it to the Studio instance.
 
