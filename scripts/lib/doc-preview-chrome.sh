@@ -524,7 +524,7 @@ print_chrome_header() {
   </div>
 </header>
 <div class="page">
-  <main class="CHROME_MAIN_CLASS">
+  <main class="$CHROME_MAIN_CLASS">
 EOF
 }
 
