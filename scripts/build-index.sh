@@ -1,13 +1,53 @@
 #!/usr/bin/env bash
 # Generates site/index.html linking to every generated vision page.
-# Run after the `slides` make target has populated $SITE_DIR with one
-# .html file per root-level vision markdown document.
+# The index's look tracks PREVIEW_ENGINE: show-md emits the light
+# doc-preview shell (matching each rendered doc page), other engines
+# keep the original dark marp-flavored index.
+#
+# Usage: build-index.sh <site_dir> [marp|show-md]
 set -euo pipefail
 
 SITE_DIR="${1:-site}"
+PREVIEW_ENGINE="${2:-${PREVIEW_ENGINE:-marp}}"
 mkdir -p "$SITE_DIR"
 INDEX="$SITE_DIR/index.html"
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Render with the same chrome as the doc pages so the index doesn't
+# look like it came from a different build.
+if [ "$PREVIEW_ENGINE" = "show-md" ]; then
+  # shellcheck source=lib/doc-preview-chrome.sh
+  source "$SCRIPT_DIR/lib/doc-preview-chrome.sh"
+
+  CHROME_TITLE="Constructor Fabric vision documents"
+  CHROME_GH_URL="https://github.com/constructorfabric/vision"
+  CHROME_MAIN_CLASS="index"
+
+  print_chrome_header > "$INDEX"
+
+  cat >> "$INDEX" <<'HTML'
+    <h1>Constructor Fabric vision documents</h1>
+    <ul>
+HTML
+
+  for md in *.md; do
+    [ "$md" = "README.md" ] && continue
+    html="${md%.md}.html"
+    title=$(grep -m1 -E '^#[[:space:]]+' "$md" | sed -E 's/^#[[:space:]]+//')
+    [ -z "$title" ] && title="${md%.md}"
+    printf '      <li><a href="%s">%s</a></li>\n' "$html" "$title" >> "$INDEX"
+  done
+
+  cat >> "$INDEX" <<'HTML'
+    </ul>
+HTML
+
+  print_chrome_footer >> "$INDEX"
+  exit 0
+fi
+
+# Default: marp engine — keep the original dark rose-pine-moon index.
 cat > "$INDEX" <<'HTML'
 <!DOCTYPE html>
 <html lang="en">

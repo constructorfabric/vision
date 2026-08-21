@@ -28,7 +28,7 @@ $(SITE_DIR)/%.html: %.md $(DOC_PREVIEW_SCRIPT)
 endif
 
 site: slides
-	@./scripts/build-index.sh $(SITE_DIR)
+	@./scripts/build-index.sh $(SITE_DIR) $(PREVIEW_ENGINE)
 
 clean:
 	rm -rf $(SITE_DIR)
