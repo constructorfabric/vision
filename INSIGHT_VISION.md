@@ -1,4 +1,6 @@
-# 1. Constructor Insight Vision
+# Constructor Insight Vision
+
+## 1\. Vision
 
 Constructor Insight is an AI-assisted intelligence product that helps organizations understand and improve how work is performed across roles, teams, systems, and cost centers.
 
