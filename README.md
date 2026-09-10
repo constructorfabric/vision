@@ -11,7 +11,7 @@ The vision documents are published as a website: **https://constructorfabric.git
 Add this repository as a git submodule in any Constructor Fabric repository:
 
 ```bash
-git submodule add https://github.com/vzhuman/vision vision
+git submodule add https://github.com/constructorfabric/vision vision
 ```
 
 Then validate your requirements and implementation against the vision documents here before shipping changes. This keeps every element aligned with the overall direction without duplicating intent across repositories.
